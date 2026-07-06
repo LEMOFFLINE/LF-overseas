@@ -1045,7 +1045,7 @@ A China-based apparel manufacturer focused on workwear, uniforms, business cloth
 ```text
 Beijing Lingfeng Apparel Co., Ltd. is a China-based apparel manufacturer specializing in workwear, uniforms, business clothing and functional protective garments.
 
-The company operates from Beijing, with production facilities in Shijiazhuang, Hebei. Our team includes experienced technicians, pattern makers, designers and production staff, supporting clients from material selection and sample development to bulk production and quality inspection.
+The company is located at Room 203, Building 1, No. 18 Jia, Longtai Road, Jiugong Industrial Park, Daxing District, Beijing, China. Our team includes experienced technicians, pattern makers, designers and production staff, supporting clients from material selection and sample development to bulk production and quality inspection.
 
 We manufacture business suits, work jackets, winter workwear, uniforms and functional protective garments for corporate, institutional and industrial clients.
 ```
@@ -1180,7 +1180,9 @@ Contact
 ```text
 Email:
 WhatsApp:
-Location: Beijing, China / Shijiazhuang Production Facility
+Email: sales@lfclothing.com
+WhatsApp: https://wa.me/8613901335518
+Location: Room 203, Building 1, No. 18 Jia, Longtai Road, Jiugong Industrial Park, Daxing District, Beijing, China.
 ```
 
 底部版权：
