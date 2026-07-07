@@ -33,6 +33,7 @@ function showFormMessage(message, isError = false) {
   formMessage.textContent = message;
   formMessage.classList.toggle("is-error", isError);
   formMessage.classList.add("is-visible");
+  formMessage.scrollIntoView({ behavior: "smooth", block: "center" });
   formMessage.focus();
 }
 
