@@ -8,6 +8,14 @@
 4. Recommended sender:
    - Sender email: `sales@lfclothing.com`
    - Sender name: `Lingfeng Apparel Website`
+5. Authenticate the sender domain in Brevo:
+   - Add the Brevo verification record.
+   - Add the DKIM records Brevo provides.
+   - Add or update DMARC for the domain.
+6. Check **Security** -> **Authorized IPs**:
+   - If IP authorization is enabled, Brevo will reject requests from unrecognized IP addresses even when the API key is valid.
+   - For local testing, authorize your current local public IP.
+   - For Netlify Functions, IP addresses may change. If Brevo IP authorization blocks unknown IPs, either disable strict IP authorization for this API key or approve the Netlify function IP shown in Brevo's blocked request log after a failed deploy test.
 
 ## 2. Netlify environment variables
 
@@ -43,6 +51,7 @@ After saving variables, trigger a new deploy.
 4. Confirm the message arrives at `sales@lfclothing.com`.
 5. Reply to the received email and confirm it replies to the test buyer email.
 6. Test a bad URL such as `/missing-page-test` and confirm the custom 404 page appears.
+7. If the form fails and Brevo logs an unauthorized IP error, authorize the reported IP or relax IP authorization in Brevo security settings.
 
 ## 5. Optional hardening
 
