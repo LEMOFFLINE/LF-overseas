@@ -29,6 +29,7 @@
         <div class="section-inner form-layout">
           <form class="rfq-form" data-rfq-form>
             <div class="form-message" tabindex="-1" data-form-message>Thank you. Your request has been received. Our team will review the details and contact you soon.</div>
+            <div class="field trap" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
             <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
             <div class="field"><label for="company">Company</label><input id="company" name="company" autocomplete="organization"></div>
             <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
@@ -39,9 +40,10 @@
             <div class="field"><label for="delivery">Target Delivery Time</label><input id="delivery" name="delivery" placeholder="Example: October 2026"></div>
             <div class="field full"><label for="customization">Customization Requirements</label><textarea id="customization" name="customization" placeholder="Fabric, color, size chart, logo, pockets, trims, labels or packaging requirements"></textarea></div>
             <div class="field full"><label for="function">Functional Requirements</label><textarea id="function" name="function" placeholder="Anti-static, acid-resistant, UV-resistant, antibacterial, cold-weather or other requirements"></textarea></div>
-            <div class="field full"><label for="file">Reference Image / File Upload</label><input id="file" name="file" type="file"></div>
+            <div class="field full"><label for="file">Reference Image / File Upload</label><input id="file" name="file" type="file" accept=".jpg,.jpeg,.png,.webp,.pdf,.doc,.docx,.xls,.xlsx"></div>
             <div class="field full"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us the project background and any important details"></textarea></div>
-            <button class="btn btn-primary" type="submit">Send RFQ</button>
+            <p class="form-note">We use your information only to review and respond to your inquiry. Maximum attachment size: 4 MB.</p>
+            <button class="btn btn-primary" type="submit" data-submit-button>Send RFQ</button>
           </form>
 
           <aside class="sidebar-box">

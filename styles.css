@@ -744,6 +744,14 @@ h3 {
   grid-column: 1 / -1;
 }
 
+.field.trap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .field label {
   color: var(--gray-950);
   font-size: 0.9rem;
@@ -780,6 +788,25 @@ h3 {
 
 .form-message.is-visible {
   display: block;
+}
+
+.form-message.is-error {
+  border-color: rgba(220, 38, 38, 0.24);
+  color: #7f1d1d;
+  background: rgba(254, 226, 226, 0.78);
+}
+
+.form-note {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--gray-600);
+  font-size: 0.88rem;
+}
+
+.rfq-form .btn[disabled] {
+  cursor: wait;
+  opacity: 0.7;
+  transform: none;
 }
 
 .sidebar-box {
