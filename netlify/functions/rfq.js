@@ -26,6 +26,10 @@ function row(label, value) {
 }
 
 function buildEmailHtml(data) {
+  const attachmentLabel = data.attachmentName
+    ? `${data.attachmentName}${data.attachmentSize ? ` (${Math.round(data.attachmentSize / 1024)} KB)` : ""}`
+    : "No attachment received";
+
   return `
     <div style="font-family:Arial,Helvetica,sans-serif;color:#1f2933;line-height:1.55;">
       <h2 style="color:#08233f;margin:0 0 16px;">New RFQ from Lingfeng Overseas Website</h2>
@@ -41,6 +45,7 @@ function buildEmailHtml(data) {
         ${row("Customization Requirements", data.customization)}
         ${row("Functional Requirements", data.functionRequirements)}
         ${row("Message", data.message)}
+        ${row("Attachment", attachmentLabel)}
       </table>
       <p style="margin-top:18px;color:#6b7280;font-size:13px;">This message was submitted from the website RFQ form.</p>
     </div>
@@ -111,6 +116,8 @@ exports.handler = async (event) => {
     htmlContent: buildEmailHtml({
       ...data,
       functionRequirements: data.functionRequirements || data.function,
+      attachmentName: attachment?.name,
+      attachmentSize: attachment?.size,
     }),
   };
 
