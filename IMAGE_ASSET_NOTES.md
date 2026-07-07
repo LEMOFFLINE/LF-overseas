@@ -26,7 +26,7 @@
   - `assets/site/models/property-security-service-uniform.jpg`
   - `assets/site/models/cleaning-logistics-service-uniform.jpg`
   - `assets/site/models/reception-company-service-uniform.jpg`
-  - `assets/site/product-business-suits.jpg`
+  - `assets/site/models/basic-business-uniform-set.jpg`
 
 ## Still worth supplementing
 
@@ -36,7 +36,6 @@
 - Packaging and carton preparation photos for export-oriented projects.
 - Product-only photos for winter workwear and protective apparel if current model images are not representative enough.
 - A dedicated anti-static workwear model photo. The current product card uses a gray factory workwear image as a temporary visual.
-- A dedicated basic business/company uniform set photo. The current product card uses an existing domestic-source business uniform image.
 
 ## Usage note
 
