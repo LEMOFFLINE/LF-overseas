@@ -30,7 +30,7 @@
 
 ## Still worth supplementing
 
-- Real factory sewing line photos from Lingfeng's own workshop.
+- Real partner production-site sewing line photos approved for overseas marketing use.
 - Cutting table, CAD layout, fabric inspection and pressing/finishing photos.
 - Quality inspection photos: measurement, stitching check, needle inspection, packing review.
 - Packaging and carton preparation photos for export-oriented projects.

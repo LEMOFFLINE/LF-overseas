@@ -10,7 +10,7 @@
 英文定位：
 
 ```text
-Custom Workwear, Uniform & Protective Apparel Manufacturer in China
+OEM/ODM Workwear & Uniform Supplier in China
 ```
 
 中文理解：
@@ -209,9 +209,9 @@ Header
 Hero
 Floating Product Cards
 Core Numbers
-What We Manufacture
+What We Supply
 Manufacturing Process
-Factory Capabilities
+Production Capability
 Quality Control
 Export-Oriented Project Experience
 Industries Served
@@ -252,7 +252,7 @@ From material selection and pattern development to production and quality inspec
 
 ```text
 Request a Quote
-View Manufacturing Capabilities
+View Production Capability
 ```
 
 ### 中文审核理解
@@ -353,7 +353,7 @@ Technical Experience
 
 ---
 
-## Section 4：What We Manufacture
+## Section 4：What We Supply
 
 ### 排版
 
@@ -372,7 +372,7 @@ Technical Experience
 ### 标题
 
 ```text
-What We Manufacture
+What We Supply
 ```
 
 ### 副标题
@@ -486,7 +486,7 @@ Prepare folding, packing, labeling and delivery support based on project require
 
 ---
 
-## Section 6：Factory Capabilities 深蓝能力区
+## Section 6：Production Capability 深蓝能力区
 
 ### 排版
 
@@ -498,7 +498,7 @@ Prepare folding, packing, labeling and delivery support based on project require
 ### 标题
 
 ```text
-Factory Capabilities Built for Workwear Production
+Manufacturing Resources for Workwear Production
 ```
 
 ### 左侧短文案
@@ -1037,13 +1037,13 @@ RFQ CTA
 ```text
 About Beijing Lingfeng Apparel
 
-A China-based apparel manufacturer focused on workwear, uniforms, business clothing and functional protective garments.
+A China-based workwear and uniform supplier serving overseas B2B buyers.
 ```
 
 ## Company Introduction
 
 ```text
-Beijing Lingfeng Apparel Co., Ltd. is a China-based apparel manufacturer specializing in workwear, uniforms, business clothing and functional protective garments.
+Beijing Lingfeng Apparel Co., Ltd. is a China-based workwear and uniform supplier serving overseas B2B buyers.
 
 The company is located at Room 203, Building 1, No. 18 Jia, Longtai Road, Jiugong Industrial Park, Daxing District, Beijing, China. Our team includes experienced technicians, pattern makers, designers and production staff, supporting clients from material selection and sample development to bulk production and quality inspection.
 
@@ -1152,7 +1152,7 @@ Thank you. Your request has been received. Our team will review the details and 
 ```text
 Beijing Lingfeng Apparel
 
-Custom workwear, uniform and protective apparel manufacturing for corporate, industrial and institutional clients.
+Custom workwear, uniform and protective apparel supply with project coordination and quality control for corporate, industrial and institutional clients.
 ```
 
 ### Column 2：Products
@@ -1263,7 +1263,7 @@ Location: Room 203, Building 1, No. 18 Jia, Longtai Road, Jiugong Industrial Par
 ## Home Title
 
 ```text
-Custom Workwear & Uniform Manufacturer in China | Beijing Lingfeng Apparel
+OEM/ODM Workwear & Uniform Supplier in China | Beijing Lingfeng Apparel
 ```
 
 ## Home Description
@@ -1293,7 +1293,7 @@ Quality Control for Workwear & Uniform Production | Lingfeng Apparel
 ## About Title
 
 ```text
-About Beijing Lingfeng Apparel | Workwear & Uniform Manufacturer
+About Beijing Lingfeng Apparel | Workwear & Uniform Supplier
 ```
 
 ## Contact Title
@@ -1309,7 +1309,7 @@ Request a Quote | Beijing Lingfeng Apparel
 可以直接把下面这段给 Codex：
 
 ```text
-Build a modern B2B website for Beijing Lingfeng Apparel, a China-based custom workwear, uniform and protective apparel manufacturer.
+Build a modern B2B website for Beijing Lingfeng Apparel, a China-based custom workwear and uniform supplier supported by long-term production resources.
 
 Use a dark navy industrial B2B visual style inspired by international logistics/manufacturing websites: large hero image, dark blue overlay, floating product capability cards, clean white sections, strong statistics, process timeline, factory capability grid, quality control section, RFQ CTA, and a deep navy footer.
 
