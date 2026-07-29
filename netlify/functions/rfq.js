@@ -32,15 +32,18 @@ function buildEmailHtml(data) {
 
   return `
     <div style="font-family:Arial,Helvetica,sans-serif;color:#1f2933;line-height:1.55;">
-      <h2 style="color:#08233f;margin:0 0 16px;">New RFQ from Lingfeng Overseas Website</h2>
+      <h2 style="color:#17212b;margin:0 0 16px;">New Inquiry from LF Clothing Website</h2>
       <table cellspacing="0" cellpadding="0" style="border-collapse:collapse;width:100%;max-width:760px;">
+        ${row("Request Type", data.requestType)}
         ${row("Name", data.name)}
         ${row("Company", data.company)}
         ${row("Email", data.email)}
         ${row("WhatsApp / Phone", data.phone)}
         ${row("Country / Region", data.country)}
         ${row("Product Category", data.category)}
+        ${row("Product Style / LF Code", data.productStyle)}
         ${row("Estimated Quantity", data.quantity)}
+        ${row("Logo / Decoration", data.logoMethod)}
         ${row("Target Delivery Time", data.delivery)}
         ${row("Customization Requirements", data.customization)}
         ${row("Functional Requirements", data.functionRequirements)}
@@ -112,7 +115,7 @@ exports.handler = async (event) => {
       email: data.email,
       name: data.name,
     },
-    subject: `New RFQ: ${data.category || "Website Inquiry"} - ${data.name}`,
+    subject: `${data.requestType || "Website Inquiry"}: ${data.category || "General"} - ${data.name}`,
     htmlContent: buildEmailHtml({
       ...data,
       functionRequirements: data.functionRequirements || data.function,

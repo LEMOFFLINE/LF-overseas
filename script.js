@@ -4,6 +4,9 @@ const navLinks = document.querySelector(".nav-links");
 const rfqForm = document.querySelector("[data-rfq-form]");
 const formMessage = document.querySelector("[data-form-message]");
 const submitButton = document.querySelector("[data-submit-button]");
+const heroCarousel = document.querySelector("[data-hero-carousel]");
+const footer = document.querySelector(".footer");
+const whatsappLink = document.querySelector(".whatsapp-link");
 const MAX_ATTACHMENT_BYTES = 4 * 1024 * 1024;
 
 function syncHeader() {
@@ -14,18 +17,109 @@ function syncHeader() {
 syncHeader();
 window.addEventListener("scroll", syncHeader, { passive: true });
 
+if (footer && whatsappLink && "IntersectionObserver" in window) {
+  const footerObserver = new IntersectionObserver(
+    ([entry]) => {
+      whatsappLink.classList.toggle("is-hidden", entry.isIntersecting);
+    },
+    { threshold: 0.05 },
+  );
+
+  footerObserver.observe(footer);
+}
+
 if (menuToggle && navLinks) {
   menuToggle.addEventListener("click", () => {
     const isOpen = navLinks.classList.toggle("is-open");
     menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+    document.body.classList.toggle("menu-open", isOpen);
   });
 
   navLinks.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       navLinks.classList.remove("is-open");
       menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Open menu");
+      document.body.classList.remove("menu-open");
     });
   });
+}
+
+function prefillInquiryForm() {
+  if (!rfqForm) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const request = params.get("request");
+  const category = params.get("category");
+  const style = params.get("style");
+  const requestType = rfqForm.elements.requestType;
+  const categoryField = rfqForm.elements.category;
+  const styleField = rfqForm.elements.productStyle;
+
+  const requestValues = {
+    catalog: "Full Product Catalog",
+    product: "Product Inquiry",
+    sample: "Sample Development",
+    quote: "Quotation Request",
+  };
+
+  if (requestType && requestValues[request]) {
+    requestType.value = requestValues[request];
+  }
+  if (categoryField && category) {
+    categoryField.value = category;
+  }
+  if (styleField && style) {
+    styleField.value = style;
+  }
+}
+
+prefillInquiryForm();
+
+if (heroCarousel) {
+  const heroSlides = Array.from(heroCarousel.querySelectorAll(".hero-slide"));
+  const heroDots = Array.from(heroCarousel.querySelectorAll("[data-hero-index]"));
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let activeHeroIndex = 0;
+  let heroTimer;
+
+  function showHeroSlide(index) {
+    activeHeroIndex = index;
+    heroSlides.forEach((slide, slideIndex) => {
+      slide.classList.toggle("is-active", slideIndex === index);
+    });
+    heroDots.forEach((dot, dotIndex) => {
+      const isActive = dotIndex === index;
+      dot.classList.toggle("is-active", isActive);
+      dot.setAttribute("aria-pressed", String(isActive));
+    });
+  }
+
+  function stopHeroRotation() {
+    window.clearInterval(heroTimer);
+  }
+
+  function startHeroRotation() {
+    if (reduceMotion || heroSlides.length < 2) return;
+    stopHeroRotation();
+    heroTimer = window.setInterval(() => {
+      showHeroSlide((activeHeroIndex + 1) % heroSlides.length);
+    }, 5500);
+  }
+
+  heroDots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      showHeroSlide(Number(dot.dataset.heroIndex));
+      startHeroRotation();
+    });
+  });
+
+  heroCarousel.addEventListener("mouseenter", stopHeroRotation);
+  heroCarousel.addEventListener("mouseleave", startHeroRotation);
+  heroCarousel.addEventListener("focusin", stopHeroRotation);
+  heroCarousel.addEventListener("focusout", startHeroRotation);
+  startHeroRotation();
 }
 
 function showFormMessage(message, isError = false) {
@@ -83,13 +177,16 @@ if (rfqForm && formMessage) {
 
       const payload = {
         website: formData.get("website") || "",
+        requestType: formData.get("requestType") || "",
         name: formData.get("name") || "",
         company: formData.get("company") || "",
         email: formData.get("email") || "",
         phone: formData.get("phone") || "",
         country: formData.get("country") || "",
         category: formData.get("category") || "",
+        productStyle: formData.get("productStyle") || "",
         quantity: formData.get("quantity") || "",
+        logoMethod: formData.get("logoMethod") || "",
         delivery: formData.get("delivery") || "",
         customization: formData.get("customization") || "",
         functionRequirements: formData.get("function") || "",
@@ -111,14 +208,14 @@ if (rfqForm && formMessage) {
         throw new Error(result.error || "Unable to send your request right now.");
       }
 
-      showFormMessage("Thank you. Your request has been received. Our team will review the details and contact you soon.");
+      showFormMessage("Thank you. Your inquiry has been received. Our team will review the details and contact you soon.");
       rfqForm.reset();
     } catch (error) {
       showFormMessage(error.message || "Unable to send your request right now. Please email sales@lfclothing.com directly.", true);
     } finally {
       if (submitButton) {
         submitButton.disabled = false;
-        submitButton.textContent = "Send RFQ";
+        submitButton.textContent = "Send Inquiry";
       }
     }
   });
