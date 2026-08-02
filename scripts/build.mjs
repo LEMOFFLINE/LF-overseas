@@ -14,7 +14,6 @@ const rootFiles = [
   "apple-touch-icon.png",
   "apple-touch-icon-precomposed.png",
   "logo.png",
-  "c9e4c5b4b2d84f1e8a9a6d0f7e8c1b3a.txt",
 ];
 
 async function copyRelative(relativePath) {
@@ -30,11 +29,14 @@ await mkdir(output, { recursive: true });
 const htmlFiles = (await readdir(root))
   .filter((name) => name.endsWith(".html"))
   .sort();
+const verificationFiles = (await readdir(root))
+  .filter((name) => name.endsWith(".txt"))
+  .sort();
 const productPageFiles = (await readdir(join(root, "product-pages")))
   .filter((name) => name.endsWith(".html"))
   .sort();
 
-for (const file of [...htmlFiles, ...rootFiles]) {
+for (const file of [...htmlFiles, ...rootFiles, ...verificationFiles]) {
   await copyRelative(file);
 }
 
