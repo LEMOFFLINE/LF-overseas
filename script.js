@@ -5,8 +5,6 @@ const rfqForm = document.querySelector("[data-rfq-form]");
 const formMessage = document.querySelector("[data-form-message]");
 const submitButton = document.querySelector("[data-submit-button]");
 const heroCarousel = document.querySelector("[data-hero-carousel]");
-const footer = document.querySelector(".footer");
-const whatsappLink = document.querySelector(".whatsapp-link");
 const MAX_ATTACHMENT_BYTES = 4 * 1024 * 1024;
 
 function syncHeader() {
@@ -16,17 +14,6 @@ function syncHeader() {
 
 syncHeader();
 window.addEventListener("scroll", syncHeader, { passive: true });
-
-if (footer && whatsappLink && "IntersectionObserver" in window) {
-  const footerObserver = new IntersectionObserver(
-    ([entry]) => {
-      whatsappLink.classList.toggle("is-hidden", entry.isIntersecting);
-    },
-    { threshold: 0.05 },
-  );
-
-  footerObserver.observe(footer);
-}
 
 if (menuToggle && navLinks) {
   menuToggle.addEventListener("click", () => {

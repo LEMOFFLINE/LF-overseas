@@ -14,23 +14,38 @@ const exists = async (filePath) => {
   }
 };
 
-const files = await readdir(root);
-const pages = files.filter((file) => file.endsWith(".html"));
+async function findHtmlPages(directory, prefix = "") {
+  const entries = await readdir(directory, { withFileTypes: true });
+  const pages = [];
+
+  for (const entry of entries) {
+    const relativePath = path.join(prefix, entry.name);
+    if (entry.isDirectory()) {
+      pages.push(...await findHtmlPages(path.join(directory, entry.name), relativePath));
+    } else if (entry.name.endsWith(".html")) {
+      pages.push(relativePath);
+    }
+  }
+
+  return pages;
+}
+
+const pages = await findHtmlPages(root);
 
 for (const page of pages) {
   const filePath = path.join(root, page);
   const html = await readFile(filePath, "utf8");
 
   const h1Count = (html.match(/<h1\b/gi) || []).length;
-  if (page !== "404.html" && h1Count !== 1) {
+  if (path.basename(page) !== "404.html" && h1Count !== 1) {
     errors.push(`${page}: expected 1 H1, found ${h1Count}`);
   }
 
-  if (page !== "404.html" && !/<meta\s+name="description"\s+content="[^"]{50,180}"/i.test(html)) {
+  if (path.basename(page) !== "404.html" && !/<meta\s+name="description"\s+content="[^"]{50,180}"/i.test(html)) {
     errors.push(`${page}: missing or unsuitable meta description`);
   }
 
-  if (page !== "404.html" && !/<link\s+rel="canonical"\s+href="https:\/\/lfclothing\.com\/[^"]*"/i.test(html)) {
+  if (path.basename(page) !== "404.html" && !/<link\s+rel="canonical"\s+href="https:\/\/lfclothing\.com\/[^"]*"/i.test(html)) {
     errors.push(`${page}: missing canonical URL`);
   }
 

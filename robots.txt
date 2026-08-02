@@ -2,7 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /*.md$
 Disallow: /PHOTOS/
-Disallow: /products/
 Disallow: /assets/cn-source/
 
 Sitemap: https://lfclothing.com/sitemap.xml

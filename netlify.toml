@@ -58,8 +58,14 @@
   force = true
 
 [[redirects]]
+  from = "/quality"
+  to = "/manufacturing"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/quality.html"
-  to = "/quality"
+  to = "/manufacturing"
   status = 301
   force = true
 

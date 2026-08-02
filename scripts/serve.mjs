@@ -17,9 +17,20 @@ const mimeTypes = {
   ".webp": "image/webp",
   ".xml": "application/xml; charset=utf-8",
 };
+const redirects = new Map([
+  ["/quality", "/manufacturing"],
+  ["/quality.html", "/manufacturing"],
+]);
 
 createServer((request, response) => {
   const requestPath = decodeURIComponent(new URL(request.url, "http://localhost").pathname);
+  const redirectTarget = redirects.get(requestPath);
+  if (redirectTarget) {
+    response.writeHead(301, { Location: redirectTarget, "Cache-Control": "no-store" });
+    response.end();
+    return;
+  }
+
   let relativePath = requestPath === "/" ? "index.html" : requestPath.slice(1);
 
   if (!extname(relativePath)) {

@@ -30,13 +30,27 @@ await mkdir(output, { recursive: true });
 const htmlFiles = (await readdir(root))
   .filter((name) => name.endsWith(".html"))
   .sort();
+const productPageFiles = (await readdir(join(root, "product-pages")))
+  .filter((name) => name.endsWith(".html"))
+  .sort();
 
 for (const file of [...htmlFiles, ...rootFiles]) {
   await copyRelative(file);
 }
 
+for (const file of productPageFiles) {
+  const sourcePath = join(root, "product-pages", file);
+  const outputPath = join(output, "products", file);
+  await mkdir(dirname(outputPath), { recursive: true });
+  await copyFile(sourcePath, outputPath);
+}
+
 const sourceText = await Promise.all(
-  [...htmlFiles, "styles.css"].map((file) => readFile(join(root, file), "utf8")),
+  [
+    ...htmlFiles.map((file) => join(root, file)),
+    ...productPageFiles.map((file) => join(root, "product-pages", file)),
+    join(root, "styles.css"),
+  ].map((file) => readFile(file, "utf8")),
 );
 const assetReferences = new Set();
 
@@ -53,4 +67,4 @@ for (const asset of [...assetReferences].sort()) {
   await copyRelative(asset);
 }
 
-console.log(`Built ${htmlFiles.length} pages and ${assetReferences.size} referenced assets in ${relative(root, output)}.`);
+console.log(`Built ${htmlFiles.length + productPageFiles.length} pages and ${assetReferences.size} referenced assets in ${relative(root, output)}.`);
