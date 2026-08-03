@@ -64,6 +64,7 @@
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="preload" as="image" href="/assets/site/process-table-hero.webp" type="image/webp" fetchpriority="high">
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
@@ -93,14 +94,15 @@
     <main id="main">
       <section class="home-hero" data-hero-carousel>
         <div class="hero-carousel" aria-hidden="true">
-          <div class="hero-slide is-active"><img src="/assets/site/process-table.jpg" width="2000" height="857" alt=""></div>
-          <div class="hero-slide"><img src="/assets/site/hero-factory.jpg" width="2000" height="857" alt=""></div>
-          <div class="hero-slide"><img src="/assets/site/workshop-rack.jpg" width="2000" height="857" alt=""></div>
+          <div class="hero-slide is-active"><img src="/assets/site/process-table-hero.webp" width="1920" height="822" alt="" loading="eager" fetchpriority="high" decoding="async"></div>
+          <div class="hero-slide"><img data-src="/assets/site/hero-factory-hero.webp" width="1920" height="822" alt="" decoding="async"></div>
+          <div class="hero-slide"><img data-src="/assets/site/workshop-rack-hero.webp" width="1920" height="822" alt="" decoding="async"></div>
         </div>
         <div class="hero-shade" aria-hidden="true"></div>
         <div class="home-hero-inner">
           <div class="hero-copy">
-            <h1>Custom Apparel Supplier for International B2B Buyers</h1>
+            <h1>Custom Workwear, Uniforms & Apparel for B2B Buyers</h1>
+            <p>From industrial workwear and flight suits to school uniforms, logo T-shirts and private-label apparel, we support both standard products and project-specific development.</p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="/products">Explore Products</a>
               <a class="btn btn-outline" href="/contact?request=catalog">Request Full Catalog</a>
@@ -108,8 +110,8 @@
           </div>
           <div class="hero-dots" role="group" aria-label="Homepage image carousel">
             <button class="hero-dot is-active" type="button" data-hero-index="0" aria-label="Show product development image" aria-pressed="true"></button>
-            <button class="hero-dot" type="button" data-hero-index="1" aria-label="Show apparel production image" aria-pressed="false"></button>
-            <button class="hero-dot" type="button" data-hero-index="2" aria-label="Show garment finishing image" aria-pressed="false"></button>
+            <button class="hero-dot" type="button" data-hero-index="1" aria-label="Show apparel production image" aria-pressed="false" disabled></button>
+            <button class="hero-dot" type="button" data-hero-index="2" aria-label="Show garment finishing image" aria-pressed="false" disabled></button>
           </div>
         </div>
       </section>
@@ -162,17 +164,21 @@
       <section class="section section-soft">
         <div class="section-inner buyer-row">
           <div class="section-head">
-            <p class="eyebrow">International B2B supply</p>
-            <h2>Built for Buyers Who Manage Real Apparel Projects</h2>
-            <p>We help buyers compare suitable styles, clarify customization requirements and move from sample review to coordinated bulk production.</p>
+            <p class="eyebrow">Multi-category apparel supply</p>
+            <h2>More Than Workwear—One Partner for Custom Apparel Projects</h2>
+            <p>Our capabilities extend beyond the products shown on this website. We support a broad range of workwear, uniforms, special-purpose garments and custom apparel for B2B orders.</p>
+            <p>Send us a product image, physical sample, specification sheet or design brief. Our team will review the construction, material, customization requirements and production feasibility.</p>
+            <p><strong>If you do not see the product you need, send us a reference.</strong> The website presents selected styles only, not our full product range.</p>
           </div>
           <ul class="buyer-list">
-            <li>Apparel wholesalers</li>
-            <li>Local uniform suppliers</li>
-            <li>Schools and institutions</li>
-            <li>Contractors and project buyers</li>
-            <li>Corporate procurement teams</li>
-            <li>Distributors and small businesses</li>
+            <li>Industrial workwear and factory uniforms</li>
+            <li>Special-purpose and protective garments</li>
+            <li>Aviation uniforms and flight suits</li>
+            <li>School and activity uniforms</li>
+            <li>Corporate and service uniforms</li>
+            <li>Custom logo T-shirts and polo shirts</li>
+            <li>Retail and private-label apparel</li>
+            <li>Jackets, teamwear and outdoor clothing</li>
           </ul>
         </div>
       </section>
@@ -181,17 +187,18 @@
         <div class="section-inner split-layout">
           <div class="split-media"><img src="/assets/site/fabric-options.jpg" width="1200" height="900" loading="lazy" alt="Fabric and color options for custom apparel development"></div>
           <div>
-            <p class="eyebrow">Customization</p>
-            <h2>Built Around Your Logo, Colors and Size Requirements</h2>
-            <p>Selected styles can be customized with printing, embroidery, woven labels, color options, buyer-provided size specifications and custom packaging. Availability and MOQ are confirmed according to the product, decoration method and order quantity.</p>
+            <p class="eyebrow">Custom development</p>
+            <h2>From Standard Logo Apparel to Project-Specific Uniforms</h2>
+            <p>Choose an existing style or request development from a sample, reference image, technical file or size chart. Fabric, construction, colors, branding and packaging are confirmed according to the intended use and order requirements.</p>
             <ul class="feature-list">
-              <li>Screen and transfer printing</li>
-              <li>Embroidery and badges</li>
-              <li>Woven and printed labels</li>
-              <li>Buyer size specifications</li>
-              <li>Fabric and color review</li>
-              <li>Individual or bulk packaging</li>
+              <li>Custom fabrics, colors and garment construction</li>
+              <li>Printing, embroidery, badges and logo placement</li>
+              <li>Buyer size charts and pattern development</li>
+              <li>Pockets, closures, trims and functional details</li>
+              <li>Private labels, care labels and hangtags</li>
+              <li>Individual, retail-ready or bulk packaging</li>
             </ul>
+            <p>For garments with functional or protective requirements, material specifications, applicable standards and testing requirements are reviewed separately for each project.</p>
           </div>
         </div>
       </section>
@@ -199,15 +206,15 @@
       <section class="section section-warm">
         <div class="section-inner">
           <div class="section-head">
-            <p class="eyebrow">Order workflow</p>
-            <h2>From Product Brief to Delivery Preparation</h2>
-            <p>Each order is reviewed as a project. The final process and checkpoints are adjusted according to product type, customization and buyer requirements.</p>
+            <p class="eyebrow">How to start</p>
+            <h2>Send Us the Product You Need</h2>
+            <p>A reference image, sample or technical file is enough to begin a practical product and feasibility review.</p>
           </div>
           <div class="process-grid">
-            <article class="process-step"><strong>01</strong><h3>Requirement Review</h3><p>Confirm category, quantity, logo method, sizes, destination and target schedule.</p></article>
-            <article class="process-step"><strong>02</strong><h3>Quotation & Sample</h3><p>Review suitable styles, material direction and sample requirements before bulk production.</p></article>
-            <article class="process-step"><strong>03</strong><h3>Production & QC</h3><p>Manage production progress and complete quality checks against confirmed specifications.</p></article>
-            <article class="process-step"><strong>04</strong><h3>Packing & Delivery</h3><p>Confirm labeling, packing, export documentation and shipment preparation.</p></article>
+            <article class="process-step"><strong>01</strong><h3>Share Your Requirement</h3><p>Send a reference image, sample, technical file or product description with the estimated quantity, size range, destination and delivery target.</p></article>
+            <article class="process-step"><strong>02</strong><h3>Feasibility & Product Review</h3><p>We review the garment construction, material direction, customization requirements and suitable production arrangement.</p></article>
+            <article class="process-step"><strong>03</strong><h3>Quotation & Sample</h3><p>Product specifications, MOQ, pricing, sample requirements and estimated lead time are confirmed according to the project.</p></article>
+            <article class="process-step"><strong>04</strong><h3>Approval & Bulk Production</h3><p>Bulk production begins after the sample, specifications, colors, sizing, branding and packaging details are approved.</p></article>
           </div>
         </div>
       </section>
@@ -263,6 +270,6 @@
         <div class="footer-bottom">(c) 2026 Beijing Lingfeng Apparel Co., Ltd. All rights reserved.</div>
       </div>
     </footer>
-    <script src="/script.js"></script>
+    <script src="/script.js" defer></script>
   </body>
 </html>

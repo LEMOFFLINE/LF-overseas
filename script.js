@@ -67,11 +67,14 @@ prefillInquiryForm();
 if (heroCarousel) {
   const heroSlides = Array.from(heroCarousel.querySelectorAll(".hero-slide"));
   const heroDots = Array.from(heroCarousel.querySelectorAll("[data-hero-index]"));
+  const heroImages = heroSlides.map((slide) => slide.querySelector("img"));
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const readyHeroIndices = new Set();
   let activeHeroIndex = 0;
   let heroTimer;
 
   function showHeroSlide(index) {
+    if (!readyHeroIndices.has(index)) return false;
     activeHeroIndex = index;
     heroSlides.forEach((slide, slideIndex) => {
       slide.classList.toggle("is-active", slideIndex === index);
@@ -81,6 +84,7 @@ if (heroCarousel) {
       dot.classList.toggle("is-active", isActive);
       dot.setAttribute("aria-pressed", String(isActive));
     });
+    return true;
   }
 
   function stopHeroRotation() {
@@ -88,11 +92,42 @@ if (heroCarousel) {
   }
 
   function startHeroRotation() {
-    if (reduceMotion || heroSlides.length < 2) return;
+    if (reduceMotion || readyHeroIndices.size < 2) return;
     stopHeroRotation();
     heroTimer = window.setInterval(() => {
-      showHeroSlide((activeHeroIndex + 1) % heroSlides.length);
+      for (let offset = 1; offset <= heroSlides.length; offset += 1) {
+        const nextIndex = (activeHeroIndex + offset) % heroSlides.length;
+        if (showHeroSlide(nextIndex)) break;
+      }
     }, 5500);
+  }
+
+  async function markHeroReady(index) {
+    const image = heroImages[index];
+    if (!image || !image.complete || !image.naturalWidth) return;
+    try {
+      if (image.decode) await image.decode();
+    } catch {
+      // A loaded image can still be displayed when decode() is unavailable or rejects.
+    }
+    readyHeroIndices.add(index);
+    if (heroDots[index]) heroDots[index].disabled = false;
+    startHeroRotation();
+  }
+
+  async function loadDeferredHeroImages() {
+    for (let index = 1; index < heroImages.length; index += 1) {
+      const image = heroImages[index];
+      if (!image?.dataset.src) continue;
+
+      await new Promise((resolve) => {
+        image.addEventListener("load", resolve, { once: true });
+        image.addEventListener("error", resolve, { once: true });
+        image.src = image.dataset.src;
+        delete image.dataset.src;
+      });
+      await markHeroReady(index);
+    }
   }
 
   heroDots.forEach((dot) => {
@@ -106,7 +141,21 @@ if (heroCarousel) {
   heroCarousel.addEventListener("mouseleave", startHeroRotation);
   heroCarousel.addEventListener("focusin", stopHeroRotation);
   heroCarousel.addEventListener("focusout", startHeroRotation);
-  startHeroRotation();
+
+  const firstHeroImage = heroImages[0];
+  if (firstHeroImage?.complete) {
+    markHeroReady(0);
+  } else {
+    firstHeroImage?.addEventListener("load", () => markHeroReady(0), { once: true });
+  }
+
+  window.addEventListener("load", () => {
+    if ("requestIdleCallback" in window) {
+      window.requestIdleCallback(loadDeferredHeroImages, { timeout: 1500 });
+    } else {
+      window.setTimeout(loadDeferredHeroImages, 250);
+    }
+  }, { once: true });
 }
 
 function showFormMessage(message, isError = false) {
