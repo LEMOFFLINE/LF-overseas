@@ -545,8 +545,9 @@ function renderPage(product) {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>${escapeHtml(product.name)} | Custom B2B Apparel | LF Clothing</title>
+    <title>${escapeHtml(product.name)} | LF Clothing</title>
     <meta name="description" content="${escapeHtml(metaDescription)}">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="${url}">
     <meta property="og:site_name" content="LF Clothing | Lingfeng Apparel">
     <meta property="og:type" content="product">
@@ -681,21 +682,27 @@ for (const page of cardPages) {
   await writeFile(filePath, html, "utf8");
 }
 
+const sitemapLastModified = new Date().toISOString().slice(0, 10);
 const sitemapPages = [
-  ["/", "2026-07-31"],
-  ["/products", "2026-07-31"],
-  ["/business-professional-wear", "2026-07-31"],
-  ["/corporate-logo-apparel", "2026-07-31"],
-  ["/industrial-workwear", "2026-07-31"],
-  ["/team-jackets-hoodies", "2026-07-31"],
-  ["/outdoor-apparel", "2026-07-31"],
-  ["/school-uniforms", "2026-07-31"],
-  ["/manufacturing", "2026-07-31"],
-  ["/about", "2026-07-31"],
-  ["/contact", "2026-07-31"],
-  ...products.map((product) => [`/products/${product.slug}`, "2026-07-31"]),
+  ["/", sitemapLastModified],
+  ["/products", sitemapLastModified],
+  ["/business-professional-wear", sitemapLastModified],
+  ["/corporate-logo-apparel", sitemapLastModified],
+  ["/industrial-workwear", sitemapLastModified],
+  ["/team-jackets-hoodies", sitemapLastModified],
+  ["/outdoor-apparel", sitemapLastModified],
+  ["/school-uniforms", sitemapLastModified],
+  ["/manufacturing", sitemapLastModified],
+  ["/about", sitemapLastModified],
+  ["/contact", sitemapLastModified],
+  ...products.map((product) => [
+    `/products/${product.slug}`,
+    sitemapLastModified,
+    product.image,
+    product.name,
+  ]),
 ];
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapPages.map(([path, lastmod]) => `  <url><loc>https://lfclothing.com${path}</loc><lastmod>${lastmod}</lastmod></url>`).join("\n")}\n</urlset>\n`;
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${sitemapPages.map(([path, lastmod, image, imageTitle]) => `  <url><loc>https://lfclothing.com${path}</loc><lastmod>${lastmod}</lastmod>${image ? `<image:image><image:loc>https://lfclothing.com${image}</image:loc><image:title>${escapeHtml(imageTitle)}</image:title></image:image>` : ""}</url>`).join("\n")}\n</urlset>\n`;
 await writeFile(join(root, "sitemap.xml"), sitemap, "utf8");
 
 console.log(`Generated ${products.length} product detail pages and updated product links.`);

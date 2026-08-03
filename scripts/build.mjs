@@ -1,4 +1,4 @@
-import { copyFile, mkdir, readFile, readdir, rm } from "node:fs/promises";
+import { copyFile, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { dirname, join, relative, resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
@@ -45,6 +45,33 @@ for (const file of productPageFiles) {
   const outputPath = join(output, "products", file);
   await mkdir(dirname(outputPath), { recursive: true });
   await copyFile(sourcePath, outputPath);
+}
+
+// Keep crawl directives and social titles consistent across every deployable page.
+for (const relativePath of [
+  ...htmlFiles,
+  ...productPageFiles.map((file) => join("products", file)),
+]) {
+  const outputPath = join(output, relativePath);
+  let html = await readFile(outputPath, "utf8");
+  const title = html.match(/<title>([\s\S]*?)<\/title>/i)?.[1];
+
+  if (title) {
+    html = html.replace(/(<meta\s+property="og:title"\s+content=")[^"]*(")/i, `$1${title}$2`);
+    html = html.replace(/(<meta\s+name="twitter:title"\s+content=")[^"]*(")/i, `$1${title}$2`);
+  }
+
+  if (!/<meta\s+name="robots"/i.test(html)) {
+    const directive = relativePath === "404.html"
+      ? "noindex,follow"
+      : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1";
+    html = html.replace(
+      /(<meta\s+name="description"[^>]*>)/i,
+      `$1\n    <meta name="robots" content="${directive}">`,
+    );
+  }
+
+  await writeFile(outputPath, html);
 }
 
 const sourceText = await Promise.all(
