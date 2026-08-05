@@ -4,8 +4,70 @@ const navLinks = document.querySelector(".nav-links");
 const rfqForm = document.querySelector("[data-rfq-form]");
 const formMessage = document.querySelector("[data-form-message]");
 const submitButton = document.querySelector("[data-submit-button]");
+const submitButtonText = submitButton?.textContent || "Send Inquiry";
 const heroCarousel = document.querySelector("[data-hero-carousel]");
 const MAX_ATTACHMENT_BYTES = 4 * 1024 * 1024;
+const ATTRIBUTION_STORAGE_KEY = "lf_inquiry_attribution";
+
+function trackEvent(name, parameters = {}) {
+  if (typeof window.gtag !== "function") return;
+  window.gtag("event", name, parameters);
+}
+
+function getInquiryAttribution() {
+  const params = new URLSearchParams(window.location.search);
+  const current = {
+    landingPage: `${window.location.pathname}${window.location.search}`,
+    referrer: document.referrer || "Direct / unavailable",
+    utmSource: params.get("utm_source") || "",
+    utmMedium: params.get("utm_medium") || "",
+    utmCampaign: params.get("utm_campaign") || "",
+    utmContent: params.get("utm_content") || "",
+    utmTerm: params.get("utm_term") || "",
+  };
+
+  try {
+    const stored = JSON.parse(window.sessionStorage.getItem(ATTRIBUTION_STORAGE_KEY) || "null");
+    if (stored && typeof stored === "object") return stored;
+    window.sessionStorage.setItem(ATTRIBUTION_STORAGE_KEY, JSON.stringify(current));
+  } catch {
+    // Attribution still accompanies the inquiry when session storage is unavailable.
+  }
+
+  return current;
+}
+
+const inquiryAttribution = getInquiryAttribution();
+
+if (window.location.pathname.startsWith("/products/")) {
+  trackEvent("view_product", {
+    product_name: document.querySelector("h1")?.textContent?.trim() || "",
+    product_code: document.querySelector(".product-code")?.textContent?.trim() || "",
+  });
+}
+
+document.addEventListener("click", (event) => {
+  const link = event.target.closest("a[href]");
+  if (!link) return;
+
+  const href = link.getAttribute("href") || "";
+  const eventParameters = {
+    link_url: link.href,
+    link_text: link.textContent?.trim().slice(0, 120) || "",
+  };
+
+  if (href.startsWith("https://wa.me/")) {
+    trackEvent("whatsapp_click", eventParameters);
+  } else if (href.startsWith("mailto:")) {
+    trackEvent("email_click", eventParameters);
+  } else if (href === "#inquiry") {
+    trackEvent("quote_click", eventParameters);
+  } else if (/\/contact\?[^#]*request=(?:quote|product)/.test(href)) {
+    trackEvent("quote_click", eventParameters);
+  } else if (/\/contact\?[^#]*request=catalog/.test(href)) {
+    trackEvent("catalog_click", eventParameters);
+  }
+});
 
 function syncHeader() {
   if (!header) return;
@@ -196,6 +258,13 @@ function readAttachment(file) {
 }
 
 if (rfqForm && formMessage) {
+  rfqForm.addEventListener("focusin", () => {
+    trackEvent("rfq_form_start", {
+      request_type: rfqForm.elements.requestType?.value || "",
+      product_category: rfqForm.elements.category?.value || "",
+    });
+  }, { once: true });
+
   rfqForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -227,6 +296,8 @@ if (rfqForm && formMessage) {
         customization: formData.get("customization") || "",
         functionRequirements: formData.get("function") || "",
         message: formData.get("message") || "",
+        pageUrl: window.location.href,
+        ...inquiryAttribution,
         attachment,
       };
 
@@ -245,13 +316,21 @@ if (rfqForm && formMessage) {
       }
 
       showFormMessage("Thank you. Your inquiry has been received. Our team will review the details and contact you soon.");
+      trackEvent("generate_lead", {
+        request_type: formData.get("requestType") || "",
+        product_category: formData.get("category") || "",
+        product_style: formData.get("productStyle") || "",
+      });
       rfqForm.reset();
     } catch (error) {
+      trackEvent("rfq_submit_error", {
+        error_message: error.message || "Unknown submission error",
+      });
       showFormMessage(error.message || "Unable to send your request right now. Please email sales@lfclothing.com directly.", true);
     } finally {
       if (submitButton) {
         submitButton.disabled = false;
-        submitButton.textContent = "Send Inquiry";
+        submitButton.textContent = submitButtonText;
       }
     }
   });

@@ -3,6 +3,21 @@ import { dirname, join, relative, resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
 const output = join(root, "dist");
+const ga4MeasurementId = process.env.GA4_MEASUREMENT_ID?.trim();
+
+if (ga4MeasurementId && !/^G-[A-Z0-9]+$/.test(ga4MeasurementId)) {
+  throw new Error("GA4_MEASUREMENT_ID must be a valid ID beginning with G-.");
+}
+
+const ga4Snippet = ga4MeasurementId ? `
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=${ga4MeasurementId}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${ga4MeasurementId}');
+    </script>` : "";
 const rootFiles = [
   "styles.css",
   "script.js",
@@ -55,6 +70,10 @@ for (const relativePath of [
   const outputPath = join(output, relativePath);
   let html = await readFile(outputPath, "utf8");
   const title = html.match(/<title>([\s\S]*?)<\/title>/i)?.[1];
+
+  if (ga4Snippet && !/googletagmanager\.com\/gtag\/js/i.test(html)) {
+    html = html.replace(/<head>/i, `<head>${ga4Snippet}`);
+  }
 
   if (title) {
     html = html.replace(/(<meta\s+property="og:title"\s+content=")[^"]*(")/i, `$1${title}$2`);

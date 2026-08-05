@@ -20,6 +20,27 @@
 - Added product images to the XML sitemap and made `lastmod` update when product pages are regenerated.
 - Expanded validation to fail on duplicate or unsuitable titles/descriptions, missing crawler directives and sitemap drift.
 
+## GA4 and inquiry attribution
+
+Netlify must provide this build environment variable in every deploy context:
+
+```text
+GA4_MEASUREMENT_ID=G-D5XWSW9S5V
+```
+
+The build injects one Google tag into every HTML page. The shared site script records these events without sending inquiry contact details to GA4:
+
+- `view_product`
+- `quote_click`
+- `catalog_click`
+- `whatsapp_click`
+- `email_click`
+- `rfq_form_start`
+- `generate_lead` after a successful RFQ response
+- `rfq_submit_error`
+
+The RFQ email also includes the first landing page, form URL, referrer and available UTM parameters. GA4 collection begins only after the tagged build is deployed and does not backfill historical visits.
+
 ## Sitemap submission URL
 
 Submit this URL in Bing Webmaster Tools and Google Search Console:

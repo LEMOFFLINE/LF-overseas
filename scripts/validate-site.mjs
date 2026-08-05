@@ -3,6 +3,7 @@ import path from "node:path";
 
 const root = path.resolve(process.argv[2] || "dist");
 const baseUrl = new URL("https://lfclothing.com/");
+const expectedGa4Id = process.env.GA4_MEASUREMENT_ID?.trim();
 const errors = [];
 
 const exists = async (filePath) => {
@@ -38,6 +39,13 @@ const canonicalUrls = new Set();
 for (const page of pages) {
   const filePath = path.join(root, page);
   const html = await readFile(filePath, "utf8");
+
+  if (expectedGa4Id) {
+    const ga4LoaderCount = (html.match(/googletagmanager\.com\/gtag\/js\?id=/gi) || []).length;
+    if (ga4LoaderCount !== 1 || !html.includes(expectedGa4Id)) {
+      errors.push(`${page}: expected one Google tag using ${expectedGa4Id}`);
+    }
+  }
 
   const h1Count = (html.match(/<h1\b/gi) || []).length;
   if (path.basename(page) !== "404.html" && h1Count !== 1) {

@@ -48,6 +48,14 @@ function buildEmailHtml(data) {
         ${row("Customization Requirements", data.customization)}
         ${row("Functional Requirements", data.functionRequirements)}
         ${row("Message", data.message)}
+        ${row("Landing Page", data.landingPage)}
+        ${row("Form Page", data.pageUrl)}
+        ${row("Referrer", data.referrer)}
+        ${row("UTM Source", data.utmSource)}
+        ${row("UTM Medium", data.utmMedium)}
+        ${row("UTM Campaign", data.utmCampaign)}
+        ${row("UTM Content", data.utmContent)}
+        ${row("UTM Term", data.utmTerm)}
         ${row("Attachment", attachmentLabel)}
       </table>
       <p style="margin-top:18px;color:#6b7280;font-size:13px;">This message was submitted from the website RFQ form.</p>
