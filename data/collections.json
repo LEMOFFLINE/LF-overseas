@@ -1,0 +1,67 @@
+[
+  {
+    "slug": "industrial-workwear",
+    "name": "Industrial Workwear",
+    "shortName": "Industrial",
+    "description": "Work jackets, coveralls, trousers, coats and denim layers for manufacturing, maintenance, logistics and general industrial programs.",
+    "intro": "Start with the working environment, movement, pocket needs and laundering plan. LF then coordinates fabric, construction, sampling and production around the agreed specification.",
+    "factors": [
+      "Daily task and movement",
+      "Pocket and closure layout",
+      "Fabric composition and weight",
+      "Laundering and repeat-supply requirements"
+    ]
+  },
+  {
+    "slug": "protective-hi-vis",
+    "name": "Protective & Hi-Vis",
+    "shortName": "Protective & Hi-Vis",
+    "description": "High-visibility and performance-oriented garments configured around the buyer's target material, construction and verification requirements.",
+    "intro": "Performance is specified project by project. Fabric properties, reflective layouts and garment testing are confirmed against the destination market and intended use.",
+    "factors": [
+      "Risk assessment and end use",
+      "Target fabric performance",
+      "Reflective material and layout",
+      "Testing and documentation route"
+    ]
+  },
+  {
+    "slug": "cold-weather-outdoor-workwear",
+    "name": "Cold Weather & Outdoor Workwear",
+    "shortName": "Cold Weather",
+    "description": "Shells, insulated jackets and weather-ready workwear for outdoor teams, field service and cold-season operations.",
+    "intro": "Outer fabric, insulation, hood, liner and weather-protection details are balanced against climate, activity level and the buyer's delivery program.",
+    "factors": [
+      "Climate and activity level",
+      "Shell and lining system",
+      "Insulation type and target warmth",
+      "Hood, cuff and closure details"
+    ]
+  },
+  {
+    "slug": "corporate-service-uniforms",
+    "name": "Corporate & Service Uniforms",
+    "shortName": "Corporate Uniforms",
+    "description": "Tailored jackets and trousers for corporate, reception, hospitality, institutional and service uniform programs.",
+    "intro": "Fabric, silhouette, grading, lining and presentation details are coordinated across roles so a program reads as one consistent uniform system.",
+    "factors": [
+      "Role and presentation level",
+      "Fabric handle and season",
+      "Fit and grading method",
+      "Coordinated trims and packaging"
+    ]
+  },
+  {
+    "slug": "team-staff-apparel",
+    "name": "Team & Staff Apparel",
+    "shortName": "Team & Staff",
+    "description": "Track jackets, trousers, hoodies, softshells and polos for staff, education, team and branded apparel programs.",
+    "intro": "Colour blocking, decoration placement, size mix and repeat-order practicality are reviewed together before samples are developed.",
+    "factors": [
+      "Team identity and colour blocking",
+      "Decoration method and placement",
+      "Size mix and grading",
+      "Fabric hand feel and care"
+    ]
+  }
+]

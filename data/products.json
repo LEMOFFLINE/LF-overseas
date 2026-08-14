@@ -1,0 +1,3716 @@
+[
+  {
+    "sku": "GAR-WJ-001",
+    "sourceNumber": 1,
+    "slug": "cotton-twill-work-jacket-gar-wj-001",
+    "name": "Cotton Twill Work Jacket",
+    "primaryCollection": "industrial-workwear",
+    "secondaryCollections": [],
+    "garmentType": "Work Jacket",
+    "summary": "A practical cotton twill work jacket built around 100% combed cotton with a pre-wash option; shrinkage and colourfastness targets are confirmed in the approved specification for manufacturing and maintenance.",
+    "applications": [
+      "Manufacturing",
+      "Maintenance",
+      "Logistics",
+      "Engineering support"
+    ],
+    "materials": [
+      {
+        "value": "100% combed cotton with a pre-wash option; shrinkage and colourfastness targets are confirmed in the approved specification.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "260–300 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Structured workwear body with practical layering room",
+      "Front closure selected for the project",
+      "Pocket layout can be adapted to the task",
+      "Cuff and hem details reviewed at sampling"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Cotton",
+      "Work Jacket"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-wj-001/front.webp",
+      "back": "/assets/products/gar-wj-001/back.webp",
+      "inner": null
+    },
+    "homepage": true,
+    "seo": {
+      "title": "Cotton Twill Work Jacket | GAR-WJ-001 | LF Clothing",
+      "description": "Cotton Twill Work Jacket (GAR-WJ-001) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "工装夹克",
+      "sourceName": "纯棉翻领工装夹克",
+      "sourceMaterialText": "100%纯棉精梳面料，成衣高温水洗预缩，缩水率 色牢度均达国家标准",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Industrial Workwear"
+    }
+  },
+  {
+    "sku": "GAR-KN-001",
+    "sourceNumber": 2,
+    "slug": "stretch-cotton-zip-hoodie-gar-kn-001",
+    "name": "Stretch Cotton Zip Hoodie",
+    "primaryCollection": "team-staff-apparel",
+    "secondaryCollections": [],
+    "garmentType": "Zip Hoodie",
+    "summary": "A configurable stretch cotton zip hoodie built around 95% cotton / 5% elastane with a pre-wash option for staff programs and education and clubs.",
+    "applications": [
+      "Staff programs",
+      "Education and clubs",
+      "Events and promotion",
+      "General teamwear"
+    ],
+    "materials": [
+      {
+        "value": "95% cotton / 5% elastane with a pre-wash option.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "280–320 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Full-front zip construction",
+      "Drawcord hood with ribbed cuffs and hem",
+      "Front hand pockets",
+      "Decoration zones suitable for team programs"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Screen printing",
+      "Heat transfer",
+      "Woven patches and labels"
+    ],
+    "filters": [
+      "Cotton Blend",
+      "Stretch",
+      "Hoodie"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-kn-001/front.webp",
+      "back": "/assets/products/gar-kn-001/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Stretch Cotton Zip Hoodie | GAR-KN-001 | LF Clothing",
+      "description": "Stretch Cotton Zip Hoodie (GAR-KN-001) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "卫衣/软壳",
+      "sourceName": "全拉链连帽卫衣",
+      "sourceMaterialText": "95%棉5%氨纶，成衣水洗预缩",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Team & Staff Apparel"
+    }
+  },
+  {
+    "sku": "GAR-OJ-001",
+    "sourceNumber": 3,
+    "slug": "waterproof-breathable-hooded-shell-gar-oj-001",
+    "name": "Waterproof-Breathable Hooded Shell",
+    "primaryCollection": "cold-weather-outdoor-workwear",
+    "secondaryCollections": [
+      "protective-hi-vis"
+    ],
+    "garmentType": "Hooded Shell Jacket",
+    "summary": "A project-ready waterproof-breathable hooded shell built around 100% polyester shell with a waterproof-breathable coating option; performance targets are subject to the final specification and test route for outdoor operations and cold-weather teams.",
+    "applications": [
+      "Outdoor operations",
+      "Cold-weather teams",
+      "Logistics yards",
+      "Field service"
+    ],
+    "materials": [
+      {
+        "value": "100% polyester shell with a waterproof-breathable coating option; performance targets are subject to the final specification and test route.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "150–200 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Protective hood and high front closure",
+      "Shell construction designed for layering",
+      "Pocket and cuff layout visible in the approved sample",
+      "Coating and seam details set by performance target"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Target performance and verification route confirmed before sampling",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Polyester",
+      "Weather Protection",
+      "Hooded"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-oj-001/front.webp",
+      "back": "/assets/products/gar-oj-001/back.webp",
+      "inner": "/assets/products/gar-oj-001/inner.webp"
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Waterproof-Breathable Hooded Shell | GAR-OJ-001 | LF Clothing",
+      "description": "Waterproof-Breathable Hooded Shell (GAR-OJ-001) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "防护/防寒外套",
+      "sourceName": "防水透湿连帽外套",
+      "sourceMaterialText": "100%聚酯纤维，面料内层做防水透气透湿图层，达国家标准",
+      "imageStatus": "正面/背面/夹层已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Cold Weather & Outdoor Workwear"
+    }
+  },
+  {
+    "sku": "GAR-WJ-002",
+    "sourceNumber": 4,
+    "slug": "cotton-work-jacket-with-reflective-detail-gar-wj-002",
+    "name": "Cotton Work Jacket with Reflective Detail",
+    "primaryCollection": "industrial-workwear",
+    "secondaryCollections": [
+      "protective-hi-vis"
+    ],
+    "garmentType": "Work Jacket",
+    "summary": "A specification-led cotton work jacket with reflective detail built around 100% combed cotton for manufacturing and maintenance.",
+    "applications": [
+      "Manufacturing",
+      "Maintenance",
+      "Logistics",
+      "Engineering support"
+    ],
+    "materials": [
+      {
+        "value": "100% combed cotton.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "200–240 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Structured workwear body with practical layering room",
+      "Front closure selected for the project",
+      "Pocket layout can be adapted to the task",
+      "Cuff and hem details reviewed at sampling"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Buyer size chart and grading support",
+      "Reflective material, width and placement subject to specification",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Cotton",
+      "Reflective Detail",
+      "Work Jacket"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-wj-002/front.webp",
+      "back": "/assets/products/gar-wj-002/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Cotton Work Jacket with Reflective Detail | GAR-WJ-002 | LF Clothing",
+      "description": "Cotton Work Jacket with Reflective Detail (GAR-WJ-002) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "工装夹克",
+      "sourceName": "纯棉反光条工装夹克",
+      "sourceMaterialText": "100%精梳棉",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Industrial Workwear"
+    }
+  },
+  {
+    "sku": "GAR-OJ-002",
+    "sourceNumber": 5,
+    "slug": "aramid-high-visibility-hooded-jacket-gar-oj-002",
+    "name": "Aramid High-Visibility Hooded Jacket",
+    "primaryCollection": "protective-hi-vis",
+    "secondaryCollections": [
+      "cold-weather-outdoor-workwear"
+    ],
+    "garmentType": "Protective Work Jacket",
+    "summary": "A versatile aramid high-visibility hooded jacket built around 100% aramid fabric option; flame-resistant and high-visibility requirements are subject to project specification and verification for utilities and road and infrastructure teams.",
+    "applications": [
+      "Utilities",
+      "Road and infrastructure teams",
+      "Site safety programs",
+      "Industrial operations"
+    ],
+    "materials": [
+      {
+        "value": "100% aramid fabric option; flame-resistant and high-visibility requirements are subject to project specification and verification.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "200–240 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Workwear body designed for visible performance details",
+      "Front closure and storm protection reviewed by use",
+      "Reflective layout is specified before sampling",
+      "Pocket and cuff details can be project configured"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Target performance and verification route confirmed before sampling",
+      "Buyer size chart and grading support",
+      "Reflective material, width and placement subject to specification",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Aramid Option",
+      "Flame-Resistant Option",
+      "Reflective Detail",
+      "Hooded"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-oj-002/front.webp",
+      "back": "/assets/products/gar-oj-002/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Aramid High-Visibility Hooded Jacket | GAR-OJ-002 | LF Clothing",
+      "description": "Aramid High-Visibility Hooded Jacket (GAR-OJ-002) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "防护/防寒外套",
+      "sourceName": "芳纶阻燃高可视连帽外套",
+      "sourceMaterialText": "100%芳纶阻燃材质，",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Protective & Hi-Vis"
+    }
+  },
+  {
+    "sku": "GAR-CO-001",
+    "sourceNumber": 6,
+    "slug": "cotton-long-sleeve-work-coverall-gar-co-001",
+    "name": "Cotton Long-Sleeve Work Coverall",
+    "primaryCollection": "industrial-workwear",
+    "secondaryCollections": [],
+    "garmentType": "Work Coverall",
+    "summary": "A practical cotton long-sleeve work coverall built around 100% cotton for manufacturing and maintenance.",
+    "applications": [
+      "Manufacturing",
+      "Maintenance",
+      "Logistics",
+      "Engineering support"
+    ],
+    "materials": [
+      {
+        "value": "100% cotton.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "240–280 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "One-piece long-sleeve construction",
+      "Front opening designed for practical dressing",
+      "Chest and side pocket options",
+      "Waist and cuff details reviewed at sampling"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Cotton",
+      "Coverall"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-co-001/front.webp",
+      "back": "/assets/products/gar-co-001/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Cotton Long-Sleeve Work Coverall | GAR-CO-001 | LF Clothing",
+      "description": "Cotton Long-Sleeve Work Coverall (GAR-CO-001) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "连体工作服",
+      "sourceName": "纯棉长袖连体工作服",
+      "sourceMaterialText": "100%棉",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Industrial Workwear"
+    }
+  },
+  {
+    "sku": "GAR-CO-002",
+    "sourceNumber": 7,
+    "slug": "weather-ready-insulated-work-coverall-gar-co-002",
+    "name": "Weather-Ready Insulated Work Coverall",
+    "primaryCollection": "cold-weather-outdoor-workwear",
+    "secondaryCollections": [
+      "industrial-workwear"
+    ],
+    "garmentType": "Insulated Coverall",
+    "summary": "A configurable weather-ready insulated work coverall built around 100% polyester shell with a waterproof-breathable coating option; insulation and performance targets are confirmed for the project for outdoor operations and cold-weather teams.",
+    "applications": [
+      "Outdoor operations",
+      "Cold-weather teams",
+      "Logistics yards",
+      "Field service"
+    ],
+    "materials": [
+      {
+        "value": "100% polyester shell with a waterproof-breathable coating option; insulation and performance targets are confirmed for the project.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "160–210 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "One-piece insulated body",
+      "Protective hood and high front closure",
+      "Cold-weather pocket and cuff details",
+      "Shell, lining and insulation reviewed as a system"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Target performance and verification route confirmed before sampling",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Polyester",
+      "Weather Protection",
+      "Insulated",
+      "Coverall"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-co-002/front.webp",
+      "back": "/assets/products/gar-co-002/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Weather-Ready Insulated Work Coverall | GAR-CO-002 | LF Clothing",
+      "description": "Weather-Ready Insulated Work Coverall (GAR-CO-002) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "连体工作服",
+      "sourceName": "防水透湿防寒连体服",
+      "sourceMaterialText": "100%聚酯纤维，面料内层做防水透气透湿图层，达国家标准",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Cold Weather & Outdoor Workwear"
+    }
+  },
+  {
+    "sku": "GAR-WP-001",
+    "sourceNumber": 8,
+    "slug": "high-visibility-bib-work-trousers-gar-wp-001",
+    "name": "High-Visibility Bib Work Trousers",
+    "primaryCollection": "protective-hi-vis",
+    "secondaryCollections": [
+      "industrial-workwear"
+    ],
+    "garmentType": "Bib Work Trousers",
+    "summary": "A project-ready high-visibility bib work trousers built around 100% polyester shell with a waterproof-breathable coating option; performance is subject to final material and garment verification for utilities and road and infrastructure teams.",
+    "applications": [
+      "Utilities",
+      "Road and infrastructure teams",
+      "Site safety programs",
+      "Industrial operations"
+    ],
+    "materials": [
+      {
+        "value": "100% polyester shell with a waterproof-breathable coating option; performance is subject to final material and garment verification.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "180–230 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Bib-and-brace workwear construction",
+      "Adjustable shoulder straps",
+      "Cargo and hand-pocket options",
+      "Reflective placement specified before sampling"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Target performance and verification route confirmed before sampling",
+      "Buyer size chart and grading support",
+      "Reflective material, width and placement subject to specification",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Polyester",
+      "Weather Protection",
+      "Reflective Detail",
+      "Bib Trousers"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-wp-001/front.webp",
+      "back": "/assets/products/gar-wp-001/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "High-Visibility Bib Work Trousers | GAR-WP-001 | LF Clothing",
+      "description": "High-Visibility Bib Work Trousers (GAR-WP-001) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "工装裤/背带裤",
+      "sourceName": "防水透湿高可视背带工装裤",
+      "sourceMaterialText": "100%聚酯纤维，面料内层做防水透气透湿图层，达国家标准",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Protective & Hi-Vis"
+    }
+  },
+  {
+    "sku": "GAR-CO-003",
+    "sourceNumber": 9,
+    "slug": "fr-option-reflective-work-coverall-gar-co-003",
+    "name": "FR-Option Reflective Work Coverall",
+    "primaryCollection": "protective-hi-vis",
+    "secondaryCollections": [
+      "industrial-workwear"
+    ],
+    "garmentType": "Protective Coverall",
+    "summary": "A specification-led fr-option reflective work coverall built around 100% cotton with a flame-resistant finishing option; wash durability and garment performance require project-specific testing for utilities and road and infrastructure teams.",
+    "applications": [
+      "Utilities",
+      "Road and infrastructure teams",
+      "Site safety programs",
+      "Industrial operations"
+    ],
+    "materials": [
+      {
+        "value": "100% cotton with a flame-resistant finishing option; wash durability and garment performance require project-specific testing.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "240–300 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "One-piece long-sleeve protective configuration",
+      "Reflective layout visible front and back",
+      "Multi-pocket workwear construction",
+      "Closure and cuff details set by the risk specification"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Target performance and verification route confirmed before sampling",
+      "Buyer size chart and grading support",
+      "Reflective material, width and placement subject to specification",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Cotton",
+      "Flame-Resistant Option",
+      "Reflective Detail",
+      "Coverall"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-co-003/front.webp",
+      "back": "/assets/products/gar-co-003/back.webp",
+      "inner": null
+    },
+    "homepage": true,
+    "seo": {
+      "title": "FR-Option Reflective Work Coverall | GAR-CO-003 | LF Clothing",
+      "description": "FR-Option Reflective Work Coverall (GAR-CO-003) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "连体工作服",
+      "sourceName": "阻燃反光连体工作服",
+      "sourceMaterialText": "100%棉，阻燃后工艺处理可阻燃功能洗涤30次以上",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Protective & Hi-Vis"
+    }
+  },
+  {
+    "sku": "GAR-WC-001",
+    "sourceNumber": 10,
+    "slug": "anti-static-option-long-work-coat-gar-wc-001",
+    "name": "Anti-Static Option Long Work Coat",
+    "primaryCollection": "industrial-workwear",
+    "secondaryCollections": [
+      "protective-hi-vis"
+    ],
+    "garmentType": "Long Work Coat",
+    "summary": "A versatile anti-static option long work coat built around 60% cotton / 38% polyester / 2% conductive fibre; anti-static performance is subject to the final fabric and garment verification route for manufacturing and maintenance.",
+    "applications": [
+      "Manufacturing",
+      "Maintenance",
+      "Logistics",
+      "Engineering support"
+    ],
+    "materials": [
+      {
+        "value": "60% cotton / 38% polyester / 2% conductive fibre; anti-static performance is subject to the final fabric and garment verification route.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "220–260 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Long-line work coat coverage",
+      "Point collar and front closure",
+      "Patch-pocket workwear layout",
+      "Reflective details can be positioned by specification"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Target performance and verification route confirmed before sampling",
+      "Buyer size chart and grading support",
+      "Reflective material, width and placement subject to specification",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Cotton Blend",
+      "Anti-Static Option",
+      "Reflective Detail",
+      "Work Coat"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-wc-001/front.webp",
+      "back": "/assets/products/gar-wc-001/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Anti-Static Option Long Work Coat | GAR-WC-001 | LF Clothing",
+      "description": "Anti-Static Option Long Work Coat (GAR-WC-001) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "工装大褂",
+      "sourceName": "防静电反光长款工装大褂",
+      "sourceMaterialText": "60%棉38%聚酯纤维2%导电纤维，防静电功能达国标B级",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Industrial Workwear"
+    }
+  },
+  {
+    "sku": "GAR-OJ-003",
+    "sourceNumber": 11,
+    "slug": "polyester-insulated-hooded-work-jacket-gar-oj-003",
+    "name": "Polyester Insulated Hooded Work Jacket",
+    "primaryCollection": "cold-weather-outdoor-workwear",
+    "secondaryCollections": [],
+    "garmentType": "Insulated Work Jacket",
+    "summary": "A practical polyester insulated hooded work jacket built around 100% polyester shell with selectable synthetic insulation, down or other project-reviewed fill options for outdoor operations and cold-weather teams.",
+    "applications": [
+      "Outdoor operations",
+      "Cold-weather teams",
+      "Logistics yards",
+      "Field service"
+    ],
+    "materials": [
+      {
+        "value": "100% polyester shell with selectable synthetic insulation, down or other project-reviewed fill options.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "Shell fabric 150–200 g/m²; insulation weight confirmed for the target warmth level",
+      "status": "reference"
+    },
+    "construction": [
+      "Insulated body for cold-weather layering",
+      "High front closure and protective collar or hood",
+      "Outer and inner pocket options",
+      "Cuff, hem and liner details confirmed at sampling"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Polyester",
+      "Insulated",
+      "Hooded"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-oj-003/front.webp",
+      "back": "/assets/products/gar-oj-003/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Polyester Insulated Hooded Work Jacket | GAR-OJ-003 | LF Clothing",
+      "description": "Polyester Insulated Hooded Work Jacket (GAR-OJ-003) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "防护/防寒外套",
+      "sourceName": "涤纶防寒连帽工装外套",
+      "sourceMaterialText": "100%涤纶，内胆材质可用喷胶棉如（仿丝棉 3M新雪丽棉）或鸭绒 鹅绒等",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Cold Weather & Outdoor Workwear"
+    }
+  },
+  {
+    "sku": "GAR-WJ-003",
+    "sourceNumber": 12,
+    "slug": "anti-static-option-reflective-work-jacket-gar-wj-003",
+    "name": "Anti-Static Option Reflective Work Jacket",
+    "primaryCollection": "industrial-workwear",
+    "secondaryCollections": [
+      "protective-hi-vis"
+    ],
+    "garmentType": "Work Jacket",
+    "summary": "A configurable anti-static option reflective work jacket built around 60% cotton / 38% polyester / 2% conductive fibre; anti-static requirements are subject to final verification for manufacturing and maintenance.",
+    "applications": [
+      "Manufacturing",
+      "Maintenance",
+      "Logistics",
+      "Engineering support"
+    ],
+    "materials": [
+      {
+        "value": "60% cotton / 38% polyester / 2% conductive fibre; anti-static requirements are subject to final verification.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "220–260 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Structured workwear body with practical layering room",
+      "Front closure selected for the project",
+      "Pocket layout can be adapted to the task",
+      "Cuff and hem details reviewed at sampling"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Target performance and verification route confirmed before sampling",
+      "Buyer size chart and grading support",
+      "Reflective material, width and placement subject to specification",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Cotton Blend",
+      "Anti-Static Option",
+      "Reflective Detail",
+      "Work Jacket"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-wj-003/front.webp",
+      "back": "/assets/products/gar-wj-003/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Anti-Static Option Reflective Work Jacket | GAR-WJ-003 | LF Clothing",
+      "description": "Anti-Static Option Reflective Work Jacket (GAR-WJ-003) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "工装夹克",
+      "sourceName": "防静电反光工装夹克",
+      "sourceMaterialText": "60%棉38%聚酯纤维2%导电纤维，防静电功能达国标B级",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Industrial Workwear"
+    }
+  },
+  {
+    "sku": "GAR-HV-001",
+    "sourceNumber": 13,
+    "slug": "high-visibility-reflective-safety-vest-gar-hv-001",
+    "name": "High-Visibility Reflective Safety Vest",
+    "primaryCollection": "protective-hi-vis",
+    "secondaryCollections": [],
+    "garmentType": "Safety Vest",
+    "summary": "A project-ready high-visibility reflective safety vest built around 100% polyester with high-brightness TC reflective tape or specified branded reflective material, subject to sourcing confirmation for utilities and road and infrastructure teams.",
+    "applications": [
+      "Utilities",
+      "Road and infrastructure teams",
+      "Site safety programs",
+      "Industrial operations"
+    ],
+    "materials": [
+      {
+        "value": "100% polyester with high-brightness TC reflective tape or specified branded reflective material, subject to sourcing confirmation.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "120–150 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Lightweight sleeveless construction",
+      "Full-front zip",
+      "Vertical and horizontal reflective layout",
+      "Pocket layout can be configured for the role"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Buyer size chart and grading support",
+      "Reflective material, width and placement subject to specification",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Polyester",
+      "High Visibility",
+      "Reflective Detail",
+      "Vest"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-hv-001/front.webp",
+      "back": "/assets/products/gar-hv-001/back.webp",
+      "inner": null
+    },
+    "homepage": true,
+    "seo": {
+      "title": "High-Visibility Reflective Safety Vest | GAR-HV-001 | LF Clothing",
+      "description": "High-Visibility Reflective Safety Vest (GAR-HV-001) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "反光安全背心",
+      "sourceName": "高可视反光安全背心",
+      "sourceMaterialText": "100%涤纶，国产高亮TC反光条或3M反光条（8910或9910）",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Protective & Hi-Vis"
+    }
+  },
+  {
+    "sku": "GAR-OJ-004",
+    "sourceNumber": 14,
+    "slug": "high-visibility-anti-static-option-jacket-gar-oj-004",
+    "name": "High-Visibility Anti-Static Option Jacket",
+    "primaryCollection": "protective-hi-vis",
+    "secondaryCollections": [
+      "industrial-workwear"
+    ],
+    "garmentType": "Protective Work Jacket",
+    "summary": "A specification-led high-visibility anti-static option jacket built around 60% cotton / 38% polyester / 2% conductive fibre; anti-static and high-visibility requirements are confirmed for each project for utilities and road and infrastructure teams.",
+    "applications": [
+      "Utilities",
+      "Road and infrastructure teams",
+      "Site safety programs",
+      "Industrial operations"
+    ],
+    "materials": [
+      {
+        "value": "60% cotton / 38% polyester / 2% conductive fibre; anti-static and high-visibility requirements are confirmed for each project.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "220–260 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Workwear body designed for visible performance details",
+      "Front closure and storm protection reviewed by use",
+      "Reflective layout is specified before sampling",
+      "Pocket and cuff details can be project configured"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Target performance and verification route confirmed before sampling",
+      "Buyer size chart and grading support",
+      "Reflective material, width and placement subject to specification",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Cotton Blend",
+      "Anti-Static Option",
+      "High Visibility",
+      "Reflective Detail"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-oj-004/front.webp",
+      "back": "/assets/products/gar-oj-004/back.webp",
+      "inner": null
+    },
+    "homepage": true,
+    "seo": {
+      "title": "High-Visibility Anti-Static Option Jacket | GAR-OJ-004 | LF Clothing",
+      "description": "High-Visibility Anti-Static Option Jacket (GAR-OJ-004) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "防护/防寒外套",
+      "sourceName": "防静电高可视工装夹克",
+      "sourceMaterialText": "60%棉38%聚酯纤维2%导电纤维，防静电功能达国标B级",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Protective & Hi-Vis"
+    }
+  },
+  {
+    "sku": "GAR-KN-002",
+    "sourceNumber": 15,
+    "slug": "cotton-rich-zip-hoodie-gar-kn-002",
+    "name": "Cotton-Rich Zip Hoodie",
+    "primaryCollection": "team-staff-apparel",
+    "secondaryCollections": [],
+    "garmentType": "Zip Hoodie",
+    "summary": "A versatile cotton-rich zip hoodie built around 80% cotton / 20% polyester knitted fabric for staff programs and education and clubs.",
+    "applications": [
+      "Staff programs",
+      "Education and clubs",
+      "Events and promotion",
+      "General teamwear"
+    ],
+    "materials": [
+      {
+        "value": "80% cotton / 20% polyester knitted fabric.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "280–320 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Full-front zip construction",
+      "Drawcord hood with ribbed cuffs and hem",
+      "Front hand pockets",
+      "Decoration zones suitable for team programs"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Screen printing",
+      "Heat transfer",
+      "Woven patches and labels"
+    ],
+    "filters": [
+      "Cotton Blend",
+      "Hoodie"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-kn-002/front.webp",
+      "back": "/assets/products/gar-kn-002/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Cotton-Rich Zip Hoodie | GAR-KN-002 | LF Clothing",
+      "description": "Cotton-Rich Zip Hoodie (GAR-KN-002) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "卫衣/软壳",
+      "sourceName": "棉涤连帽针织卫衣",
+      "sourceMaterialText": "80%棉20%涤纶，针织面料",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Team & Staff Apparel"
+    }
+  },
+  {
+    "sku": "GAR-KN-003",
+    "sourceNumber": 16,
+    "slug": "stretch-softshell-work-jacket-gar-kn-003",
+    "name": "Stretch Softshell Work Jacket",
+    "primaryCollection": "team-staff-apparel",
+    "secondaryCollections": [
+      "cold-weather-outdoor-workwear"
+    ],
+    "garmentType": "Softshell Jacket",
+    "summary": "A practical stretch softshell work jacket built around 95% polyester / 5% elastane softshell option for staff programs and education and clubs.",
+    "applications": [
+      "Staff programs",
+      "Education and clubs",
+      "Events and promotion",
+      "General teamwear"
+    ],
+    "materials": [
+      {
+        "value": "95% polyester / 5% elastane softshell option.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "240–280 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Stand collar with full-front zip",
+      "Stretch shell construction",
+      "Zipped hand pockets",
+      "Clean panels for team branding"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Polyester",
+      "Stretch",
+      "Softshell"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-kn-003/front.webp",
+      "back": "/assets/products/gar-kn-003/back.webp",
+      "inner": null
+    },
+    "homepage": true,
+    "seo": {
+      "title": "Stretch Softshell Work Jacket | GAR-KN-003 | LF Clothing",
+      "description": "Stretch Softshell Work Jacket (GAR-KN-003) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "卫衣/软壳",
+      "sourceName": "弹力软壳立领夹克",
+      "sourceMaterialText": "95%涤纶5%氨纶",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Team & Staff Apparel"
+    }
+  },
+  {
+    "sku": "GAR-KN-004",
+    "sourceNumber": 17,
+    "slug": "cotton-blend-pullover-hoodie-gar-kn-004",
+    "name": "Cotton-Blend Pullover Hoodie",
+    "primaryCollection": "team-staff-apparel",
+    "secondaryCollections": [],
+    "garmentType": "Pullover Hoodie",
+    "summary": "A configurable cotton-blend pullover hoodie built around 65% cotton / 35% polyester for staff programs and education and clubs.",
+    "applications": [
+      "Staff programs",
+      "Education and clubs",
+      "Events and promotion",
+      "General teamwear"
+    ],
+    "materials": [
+      {
+        "value": "65% cotton / 35% polyester.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "280–320 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Pullover hooded construction",
+      "Kangaroo pocket",
+      "Ribbed cuffs and hem",
+      "Front and back decoration zones"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Screen printing",
+      "Heat transfer",
+      "Woven patches and labels"
+    ],
+    "filters": [
+      "Cotton Blend",
+      "Hoodie"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-kn-004/front.webp",
+      "back": "/assets/products/gar-kn-004/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Cotton-Blend Pullover Hoodie | GAR-KN-004 | LF Clothing",
+      "description": "Cotton-Blend Pullover Hoodie (GAR-KN-004) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "卫衣/软壳",
+      "sourceName": "棉涤套头连帽卫衣",
+      "sourceMaterialText": "65%棉35%聚酯纤维",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Team & Staff Apparel"
+    }
+  },
+  {
+    "sku": "GAR-WJ-004",
+    "sourceNumber": 18,
+    "slug": "colour-block-anti-static-fabric-option-jacket-gar-wj-004",
+    "name": "Colour-Block Anti-Static Fabric Option Jacket",
+    "primaryCollection": "industrial-workwear",
+    "secondaryCollections": [
+      "protective-hi-vis"
+    ],
+    "garmentType": "Work Jacket",
+    "summary": "A project-ready colour-block anti-static fabric option jacket built around 98% polyester / 2% conductive fibre anti-static fabric option; Toray sourcing is available only when confirmed in the project specification for manufacturing and maintenance.",
+    "applications": [
+      "Manufacturing",
+      "Maintenance",
+      "Logistics",
+      "Engineering support"
+    ],
+    "materials": [
+      {
+        "value": "98% polyester / 2% conductive fibre anti-static fabric option; Toray sourcing is available only when confirmed in the project specification.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "150–190 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Structured workwear body with practical layering room",
+      "Front closure selected for the project",
+      "Pocket layout can be adapted to the task",
+      "Cuff and hem details reviewed at sampling"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Target performance and verification route confirmed before sampling",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Polyester",
+      "Anti-Static Option",
+      "Colour Block",
+      "Work Jacket"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-wj-004/front.webp",
+      "back": "/assets/products/gar-wj-004/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Colour-Block Anti-Static Fabric Option Jacket | GAR-WJ-004 | LF Clothing",
+      "description": "Colour-Block Anti-Static Fabric Option Jacket (GAR-WJ-004) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "工装夹克",
+      "sourceName": "东丽防静电拼色工装夹克",
+      "sourceMaterialText": "日本进口东丽防静电面料98%聚酯纤维2%导电纤维",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Industrial Workwear"
+    }
+  },
+  {
+    "sku": "GAR-OJ-005",
+    "sourceNumber": 19,
+    "slug": "waterproof-breathable-down-work-jacket-gar-oj-005",
+    "name": "Waterproof-Breathable Down Work Jacket",
+    "primaryCollection": "cold-weather-outdoor-workwear",
+    "secondaryCollections": [],
+    "garmentType": "Down Work Jacket",
+    "summary": "A specification-led waterproof-breathable down work jacket built around 100% polyester shell with a waterproof-breathable coating option and 90% white duck-down fill option for outdoor operations and cold-weather teams.",
+    "applications": [
+      "Outdoor operations",
+      "Cold-weather teams",
+      "Logistics yards",
+      "Field service"
+    ],
+    "materials": [
+      {
+        "value": "100% polyester shell with a waterproof-breathable coating option and 90% white duck-down fill option.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "Shell fabric 120–160 g/m²; down fill weight confirmed by style and size",
+      "status": "reference"
+    },
+    "construction": [
+      "Insulated shell with project-selected down fill",
+      "Protective hood or collar construction",
+      "Cold-weather pocket layout",
+      "Fill distribution and closures confirmed in the approved sample"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Target performance and verification route confirmed before sampling",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Polyester",
+      "Weather Protection",
+      "Down Option",
+      "Insulated"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-oj-005/front.webp",
+      "back": "/assets/products/gar-oj-005/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Waterproof-Breathable Down Work Jacket | GAR-OJ-005 | LF Clothing",
+      "description": "Waterproof-Breathable Down Work Jacket (GAR-OJ-005) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "防护/防寒外套",
+      "sourceName": "防水透湿羽绒工装外套",
+      "sourceMaterialText": "100%聚酯纤维，面料内层做防水透气透湿图层，内胆填充物90%白鸭绒",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Cold Weather & Outdoor Workwear"
+    }
+  },
+  {
+    "sku": "GAR-OJ-006",
+    "sourceNumber": 20,
+    "slug": "anti-static-option-insulated-work-jacket-gar-oj-006",
+    "name": "Anti-Static Option Insulated Work Jacket",
+    "primaryCollection": "cold-weather-outdoor-workwear",
+    "secondaryCollections": [
+      "protective-hi-vis"
+    ],
+    "garmentType": "Insulated Work Jacket",
+    "summary": "A versatile anti-static option insulated work jacket built around 60% cotton / 38% polyester / 2% conductive fibre shell with 3M Thinsulate insulation available subject to sourcing and specification confirmation for outdoor operations and cold-weather teams.",
+    "applications": [
+      "Outdoor operations",
+      "Cold-weather teams",
+      "Logistics yards",
+      "Field service"
+    ],
+    "materials": [
+      {
+        "value": "60% cotton / 38% polyester / 2% conductive fibre shell with 3M Thinsulate insulation available subject to sourcing and specification confirmation.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "Shell fabric 220–260 g/m²; insulation weight confirmed for the target warmth level",
+      "status": "reference"
+    },
+    "construction": [
+      "Insulated body for cold-weather layering",
+      "High front closure and protective collar or hood",
+      "Outer and inner pocket options",
+      "Cuff, hem and liner details confirmed at sampling"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Target performance and verification route confirmed before sampling",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Cotton Blend",
+      "Anti-Static Option",
+      "Insulated"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-oj-006/front.webp",
+      "back": "/assets/products/gar-oj-006/back.webp",
+      "inner": "/assets/products/gar-oj-006/inner.webp"
+    },
+    "homepage": true,
+    "seo": {
+      "title": "Anti-Static Option Insulated Work Jacket | GAR-OJ-006 | LF Clothing",
+      "description": "Anti-Static Option Insulated Work Jacket (GAR-OJ-006) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "防护/防寒外套",
+      "sourceName": "防静电新雪丽棉防寒外套",
+      "sourceMaterialText": "60%棉38%聚酯纤维2%导电纤维，防静电功能达国标B级，内胆填充物3M新雪丽棉",
+      "imageStatus": "正面/背面/夹层已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Cold Weather & Outdoor Workwear"
+    }
+  },
+  {
+    "sku": "GAR-OJ-007",
+    "sourceNumber": 21,
+    "slug": "cotton-blend-synthetic-insulated-jacket-gar-oj-007",
+    "name": "Cotton-Blend Synthetic Insulated Jacket",
+    "primaryCollection": "cold-weather-outdoor-workwear",
+    "secondaryCollections": [],
+    "garmentType": "Insulated Work Jacket",
+    "summary": "A practical cotton-blend synthetic insulated jacket built around 35% cotton / 65% polyester shell with synthetic insulation for outdoor operations and cold-weather teams.",
+    "applications": [
+      "Outdoor operations",
+      "Cold-weather teams",
+      "Logistics yards",
+      "Field service"
+    ],
+    "materials": [
+      {
+        "value": "35% cotton / 65% polyester shell with synthetic insulation.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "Shell fabric 220–260 g/m²; insulation weight confirmed for the target warmth level",
+      "status": "reference"
+    },
+    "construction": [
+      "Insulated body for cold-weather layering",
+      "High front closure and protective collar or hood",
+      "Outer and inner pocket options",
+      "Cuff, hem and liner details confirmed at sampling"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Buyer size chart and grading support",
+      "Reflective material, width and placement subject to specification",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Cotton Blend",
+      "Insulated",
+      "Reflective Detail"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-oj-007/front.webp",
+      "back": "/assets/products/gar-oj-007/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Cotton-Blend Synthetic Insulated Jacket | GAR-OJ-007 | LF Clothing",
+      "description": "Cotton-Blend Synthetic Insulated Jacket (GAR-OJ-007) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "防护/防寒外套",
+      "sourceName": "棉涤仿丝棉防寒外套",
+      "sourceMaterialText": "35%棉65%聚酯纤维，内胆填充物仿丝棉",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Cold Weather & Outdoor Workwear"
+    }
+  },
+  {
+    "sku": "GAR-WJ-005",
+    "sourceNumber": 22,
+    "slug": "cotton-rich-anti-static-option-work-jacket-gar-wj-005",
+    "name": "Cotton-Rich Anti-Static Option Work Jacket",
+    "primaryCollection": "industrial-workwear",
+    "secondaryCollections": [
+      "protective-hi-vis"
+    ],
+    "garmentType": "Work Jacket",
+    "summary": "A configurable cotton-rich anti-static option work jacket built around 98% cotton / 2% conductive fibre; anti-static requirements are subject to final material and garment verification for manufacturing and maintenance.",
+    "applications": [
+      "Manufacturing",
+      "Maintenance",
+      "Logistics",
+      "Engineering support"
+    ],
+    "materials": [
+      {
+        "value": "98% cotton / 2% conductive fibre; anti-static requirements are subject to final material and garment verification.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "240–280 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Structured workwear body with practical layering room",
+      "Front closure selected for the project",
+      "Pocket layout can be adapted to the task",
+      "Cuff and hem details reviewed at sampling"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Target performance and verification route confirmed before sampling",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Cotton",
+      "Anti-Static Option",
+      "Work Jacket"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-wj-005/front.webp",
+      "back": "/assets/products/gar-wj-005/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Cotton-Rich Anti-Static Option Work Jacket | GAR-WJ-005 | LF Clothing",
+      "description": "Cotton-Rich Anti-Static Option Work Jacket (GAR-WJ-005) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "工装夹克",
+      "sourceName": "纯棉防静电工装夹克",
+      "sourceMaterialText": "98%棉2%导电纤维，防静电功能达国标B级",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Industrial Workwear"
+    }
+  },
+  {
+    "sku": "GAR-WP-002",
+    "sourceNumber": 23,
+    "slug": "cotton-rich-anti-static-option-work-trousers-gar-wp-002",
+    "name": "Cotton-Rich Anti-Static Option Work Trousers",
+    "primaryCollection": "industrial-workwear",
+    "secondaryCollections": [
+      "protective-hi-vis"
+    ],
+    "garmentType": "Work Trousers",
+    "summary": "A project-ready cotton-rich anti-static option work trousers built around 98% cotton / 2% conductive fibre; anti-static requirements are subject to final material and garment verification for manufacturing and maintenance.",
+    "applications": [
+      "Manufacturing",
+      "Maintenance",
+      "Logistics",
+      "Engineering support"
+    ],
+    "materials": [
+      {
+        "value": "98% cotton / 2% conductive fibre; anti-static requirements are subject to final material and garment verification.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "240–280 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Straight workwear leg",
+      "Waistband and belt-loop construction",
+      "Cargo and hand-pocket options",
+      "Reinforcement details available where required"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Target performance and verification route confirmed before sampling",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Cotton",
+      "Anti-Static Option",
+      "Work Trousers"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-wp-002/front.webp",
+      "back": "/assets/products/gar-wp-002/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Cotton-Rich Anti-Static Option Work Trousers | GAR-WP-002 | LF Clothing",
+      "description": "Cotton-Rich Anti-Static Option Work Trousers (GAR-WP-002) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "工装裤/背带裤",
+      "sourceName": "纯棉防静电工装裤",
+      "sourceMaterialText": "98%棉2%导电纤维，防静电功能达国标B级",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Industrial Workwear"
+    }
+  },
+  {
+    "sku": "GAR-OJ-008",
+    "sourceNumber": 24,
+    "slug": "cotton-work-jacket-with-removable-liner-gar-oj-008",
+    "name": "Cotton Work Jacket with Removable Liner",
+    "primaryCollection": "cold-weather-outdoor-workwear",
+    "secondaryCollections": [
+      "industrial-workwear"
+    ],
+    "garmentType": "Lined Work Jacket",
+    "summary": "A specification-led cotton work jacket with removable liner built around 100% cotton shell with a removable synthetic-insulation liner for outdoor operations and cold-weather teams.",
+    "applications": [
+      "Outdoor operations",
+      "Cold-weather teams",
+      "Logistics yards",
+      "Field service"
+    ],
+    "materials": [
+      {
+        "value": "100% cotton shell with a removable synthetic-insulation liner.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "Shell fabric 240–280 g/m²; insulation weight confirmed for the target warmth level",
+      "status": "reference"
+    },
+    "construction": [
+      "Outer work jacket with removable liner system",
+      "Front closure configured for layered use",
+      "Workwear pocket layout",
+      "Liner attachment and cuff details confirmed at sampling"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Cotton",
+      "Removable Liner",
+      "Insulated"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-oj-008/front.webp",
+      "back": "/assets/products/gar-oj-008/back.webp",
+      "inner": "/assets/products/gar-oj-008/inner.webp"
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Cotton Work Jacket with Removable Liner | GAR-OJ-008 | LF Clothing",
+      "description": "Cotton Work Jacket with Removable Liner (GAR-OJ-008) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "防护/防寒外套",
+      "sourceName": "纯棉可拆卸内胆防寒外套",
+      "sourceMaterialText": "100%棉，活里活面内胆填充物喷胶棉",
+      "imageStatus": "正面/背面/夹层已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Cold Weather & Outdoor Workwear"
+    }
+  },
+  {
+    "sku": "GAR-OJ-009",
+    "sourceNumber": 25,
+    "slug": "waterproof-breathable-goose-down-jacket-gar-oj-009",
+    "name": "Waterproof-Breathable Goose Down Jacket",
+    "primaryCollection": "cold-weather-outdoor-workwear",
+    "secondaryCollections": [],
+    "garmentType": "Down Work Jacket",
+    "summary": "A versatile waterproof-breathable goose down jacket built around 100% polyester shell with a waterproof-breathable coating option and 90% goose-down fill option for outdoor operations and cold-weather teams.",
+    "applications": [
+      "Outdoor operations",
+      "Cold-weather teams",
+      "Logistics yards",
+      "Field service"
+    ],
+    "materials": [
+      {
+        "value": "100% polyester shell with a waterproof-breathable coating option and 90% goose-down fill option.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "Shell fabric 150–200 g/m²; down fill weight confirmed by style and size",
+      "status": "reference"
+    },
+    "construction": [
+      "Insulated shell with project-selected down fill",
+      "Protective hood or collar construction",
+      "Cold-weather pocket layout",
+      "Fill distribution and closures confirmed in the approved sample"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Target performance and verification route confirmed before sampling",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Polyester",
+      "Weather Protection",
+      "Down Option",
+      "Insulated"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-oj-009/front.webp",
+      "back": "/assets/products/gar-oj-009/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Waterproof-Breathable Goose Down Jacket | GAR-OJ-009 | LF Clothing",
+      "description": "Waterproof-Breathable Goose Down Jacket (GAR-OJ-009) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "防护/防寒外套",
+      "sourceName": "防水透湿鹅绒防寒外套",
+      "sourceMaterialText": "100%聚酯纤维，面料内层做防水透气透湿图层，达国家标准，内胆填充物90%鹅绒",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Cold Weather & Outdoor Workwear"
+    }
+  },
+  {
+    "sku": "GAR-OJ-010",
+    "sourceNumber": 26,
+    "slug": "waterproof-breathable-insulated-work-jacket-gar-oj-010",
+    "name": "Waterproof-Breathable Insulated Work Jacket",
+    "primaryCollection": "cold-weather-outdoor-workwear",
+    "secondaryCollections": [],
+    "garmentType": "Insulated Work Jacket",
+    "summary": "A practical waterproof-breathable insulated work jacket built around 100% polyester shell with a waterproof-breathable coating option and 3M Thinsulate insulation available subject to confirmation for outdoor operations and cold-weather teams.",
+    "applications": [
+      "Outdoor operations",
+      "Cold-weather teams",
+      "Logistics yards",
+      "Field service"
+    ],
+    "materials": [
+      {
+        "value": "100% polyester shell with a waterproof-breathable coating option and 3M Thinsulate insulation available subject to confirmation.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "Shell fabric 160–210 g/m²; insulation weight confirmed for the target warmth level",
+      "status": "reference"
+    },
+    "construction": [
+      "Insulated body for cold-weather layering",
+      "High front closure and protective collar or hood",
+      "Outer and inner pocket options",
+      "Cuff, hem and liner details confirmed at sampling"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Target performance and verification route confirmed before sampling",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Polyester",
+      "Weather Protection",
+      "Insulated"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-oj-010/front.webp",
+      "back": "/assets/products/gar-oj-010/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Waterproof-Breathable Insulated Work Jacket | GAR-OJ-010 | LF Clothing",
+      "description": "Waterproof-Breathable Insulated Work Jacket (GAR-OJ-010) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "防护/防寒外套",
+      "sourceName": "防水透湿新雪丽棉防寒外套",
+      "sourceMaterialText": "100%聚酯纤维面料内层做防水透气透湿图层，达国家标准，内胆填充物3M新雪丽棉",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Cold Weather & Outdoor Workwear"
+    }
+  },
+  {
+    "sku": "GAR-OJ-011",
+    "sourceNumber": 27,
+    "slug": "cotton-rich-jacket-with-removable-liner-gar-oj-011",
+    "name": "Cotton-Rich Jacket with Removable Liner",
+    "primaryCollection": "cold-weather-outdoor-workwear",
+    "secondaryCollections": [
+      "industrial-workwear"
+    ],
+    "garmentType": "Lined Work Jacket",
+    "summary": "A configurable cotton-rich jacket with removable liner built around 65% cotton / 35% polyester shell with a removable synthetic-insulation liner for outdoor operations and cold-weather teams.",
+    "applications": [
+      "Outdoor operations",
+      "Cold-weather teams",
+      "Logistics yards",
+      "Field service"
+    ],
+    "materials": [
+      {
+        "value": "65% cotton / 35% polyester shell with a removable synthetic-insulation liner.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "Shell fabric 220–260 g/m²; insulation weight confirmed for the target warmth level",
+      "status": "reference"
+    },
+    "construction": [
+      "Outer work jacket with removable liner system",
+      "Front closure configured for layered use",
+      "Workwear pocket layout",
+      "Liner attachment and cuff details confirmed at sampling"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Buyer size chart and grading support",
+      "Reflective material, width and placement subject to specification",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Cotton Blend",
+      "Removable Liner",
+      "Insulated",
+      "Reflective Detail"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-oj-011/front.webp",
+      "back": "/assets/products/gar-oj-011/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Cotton-Rich Jacket with Removable Liner | GAR-OJ-011 | LF Clothing",
+      "description": "Cotton-Rich Jacket with Removable Liner (GAR-OJ-011) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "防护/防寒外套",
+      "sourceName": "棉涤可拆卸内胆防寒外套",
+      "sourceMaterialText": "65%棉35%聚酯纤维，活里活面内胆填充物仿丝棉",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Cold Weather & Outdoor Workwear"
+    }
+  },
+  {
+    "sku": "GAR-BL-001",
+    "sourceNumber": 29,
+    "slug": "men-s-single-breasted-wool-blend-suit-gar-bl-001",
+    "name": "Men's Single-Breasted Wool-Blend Suit",
+    "primaryCollection": "corporate-service-uniforms",
+    "secondaryCollections": [],
+    "garmentType": "Men's Suit Jacket",
+    "summary": "A project-ready men's single-breasted wool-blend suit built around 70% wool / 30% polyester with an anti-static lining option for corporate offices and hospitality and reception.",
+    "applications": [
+      "Corporate offices",
+      "Hospitality and reception",
+      "Institutional uniforms",
+      "Service teams"
+    ],
+    "materials": [
+      {
+        "value": "70% wool / 30% polyester with an anti-static lining option.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "280–320 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Tailored single-breasted silhouette",
+      "Lapel, lining and internal construction reviewed at sampling",
+      "Coordinated pocket and button details",
+      "Grading can follow the buyer's size chart"
+    ],
+    "customization": [
+      "Fabric composition and seasonal weight",
+      "Lining, lapel, button and pocket details",
+      "Buyer size chart and role-based grading",
+      "Hangers, garment bags and project packaging"
+    ],
+    "branding": [
+      "Woven main and care labels",
+      "Custom buttons",
+      "Branded lining option",
+      "Garment bags and project tags"
+    ],
+    "filters": [
+      "Wool Blend",
+      "Men's Tailoring"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-bl-001/front.webp",
+      "back": "/assets/products/gar-bl-001/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Men's Single-Breasted Wool-Blend Suit | GAR-BL-001 | LF Clothing",
+      "description": "Men's Single-Breasted Wool-Blend Suit (GAR-BL-001) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "职业西装",
+      "sourceName": "羊毛混纺男士单排扣西装",
+      "sourceMaterialText": "70%羊毛30%聚酯纤维，A级工艺，防静电内衬",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Corporate & Service Uniforms"
+    }
+  },
+  {
+    "sku": "GAR-TR-001",
+    "sourceNumber": 30,
+    "slug": "men-s-wool-blend-tailored-trousers-gar-tr-001",
+    "name": "Men's Wool-Blend Tailored Trousers",
+    "primaryCollection": "corporate-service-uniforms",
+    "secondaryCollections": [],
+    "garmentType": "Men's Tailored Trousers",
+    "summary": "A specification-led men's wool-blend tailored trousers built around 70% wool / 30% polyester for corporate offices and hospitality and reception.",
+    "applications": [
+      "Corporate offices",
+      "Hospitality and reception",
+      "Institutional uniforms",
+      "Service teams"
+    ],
+    "materials": [
+      {
+        "value": "70% wool / 30% polyester.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "280–320 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Tailored straight-leg silhouette",
+      "Waistband, fly and pocket construction",
+      "Fabric and pressing standard set at sampling",
+      "Buyer-specific grading supported"
+    ],
+    "customization": [
+      "Fabric composition and seasonal weight",
+      "Lining, lapel, button and pocket details",
+      "Buyer size chart and role-based grading",
+      "Hangers, garment bags and project packaging"
+    ],
+    "branding": [
+      "Woven main and care labels",
+      "Custom buttons",
+      "Branded lining option",
+      "Garment bags and project tags"
+    ],
+    "filters": [
+      "Wool Blend",
+      "Men's Tailoring",
+      "Trousers"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-tr-001/front.webp",
+      "back": "/assets/products/gar-tr-001/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Men's Wool-Blend Tailored Trousers | GAR-TR-001 | LF Clothing",
+      "description": "Men's Wool-Blend Tailored Trousers (GAR-TR-001) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "西裤",
+      "sourceName": "羊毛混纺男士西裤",
+      "sourceMaterialText": "70%羊毛30聚酯纤维，A级工艺",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Corporate & Service Uniforms"
+    }
+  },
+  {
+    "sku": "GAR-BL-002",
+    "sourceNumber": 31,
+    "slug": "long-double-breasted-wool-blend-blazer-gar-bl-002",
+    "name": "Long Double-Breasted Wool-Blend Blazer",
+    "primaryCollection": "corporate-service-uniforms",
+    "secondaryCollections": [],
+    "garmentType": "Women's Tailored Blazer",
+    "summary": "A versatile long double-breasted wool-blend blazer built around 80% wool / 20% polyester with an anti-static lining option for corporate offices and hospitality and reception.",
+    "applications": [
+      "Corporate offices",
+      "Hospitality and reception",
+      "Institutional uniforms",
+      "Service teams"
+    ],
+    "materials": [
+      {
+        "value": "80% wool / 20% polyester with an anti-static lining option.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "280–320 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Tailored women's silhouette",
+      "Lapel, lining and closure details set by the approved sample",
+      "Coordinated pocket and button options",
+      "Buyer-specific grading supported"
+    ],
+    "customization": [
+      "Fabric composition and seasonal weight",
+      "Lining, lapel, button and pocket details",
+      "Buyer size chart and role-based grading",
+      "Hangers, garment bags and project packaging"
+    ],
+    "branding": [
+      "Woven main and care labels",
+      "Custom buttons",
+      "Branded lining option",
+      "Garment bags and project tags"
+    ],
+    "filters": [
+      "Wool Blend",
+      "Women's Tailoring",
+      "Double Breasted"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-bl-002/front.webp",
+      "back": "/assets/products/gar-bl-002/back.webp",
+      "inner": null
+    },
+    "homepage": true,
+    "seo": {
+      "title": "Long Double-Breasted Wool-Blend Blazer | GAR-BL-002 | LF Clothing",
+      "description": "Long Double-Breasted Wool-Blend Blazer (GAR-BL-002) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "职业西装",
+      "sourceName": "羊毛混纺双排扣长款西装",
+      "sourceMaterialText": "80%羊毛20%聚酯纤维，A级工艺，枪驳头，双排扣，大挂面工艺，防静电内衬",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Corporate & Service Uniforms"
+    }
+  },
+  {
+    "sku": "GAR-TR-002",
+    "sourceNumber": 32,
+    "slug": "wool-blend-tailored-uniform-trousers-gar-tr-002",
+    "name": "Wool-Blend Tailored Uniform Trousers",
+    "primaryCollection": "corporate-service-uniforms",
+    "secondaryCollections": [],
+    "garmentType": "Tailored Trousers",
+    "summary": "A practical wool-blend tailored uniform trousers built around 80% wool / 20% polyester for corporate offices and hospitality and reception.",
+    "applications": [
+      "Corporate offices",
+      "Hospitality and reception",
+      "Institutional uniforms",
+      "Service teams"
+    ],
+    "materials": [
+      {
+        "value": "80% wool / 20% polyester.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "280–320 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Tailored uniform trouser silhouette",
+      "Waistband, fly and pocket construction",
+      "Coordinated fabric and trim options",
+      "Buyer-specific grading supported"
+    ],
+    "customization": [
+      "Fabric composition and seasonal weight",
+      "Lining, lapel, button and pocket details",
+      "Buyer size chart and role-based grading",
+      "Hangers, garment bags and project packaging"
+    ],
+    "branding": [
+      "Woven main and care labels",
+      "Custom buttons",
+      "Branded lining option",
+      "Garment bags and project tags"
+    ],
+    "filters": [
+      "Wool Blend",
+      "Trousers"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-tr-002/front.webp",
+      "back": "/assets/products/gar-tr-002/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Wool-Blend Tailored Uniform Trousers | GAR-TR-002 | LF Clothing",
+      "description": "Wool-Blend Tailored Uniform Trousers (GAR-TR-002) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "西裤",
+      "sourceName": "羊毛混纺西裤",
+      "sourceMaterialText": "80%羊毛20%聚酯纤维，A级工艺",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Corporate & Service Uniforms"
+    }
+  },
+  {
+    "sku": "GAR-TR-003",
+    "sourceNumber": 34,
+    "slug": "anti-static-option-wool-blend-trousers-gar-tr-003",
+    "name": "Anti-Static Option Wool-Blend Trousers",
+    "primaryCollection": "corporate-service-uniforms",
+    "secondaryCollections": [],
+    "garmentType": "Tailored Trousers",
+    "summary": "A configurable anti-static option wool-blend trousers built around 50% wool / 49.5% polyester / 0.5% conductive fibre for corporate offices and hospitality and reception.",
+    "applications": [
+      "Corporate offices",
+      "Hospitality and reception",
+      "Institutional uniforms",
+      "Service teams"
+    ],
+    "materials": [
+      {
+        "value": "50% wool / 49.5% polyester / 0.5% conductive fibre.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "280–320 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Tailored uniform trouser silhouette",
+      "Waistband, fly and pocket construction",
+      "Coordinated fabric and trim options",
+      "Buyer-specific grading supported"
+    ],
+    "customization": [
+      "Fabric composition and seasonal weight",
+      "Lining, lapel, button and pocket details",
+      "Buyer size chart and role-based grading",
+      "Hangers, garment bags and project packaging"
+    ],
+    "branding": [
+      "Woven main and care labels",
+      "Custom buttons",
+      "Branded lining option",
+      "Garment bags and project tags"
+    ],
+    "filters": [
+      "Wool Blend",
+      "Anti-Static Option",
+      "Trousers"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-tr-003/front.webp",
+      "back": "/assets/products/gar-tr-003/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Anti-Static Option Wool-Blend Trousers | GAR-TR-003 | LF Clothing",
+      "description": "Anti-Static Option Wool-Blend Trousers (GAR-TR-003) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "西裤",
+      "sourceName": "防静电羊毛混纺西裤",
+      "sourceMaterialText": "50%羊毛49.5%聚酯纤维0.5%导电纤维",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Corporate & Service Uniforms"
+    }
+  },
+  {
+    "sku": "GAR-BL-003",
+    "sourceNumber": 35,
+    "slug": "women-s-anti-static-option-wool-blend-blazer-gar-bl-003",
+    "name": "Women's Anti-Static Option Wool-Blend Blazer",
+    "primaryCollection": "corporate-service-uniforms",
+    "secondaryCollections": [],
+    "garmentType": "Women's Tailored Blazer",
+    "summary": "A project-ready women's anti-static option wool-blend blazer built around 50% wool / 49.5% polyester / 0.5% conductive fibre for corporate offices and hospitality and reception.",
+    "applications": [
+      "Corporate offices",
+      "Hospitality and reception",
+      "Institutional uniforms",
+      "Service teams"
+    ],
+    "materials": [
+      {
+        "value": "50% wool / 49.5% polyester / 0.5% conductive fibre.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "280–320 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Tailored women's silhouette",
+      "Lapel, lining and closure details set by the approved sample",
+      "Coordinated pocket and button options",
+      "Buyer-specific grading supported"
+    ],
+    "customization": [
+      "Fabric composition and seasonal weight",
+      "Lining, lapel, button and pocket details",
+      "Buyer size chart and role-based grading",
+      "Hangers, garment bags and project packaging"
+    ],
+    "branding": [
+      "Woven main and care labels",
+      "Custom buttons",
+      "Branded lining option",
+      "Garment bags and project tags"
+    ],
+    "filters": [
+      "Wool Blend",
+      "Anti-Static Option",
+      "Women's Tailoring"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-bl-003/front.webp",
+      "back": "/assets/products/gar-bl-003/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Women's Anti-Static Option Wool-Blend Blazer | GAR-BL-003 | LF Clothing",
+      "description": "Women's Anti-Static Option Wool-Blend Blazer (GAR-BL-003) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "职业西装",
+      "sourceName": "防静电羊毛混纺女士西装",
+      "sourceMaterialText": "50%羊毛49.5%聚酯纤维0.5%导电纤维",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Corporate & Service Uniforms"
+    }
+  },
+  {
+    "sku": "GAR-BL-004",
+    "sourceNumber": 36,
+    "slug": "high-wool-women-s-tailored-blazer-gar-bl-004",
+    "name": "High-Wool Women's Tailored Blazer",
+    "primaryCollection": "corporate-service-uniforms",
+    "secondaryCollections": [],
+    "garmentType": "Women's Tailored Blazer",
+    "summary": "A specification-led high-wool women's tailored blazer built around 90% wool / 10% polyester with an anti-static lining option for corporate offices and hospitality and reception.",
+    "applications": [
+      "Corporate offices",
+      "Hospitality and reception",
+      "Institutional uniforms",
+      "Service teams"
+    ],
+    "materials": [
+      {
+        "value": "90% wool / 10% polyester with an anti-static lining option.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "260–300 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Tailored women's silhouette",
+      "Lapel, lining and closure details set by the approved sample",
+      "Coordinated pocket and button options",
+      "Buyer-specific grading supported"
+    ],
+    "customization": [
+      "Fabric composition and seasonal weight",
+      "Lining, lapel, button and pocket details",
+      "Buyer size chart and role-based grading",
+      "Hangers, garment bags and project packaging"
+    ],
+    "branding": [
+      "Woven main and care labels",
+      "Custom buttons",
+      "Branded lining option",
+      "Garment bags and project tags"
+    ],
+    "filters": [
+      "Wool Blend",
+      "Women's Tailoring"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-bl-004/front.webp",
+      "back": "/assets/products/gar-bl-004/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "High-Wool Women's Tailored Blazer | GAR-BL-004 | LF Clothing",
+      "description": "High-Wool Women's Tailored Blazer (GAR-BL-004) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "职业西装",
+      "sourceName": "高羊毛含量女士西装",
+      "sourceMaterialText": "90%羊毛10%聚酯纤维，A级工艺，防静电内衬",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Corporate & Service Uniforms"
+    }
+  },
+  {
+    "sku": "GAR-BL-005",
+    "sourceNumber": 37,
+    "slug": "women-s-wool-blend-uniform-blazer-gar-bl-005",
+    "name": "Women's Wool-Blend Uniform Blazer",
+    "primaryCollection": "corporate-service-uniforms",
+    "secondaryCollections": [],
+    "garmentType": "Women's Tailored Blazer",
+    "summary": "A versatile women's wool-blend uniform blazer built around 35% wool / 65% polyester for corporate offices and hospitality and reception.",
+    "applications": [
+      "Corporate offices",
+      "Hospitality and reception",
+      "Institutional uniforms",
+      "Service teams"
+    ],
+    "materials": [
+      {
+        "value": "35% wool / 65% polyester.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "260–300 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Tailored women's silhouette",
+      "Lapel, lining and closure details set by the approved sample",
+      "Coordinated pocket and button options",
+      "Buyer-specific grading supported"
+    ],
+    "customization": [
+      "Fabric composition and seasonal weight",
+      "Lining, lapel, button and pocket details",
+      "Buyer size chart and role-based grading",
+      "Hangers, garment bags and project packaging"
+    ],
+    "branding": [
+      "Woven main and care labels",
+      "Custom buttons",
+      "Branded lining option",
+      "Garment bags and project tags"
+    ],
+    "filters": [
+      "Wool Blend",
+      "Women's Tailoring"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-bl-005/front.webp",
+      "back": "/assets/products/gar-bl-005/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Women's Wool-Blend Uniform Blazer | GAR-BL-005 | LF Clothing",
+      "description": "Women's Wool-Blend Uniform Blazer (GAR-BL-005) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "职业西装",
+      "sourceName": "羊毛混纺女士西装",
+      "sourceMaterialText": "35%羊毛65%聚酯纤维",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Corporate & Service Uniforms"
+    }
+  },
+  {
+    "sku": "GAR-BL-006",
+    "sourceNumber": 39,
+    "slug": "women-s-single-breasted-uniform-blazer-gar-bl-006",
+    "name": "Women's Single-Breasted Uniform Blazer",
+    "primaryCollection": "corporate-service-uniforms",
+    "secondaryCollections": [],
+    "garmentType": "Women's Uniform Blazer",
+    "summary": "A practical women's single-breasted uniform blazer built around 65% polyester / 35% viscose reference composition; final fabric selection is confirmed during specification review for corporate offices and hospitality and reception.",
+    "applications": [
+      "Corporate offices",
+      "Hospitality and reception",
+      "Institutional uniforms",
+      "Service teams"
+    ],
+    "materials": [
+      {
+        "value": "65% polyester / 35% viscose reference composition; final fabric selection is confirmed during specification review.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "260–300 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Single-breasted uniform silhouette",
+      "Lining, lapel and button options",
+      "Practical tailored pocket construction",
+      "Buyer-specific grading supported"
+    ],
+    "customization": [
+      "Fabric composition and seasonal weight",
+      "Lining, lapel, button and pocket details",
+      "Buyer size chart and role-based grading",
+      "Hangers, garment bags and project packaging"
+    ],
+    "branding": [
+      "Woven main and care labels",
+      "Custom buttons",
+      "Branded lining option",
+      "Garment bags and project tags"
+    ],
+    "filters": [
+      "Polyester Blend",
+      "Women's Tailoring"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-bl-006/front.webp",
+      "back": "/assets/products/gar-bl-006/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Women's Single-Breasted Uniform Blazer | GAR-BL-006 | LF Clothing",
+      "description": "Women's Single-Breasted Uniform Blazer (GAR-BL-006) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "职业西装",
+      "sourceName": "女士单排扣职业西装（面料待确认）",
+      "sourceMaterialText": "65%涤纶+35%粘胶纤维",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Corporate & Service Uniforms"
+    }
+  },
+  {
+    "sku": "GAR-BL-007",
+    "sourceNumber": 40,
+    "slug": "women-s-polyester-uniform-blazer-gar-bl-007",
+    "name": "Women's Polyester Uniform Blazer",
+    "primaryCollection": "corporate-service-uniforms",
+    "secondaryCollections": [],
+    "garmentType": "Women's Uniform Blazer",
+    "summary": "A configurable women's polyester uniform blazer built around 100% polyester for corporate offices and hospitality and reception.",
+    "applications": [
+      "Corporate offices",
+      "Hospitality and reception",
+      "Institutional uniforms",
+      "Service teams"
+    ],
+    "materials": [
+      {
+        "value": "100% polyester.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "240–280 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Single-breasted uniform silhouette",
+      "Lining, lapel and button options",
+      "Practical tailored pocket construction",
+      "Buyer-specific grading supported"
+    ],
+    "customization": [
+      "Fabric composition and seasonal weight",
+      "Lining, lapel, button and pocket details",
+      "Buyer size chart and role-based grading",
+      "Hangers, garment bags and project packaging"
+    ],
+    "branding": [
+      "Woven main and care labels",
+      "Custom buttons",
+      "Branded lining option",
+      "Garment bags and project tags"
+    ],
+    "filters": [
+      "Polyester",
+      "Women's Tailoring"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-bl-007/front.webp",
+      "back": "/assets/products/gar-bl-007/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Women's Polyester Uniform Blazer | GAR-BL-007 | LF Clothing",
+      "description": "Women's Polyester Uniform Blazer (GAR-BL-007) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "职业西装",
+      "sourceName": "涤纶女士职业西装",
+      "sourceMaterialText": "100%聚酯纤维",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Corporate & Service Uniforms"
+    }
+  },
+  {
+    "sku": "GAR-BL-008",
+    "sourceNumber": 41,
+    "slug": "men-s-anti-static-option-wool-blend-suit-gar-bl-008",
+    "name": "Men's Anti-Static Option Wool-Blend Suit",
+    "primaryCollection": "corporate-service-uniforms",
+    "secondaryCollections": [],
+    "garmentType": "Men's Suit Jacket",
+    "summary": "A project-ready men's anti-static option wool-blend suit built around 70% wool / 29.5% polyester / 0.5% conductive fibre with an anti-static lining option for corporate offices and hospitality and reception.",
+    "applications": [
+      "Corporate offices",
+      "Hospitality and reception",
+      "Institutional uniforms",
+      "Service teams"
+    ],
+    "materials": [
+      {
+        "value": "70% wool / 29.5% polyester / 0.5% conductive fibre with an anti-static lining option.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "280–320 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Tailored single-breasted silhouette",
+      "Lapel, lining and internal construction reviewed at sampling",
+      "Coordinated pocket and button details",
+      "Grading can follow the buyer's size chart"
+    ],
+    "customization": [
+      "Fabric composition and seasonal weight",
+      "Lining, lapel, button and pocket details",
+      "Buyer size chart and role-based grading",
+      "Hangers, garment bags and project packaging"
+    ],
+    "branding": [
+      "Woven main and care labels",
+      "Custom buttons",
+      "Branded lining option",
+      "Garment bags and project tags"
+    ],
+    "filters": [
+      "Wool Blend",
+      "Anti-Static Option",
+      "Men's Tailoring"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-bl-008/front.webp",
+      "back": "/assets/products/gar-bl-008/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Men's Anti-Static Option Wool-Blend Suit | GAR-BL-008 | LF Clothing",
+      "description": "Men's Anti-Static Option Wool-Blend Suit (GAR-BL-008) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "职业西装",
+      "sourceName": "防静电羊毛混纺男士西装",
+      "sourceMaterialText": "70%羊毛29.5聚酯纤维0.5%导电纤维，A级工艺，防静电内衬",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Corporate & Service Uniforms"
+    }
+  },
+  {
+    "sku": "GAR-TJ-001",
+    "sourceNumber": 42,
+    "slug": "blue-and-white-team-track-jacket-gar-tj-001",
+    "name": "Blue-and-White Team Track Jacket",
+    "primaryCollection": "team-staff-apparel",
+    "secondaryCollections": [],
+    "garmentType": "Team Track Jacket",
+    "summary": "A specification-led blue-and-white team track jacket built around 40% cotton / 60% polyester for staff programs and education and clubs.",
+    "applications": [
+      "Staff programs",
+      "Education and clubs",
+      "Events and promotion",
+      "General teamwear"
+    ],
+    "materials": [
+      {
+        "value": "40% cotton / 60% polyester.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "280–320 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Full-front zip team jacket",
+      "Stand collar with colour-block paneling",
+      "Ribbed or adjustable finishing options",
+      "Clear zones for team marks and sponsor graphics"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Screen printing",
+      "Heat transfer",
+      "Woven patches and labels"
+    ],
+    "filters": [
+      "Cotton Blend",
+      "Teamwear",
+      "Colour Block"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-tj-001/front.webp",
+      "back": "/assets/products/gar-tj-001/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Blue-and-White Team Track Jacket | GAR-TJ-001 | LF Clothing",
+      "description": "Blue-and-White Team Track Jacket (GAR-TJ-001) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "运动夹克",
+      "sourceName": "棉涤团体运动夹克",
+      "sourceMaterialText": "40%棉60%聚酯纤维",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Team & Staff Apparel"
+    }
+  },
+  {
+    "sku": "GAR-TP-001",
+    "sourceNumber": 43,
+    "slug": "black-team-jogger-trousers-gar-tp-001",
+    "name": "Black Team Jogger Trousers",
+    "primaryCollection": "team-staff-apparel",
+    "secondaryCollections": [],
+    "garmentType": "Team Track Trousers",
+    "summary": "A versatile black team jogger trousers built around 40% cotton / 60% polyester for staff programs and education and clubs.",
+    "applications": [
+      "Staff programs",
+      "Education and clubs",
+      "Events and promotion",
+      "General teamwear"
+    ],
+    "materials": [
+      {
+        "value": "40% cotton / 60% polyester.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "280–320 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Elasticated waist with drawcord option",
+      "Straight or cuffed leg configuration",
+      "Side-pocket options",
+      "Colour panels coordinated with matching jackets"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Screen printing",
+      "Heat transfer",
+      "Woven patches and labels"
+    ],
+    "filters": [
+      "Cotton Blend",
+      "Teamwear",
+      "Trousers"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-tp-001/front.webp",
+      "back": "/assets/products/gar-tp-001/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Black Team Jogger Trousers | GAR-TP-001 | LF Clothing",
+      "description": "Black Team Jogger Trousers (GAR-TP-001) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "运动长裤",
+      "sourceName": "棉涤团体运动长裤",
+      "sourceMaterialText": "40%棉60%聚酯纤维",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Team & Staff Apparel"
+    }
+  },
+  {
+    "sku": "GAR-TJ-002",
+    "sourceNumber": 44,
+    "slug": "blue-zip-team-track-jacket-gar-tj-002",
+    "name": "Blue Zip Team Track Jacket",
+    "primaryCollection": "team-staff-apparel",
+    "secondaryCollections": [],
+    "garmentType": "Team Track Jacket",
+    "summary": "A practical blue zip team track jacket built around 35% cotton / 65% polyester for staff programs and education and clubs.",
+    "applications": [
+      "Staff programs",
+      "Education and clubs",
+      "Events and promotion",
+      "General teamwear"
+    ],
+    "materials": [
+      {
+        "value": "35% cotton / 65% polyester.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "280–320 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Full-front zip team jacket",
+      "Stand collar with colour-block paneling",
+      "Ribbed or adjustable finishing options",
+      "Clear zones for team marks and sponsor graphics"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Screen printing",
+      "Heat transfer",
+      "Woven patches and labels"
+    ],
+    "filters": [
+      "Cotton Blend",
+      "Teamwear",
+      "Colour Block"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-tj-002/front.webp",
+      "back": "/assets/products/gar-tj-002/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Blue Zip Team Track Jacket | GAR-TJ-002 | LF Clothing",
+      "description": "Blue Zip Team Track Jacket (GAR-TJ-002) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "运动夹克",
+      "sourceName": "棉涤团体运动夹克",
+      "sourceMaterialText": "35%棉65%聚酯纤维",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Team & Staff Apparel"
+    }
+  },
+  {
+    "sku": "GAR-TJ-003",
+    "sourceNumber": 45,
+    "slug": "red-and-white-team-track-jacket-gar-tj-003",
+    "name": "Red-and-White Team Track Jacket",
+    "primaryCollection": "team-staff-apparel",
+    "secondaryCollections": [],
+    "garmentType": "Team Track Jacket",
+    "summary": "A configurable red-and-white team track jacket built around 60% cotton / 40% polyester for staff programs and education and clubs.",
+    "applications": [
+      "Staff programs",
+      "Education and clubs",
+      "Events and promotion",
+      "General teamwear"
+    ],
+    "materials": [
+      {
+        "value": "60% cotton / 40% polyester.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "280–320 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Full-front zip team jacket",
+      "Stand collar with colour-block paneling",
+      "Ribbed or adjustable finishing options",
+      "Clear zones for team marks and sponsor graphics"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Screen printing",
+      "Heat transfer",
+      "Woven patches and labels"
+    ],
+    "filters": [
+      "Cotton Blend",
+      "Teamwear",
+      "Colour Block"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-tj-003/front.webp",
+      "back": "/assets/products/gar-tj-003/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Red-and-White Team Track Jacket | GAR-TJ-003 | LF Clothing",
+      "description": "Red-and-White Team Track Jacket (GAR-TJ-003) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "运动夹克",
+      "sourceName": "棉涤团体运动夹克",
+      "sourceMaterialText": "60%棉40%聚酯纤维",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Team & Staff Apparel"
+    }
+  },
+  {
+    "sku": "GAR-DJ-001",
+    "sourceNumber": 46,
+    "slug": "dark-indigo-denim-work-jacket-gar-dj-001",
+    "name": "Dark Indigo Denim Work Jacket",
+    "primaryCollection": "industrial-workwear",
+    "secondaryCollections": [],
+    "garmentType": "Denim Work Jacket",
+    "summary": "A project-ready dark indigo denim work jacket built around 100% cotton denim with pre-wash and colour-setting options for manufacturing and maintenance.",
+    "applications": [
+      "Manufacturing",
+      "Maintenance",
+      "Logistics",
+      "Engineering support"
+    ],
+    "materials": [
+      {
+        "value": "100% cotton denim with pre-wash and colour-setting options.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "10–12 oz (approx. 340–410 g/m²)",
+      "status": "reference"
+    },
+    "construction": [
+      "Point-collar denim work jacket",
+      "Front button closure",
+      "Chest and lower-pocket construction",
+      "Wash and stitching details confirmed through samples"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Cotton",
+      "Denim",
+      "Work Jacket"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-dj-001/front.webp",
+      "back": "/assets/products/gar-dj-001/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Dark Indigo Denim Work Jacket | GAR-DJ-001 | LF Clothing",
+      "description": "Dark Indigo Denim Work Jacket (GAR-DJ-001) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "牛仔夹克",
+      "sourceName": "纯棉水洗牛仔工装夹克",
+      "sourceMaterialText": "100%棉牛仔面料，水洗预缩高温固色",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Industrial Workwear"
+    }
+  },
+  {
+    "sku": "GAR-DJ-002",
+    "sourceNumber": 47,
+    "slug": "mid-blue-denim-work-jacket-gar-dj-002",
+    "name": "Mid-Blue Denim Work Jacket",
+    "primaryCollection": "industrial-workwear",
+    "secondaryCollections": [],
+    "garmentType": "Denim Work Jacket",
+    "summary": "A specification-led mid-blue denim work jacket built around 100% cotton denim with pre-wash and colour-setting options for manufacturing and maintenance.",
+    "applications": [
+      "Manufacturing",
+      "Maintenance",
+      "Logistics",
+      "Engineering support"
+    ],
+    "materials": [
+      {
+        "value": "100% cotton denim with pre-wash and colour-setting options.",
+        "status": "configurable"
+      }
+    ],
+    "referenceWeight": {
+      "value": "10–12 oz (approx. 340–410 g/m²)",
+      "status": "reference"
+    },
+    "construction": [
+      "Point-collar denim work jacket",
+      "Front button closure",
+      "Chest and lower-pocket construction",
+      "Wash and stitching details confirmed through samples"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Heat transfer",
+      "Woven or rubber patches",
+      "Project labels and packing marks"
+    ],
+    "filters": [
+      "Cotton",
+      "Denim",
+      "Work Jacket"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-dj-002/front.webp",
+      "back": "/assets/products/gar-dj-002/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Mid-Blue Denim Work Jacket | GAR-DJ-002 | LF Clothing",
+      "description": "Mid-Blue Denim Work Jacket (GAR-DJ-002) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "牛仔夹克",
+      "sourceName": "纯棉水洗牛仔工装夹克",
+      "sourceMaterialText": "100%棉牛仔面料，水洗预缩高温固色",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Industrial Workwear"
+    }
+  },
+  {
+    "sku": "GAR-TJ-004",
+    "sourceNumber": 48,
+    "slug": "red-panel-team-track-jacket-gar-tj-004",
+    "name": "Red Panel Team Track Jacket",
+    "primaryCollection": "team-staff-apparel",
+    "secondaryCollections": [],
+    "garmentType": "Team Track Jacket",
+    "summary": "A versatile red panel team track jacket built around 60% cotton / 40% polyester for staff programs and education and clubs.",
+    "applications": [
+      "Staff programs",
+      "Education and clubs",
+      "Events and promotion",
+      "General teamwear"
+    ],
+    "materials": [
+      {
+        "value": "60% cotton / 40% polyester.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "280–320 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Full-front zip team jacket",
+      "Stand collar with colour-block paneling",
+      "Ribbed or adjustable finishing options",
+      "Clear zones for team marks and sponsor graphics"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Screen printing",
+      "Heat transfer",
+      "Woven patches and labels"
+    ],
+    "filters": [
+      "Cotton Blend",
+      "Teamwear",
+      "Colour Block"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-tj-004/front.webp",
+      "back": "/assets/products/gar-tj-004/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Red Panel Team Track Jacket | GAR-TJ-004 | LF Clothing",
+      "description": "Red Panel Team Track Jacket (GAR-TJ-004) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "运动夹克",
+      "sourceName": "棉涤团体运动夹克",
+      "sourceMaterialText": "60%棉40%聚酯纤维",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Team & Staff Apparel"
+    }
+  },
+  {
+    "sku": "GAR-PO-001",
+    "sourceNumber": 49,
+    "slug": "colour-block-short-sleeve-polo-gar-po-001",
+    "name": "Colour-Block Short-Sleeve Polo",
+    "primaryCollection": "team-staff-apparel",
+    "secondaryCollections": [
+      "corporate-service-uniforms"
+    ],
+    "garmentType": "Staff Polo Shirt",
+    "summary": "A practical colour-block short-sleeve polo built around 75% cotton / 25% polyester for staff programs and education and clubs.",
+    "applications": [
+      "Staff programs",
+      "Education and clubs",
+      "Events and promotion",
+      "General teamwear"
+    ],
+    "materials": [
+      {
+        "value": "75% cotton / 25% polyester.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "200–240 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Short-sleeve polo construction",
+      "Rib collar and button placket",
+      "Colour-block panels for team identity",
+      "Chest and sleeve decoration zones"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Screen printing",
+      "Heat transfer",
+      "Woven patches and labels"
+    ],
+    "filters": [
+      "Cotton Blend",
+      "Polo",
+      "Colour Block"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-po-001/front.webp",
+      "back": "/assets/products/gar-po-001/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Colour-Block Short-Sleeve Polo | GAR-PO-001 | LF Clothing",
+      "description": "Colour-Block Short-Sleeve Polo (GAR-PO-001) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "Polo衫",
+      "sourceName": "棉涤短袖Polo衫",
+      "sourceMaterialText": "75%棉25%聚酯纤维",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Team & Staff Apparel"
+    }
+  },
+  {
+    "sku": "GAR-TP-002",
+    "sourceNumber": 50,
+    "slug": "purple-team-track-trousers-gar-tp-002",
+    "name": "Purple Team Track Trousers",
+    "primaryCollection": "team-staff-apparel",
+    "secondaryCollections": [],
+    "garmentType": "Team Track Trousers",
+    "summary": "A configurable purple team track trousers built around 60% cotton / 40% polyester for staff programs and education and clubs.",
+    "applications": [
+      "Staff programs",
+      "Education and clubs",
+      "Events and promotion",
+      "General teamwear"
+    ],
+    "materials": [
+      {
+        "value": "60% cotton / 40% polyester.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "280–320 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Elasticated waist with drawcord option",
+      "Straight or cuffed leg configuration",
+      "Side-pocket options",
+      "Colour panels coordinated with matching jackets"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Screen printing",
+      "Heat transfer",
+      "Woven patches and labels"
+    ],
+    "filters": [
+      "Cotton Blend",
+      "Teamwear",
+      "Trousers"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-tp-002/front.webp",
+      "back": "/assets/products/gar-tp-002/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Purple Team Track Trousers | GAR-TP-002 | LF Clothing",
+      "description": "Purple Team Track Trousers (GAR-TP-002) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "运动长裤",
+      "sourceName": "棉涤团体运动长裤",
+      "sourceMaterialText": "60%棉40%聚酯纤维",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Team & Staff Apparel"
+    }
+  },
+  {
+    "sku": "GAR-TJ-005",
+    "sourceNumber": 51,
+    "slug": "green-and-white-team-track-jacket-gar-tj-005",
+    "name": "Green-and-White Team Track Jacket",
+    "primaryCollection": "team-staff-apparel",
+    "secondaryCollections": [],
+    "garmentType": "Team Track Jacket",
+    "summary": "A project-ready green-and-white team track jacket built around 40% cotton / 60% polyester for staff programs and education and clubs.",
+    "applications": [
+      "Staff programs",
+      "Education and clubs",
+      "Events and promotion",
+      "General teamwear"
+    ],
+    "materials": [
+      {
+        "value": "40% cotton / 60% polyester.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "280–320 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Full-front zip team jacket",
+      "Stand collar with colour-block paneling",
+      "Ribbed or adjustable finishing options",
+      "Clear zones for team marks and sponsor graphics"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Screen printing",
+      "Heat transfer",
+      "Woven patches and labels"
+    ],
+    "filters": [
+      "Cotton Blend",
+      "Teamwear",
+      "Colour Block"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-tj-005/front.webp",
+      "back": "/assets/products/gar-tj-005/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Green-and-White Team Track Jacket | GAR-TJ-005 | LF Clothing",
+      "description": "Green-and-White Team Track Jacket (GAR-TJ-005) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "运动夹克",
+      "sourceName": "棉涤团体运动夹克",
+      "sourceMaterialText": "40%棉60%聚酯纤维",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Team & Staff Apparel"
+    }
+  },
+  {
+    "sku": "GAR-PO-002",
+    "sourceNumber": 52,
+    "slug": "side-panel-staff-polo-gar-po-002",
+    "name": "Side-Panel Staff Polo",
+    "primaryCollection": "team-staff-apparel",
+    "secondaryCollections": [
+      "corporate-service-uniforms"
+    ],
+    "garmentType": "Staff Polo Shirt",
+    "summary": "A specification-led side-panel staff polo built around 75% cotton / 25% polyester for staff programs and education and clubs.",
+    "applications": [
+      "Staff programs",
+      "Education and clubs",
+      "Events and promotion",
+      "General teamwear"
+    ],
+    "materials": [
+      {
+        "value": "75% cotton / 25% polyester.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "200–240 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Short-sleeve polo construction",
+      "Rib collar and button placket",
+      "Colour-block panels for team identity",
+      "Chest and sleeve decoration zones"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Screen printing",
+      "Heat transfer",
+      "Woven patches and labels"
+    ],
+    "filters": [
+      "Cotton Blend",
+      "Polo",
+      "Colour Block"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-po-002/front.webp",
+      "back": "/assets/products/gar-po-002/back.webp",
+      "inner": null
+    },
+    "homepage": true,
+    "seo": {
+      "title": "Side-Panel Staff Polo | GAR-PO-002 | LF Clothing",
+      "description": "Side-Panel Staff Polo (GAR-PO-002) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "Polo衫",
+      "sourceName": "棉涤短袖Polo衫",
+      "sourceMaterialText": "75%棉25%聚酯纤维",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Team & Staff Apparel"
+    }
+  },
+  {
+    "sku": "GAR-TP-003",
+    "sourceNumber": 53,
+    "slug": "green-team-track-trousers-gar-tp-003",
+    "name": "Green Team Track Trousers",
+    "primaryCollection": "team-staff-apparel",
+    "secondaryCollections": [],
+    "garmentType": "Team Track Trousers",
+    "summary": "A versatile green team track trousers built around 35% cotton / 65% polyester for staff programs and education and clubs.",
+    "applications": [
+      "Staff programs",
+      "Education and clubs",
+      "Events and promotion",
+      "General teamwear"
+    ],
+    "materials": [
+      {
+        "value": "35% cotton / 65% polyester.",
+        "status": "verified"
+      }
+    ],
+    "referenceWeight": {
+      "value": "280–320 g/m²",
+      "status": "reference"
+    },
+    "construction": [
+      "Elasticated waist with drawcord option",
+      "Straight or cuffed leg configuration",
+      "Side-pocket options",
+      "Colour panels coordinated with matching jackets"
+    ],
+    "customization": [
+      "Custom colours subject to fabric availability and MOQ",
+      "Buyer size chart and grading support",
+      "Pocket, closure and trim review",
+      "Individual polybag and export carton"
+    ],
+    "branding": [
+      "Embroidery",
+      "Screen printing",
+      "Heat transfer",
+      "Woven patches and labels"
+    ],
+    "filters": [
+      "Cotton Blend",
+      "Teamwear",
+      "Trousers",
+      "Colour Block"
+    ],
+    "colours": "Custom colours available; subject to fabric availability and MOQ.",
+    "sizes": "European and Asian grading available; buyer size chart supported.",
+    "moq": "From 50 pieces per style/colour; subject to fabric, colour and customization.",
+    "sample": "Available; timing confirmed after specification review.",
+    "bulkLeadTime": "Confirmed after sample, specification, quantity and delivery review.",
+    "packaging": "Individual polybag and export carton; project-specific packing available.",
+    "images": {
+      "front": "/assets/products/gar-tp-003/front.webp",
+      "back": "/assets/products/gar-tp-003/back.webp",
+      "inner": null
+    },
+    "homepage": false,
+    "seo": {
+      "title": "Green Team Track Trousers | GAR-TP-003 | LF Clothing",
+      "description": "Green Team Track Trousers (GAR-TP-003) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options."
+    },
+    "internal": {
+      "sourceCategory": "运动长裤",
+      "sourceName": "棉涤团体运动长裤",
+      "sourceMaterialText": "35%棉65%聚酯纤维",
+      "imageStatus": "正面/背面已归档",
+      "reviewStatus": "已归档",
+      "primaryCollectionName": "Team & Staff Apparel"
+    }
+  }
+]

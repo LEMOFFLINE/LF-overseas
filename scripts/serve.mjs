@@ -18,8 +18,10 @@ const mimeTypes = {
   ".xml": "application/xml; charset=utf-8",
 };
 const redirects = new Map([
-  ["/quality", "/manufacturing"],
-  ["/quality.html", "/manufacturing"],
+  ["/quality", "/process-quality"],
+  ["/quality.html", "/process-quality"],
+  ["/solutions", "/customization"],
+  ["/solutions/", "/customization"],
 ]);
 
 createServer((request, response) => {
@@ -35,7 +37,8 @@ createServer((request, response) => {
 
   if (!extname(relativePath)) {
     const htmlPath = `${relativePath}.html`;
-    relativePath = existsSync(join(root, htmlPath)) ? htmlPath : relativePath;
+    const directoryIndex = join(relativePath, "index.html");
+    relativePath = existsSync(join(root, directoryIndex)) ? directoryIndex : (existsSync(join(root, htmlPath)) ? htmlPath : relativePath);
   }
 
   let filePath = normalize(join(root, relativePath));

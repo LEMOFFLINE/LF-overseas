@@ -1,5 +1,5 @@
 [build]
-  command = "node scripts/build.mjs"
+  command = "node scripts/generate-site.mjs && node scripts/validate-site.mjs"
   publish = "dist"
   functions = "netlify/functions"
 
@@ -16,56 +16,26 @@
   force = true
 
 [[redirects]]
-  from = "/business-professional-wear.html"
-  to = "/business-professional-wear"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/corporate-logo-apparel.html"
-  to = "/corporate-logo-apparel"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/industrial-workwear.html"
-  to = "/industrial-workwear"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/team-jackets-hoodies.html"
-  to = "/team-jackets-hoodies"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/outdoor-apparel.html"
-  to = "/outdoor-apparel"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/school-uniforms.html"
-  to = "/school-uniforms"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/manufacturing.html"
-  to = "/manufacturing"
+  to = "/process-quality"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/manufacturing"
+  to = "/process-quality"
   status = 301
   force = true
 
 [[redirects]]
   from = "/quality"
-  to = "/manufacturing"
+  to = "/process-quality"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/quality.html"
-  to = "/manufacturing"
+  from = "/solutions"
+  to = "/customization"
   status = 301
   force = true
 
@@ -77,7 +47,13 @@
 
 [[redirects]]
   from = "/contact.html"
-  to = "/contact"
+  to = "/inquiry"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact"
+  to = "/inquiry"
   status = 301
   force = true
 
@@ -90,3 +66,11 @@
   for = "/*.html"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy = "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; frame-ancestors 'none'"

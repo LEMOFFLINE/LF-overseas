@@ -39,17 +39,17 @@ After saving variables, trigger a new deploy.
 - Frontend submits RFQ data to `/.netlify/functions/rfq`.
 - Netlify Function calls Brevo's Transactional Email API.
 - The email is sent to `RFQ_TO_EMAIL`.
-- The buyer's email is set as `replyTo`, so sales can reply directly.
+- The inquiry includes the buyer's name, WhatsApp or phone number, and message so sales can respond through the supplied contact number.
 - One attachment is supported, with a 4 MB limit.
 - A hidden honeypot field is included to reduce spam.
 
 ## 4. Test checklist
 
 1. Deploy the site on Netlify after setting environment variables.
-2. Open `/contact.html`.
-3. Submit a test RFQ with a real email address.
+2. Open `/inquiry`.
+3. Submit a test inquiry with a name, WhatsApp or phone number, and message.
 4. Confirm the message arrives at `sales@lfclothing.com`.
-5. Reply to the received email and confirm it replies to the test buyer email.
+5. Confirm the buyer's contact number and message appear correctly in the received email.
 6. Test a bad URL such as `/missing-page-test` and confirm the custom 404 page appears.
 7. If the form fails and Brevo logs an unauthorized IP error, authorize the reported IP or relax IP authorization in Brevo security settings.
 

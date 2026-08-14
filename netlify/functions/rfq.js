@@ -34,19 +34,8 @@ function buildEmailHtml(data) {
     <div style="font-family:Arial,Helvetica,sans-serif;color:#1f2933;line-height:1.55;">
       <h2 style="color:#17212b;margin:0 0 16px;">New Inquiry from LF Clothing Website</h2>
       <table cellspacing="0" cellpadding="0" style="border-collapse:collapse;width:100%;max-width:760px;">
-        ${row("Request Type", data.requestType)}
         ${row("Name", data.name)}
-        ${row("Company", data.company)}
-        ${row("Email", data.email)}
         ${row("WhatsApp / Phone", data.phone)}
-        ${row("Country / Region", data.country)}
-        ${row("Product Category", data.category)}
-        ${row("Product Style / LF Code", data.productStyle)}
-        ${row("Estimated Quantity", data.quantity)}
-        ${row("Logo / Decoration", data.logoMethod)}
-        ${row("Target Delivery Time", data.delivery)}
-        ${row("Customization Requirements", data.customization)}
-        ${row("Functional Requirements", data.functionRequirements)}
         ${row("Message", data.message)}
         ${row("Landing Page", data.landingPage)}
         ${row("Form Page", data.pageUrl)}
@@ -87,12 +76,8 @@ exports.handler = async (event) => {
     return json(200, { ok: true });
   }
 
-  if (!data.name || !data.email) {
-    return json(400, { error: "Name and email are required." });
-  }
-
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
-    return json(400, { error: "Please provide a valid email address." });
+  if (!data.name || !data.phone || !data.message) {
+    return json(400, { error: "Name, WhatsApp or phone number, and message are required." });
   }
 
   const attachment = data.attachment;
@@ -119,11 +104,7 @@ exports.handler = async (event) => {
       email: senderEmail,
     },
     to: [{ email: toEmail, name: "Lingfeng Sales" }],
-    replyTo: {
-      email: data.email,
-      name: data.name,
-    },
-    subject: `${data.requestType || "Website Inquiry"}: ${data.category || "General"} - ${data.name}`,
+    subject: `Website Inquiry - ${data.name}`,
     htmlContent: buildEmailHtml({
       ...data,
       functionRequirements: data.functionRequirements || data.function,
