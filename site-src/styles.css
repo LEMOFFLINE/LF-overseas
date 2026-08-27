@@ -204,6 +204,14 @@ button { cursor: pointer; }
 .quality-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .quality-card { padding: 28px; background: var(--paper); border-radius: var(--radius); }
 .quality-card h3 { margin-top: 0; color: var(--navy); }
+.case-study-section { border-top: 1px solid var(--line); }
+.case-study-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.case-study-grid article { padding: 28px; background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--accent); border-radius: var(--radius); }
+.case-study-grid h3 { margin: 10px 0 12px; color: var(--navy); font-size: 1.25rem; line-height: 1.3; }
+.case-study-grid p { margin: 0; color: var(--muted); }
+.case-study-outcome { display: grid; grid-template-columns: 120px minmax(0, 760px); gap: 24px; align-items: start; margin-top: 24px; padding: 24px 28px; color: var(--ink); background: #edf2ef; border-radius: var(--radius); }
+.case-study-outcome strong { color: var(--navy); font-size: 1.1rem; }
+.case-study-outcome p { margin: 0; }
 .site-footer { padding: 78px 0 24px; color: #cbd1d0; background: #202a2d; }
 .footer-grid { display: grid; grid-template-columns: 1.3fr .8fr 1.25fr; gap: 48px; }
 .footer-brand p { max-width: 390px; }
@@ -241,7 +249,7 @@ button { cursor: pointer; }
   .proof-item:nth-child(2) { border-right: 0; }
   .proof-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
   .product-grid { grid-template-columns: repeat(2, 1fr); }
-  .collection-grid, .feature-grid, .quality-grid { grid-template-columns: 1fr 1fr; }
+  .collection-grid, .feature-grid, .quality-grid, .case-study-grid { grid-template-columns: 1fr 1fr; }
   .process-list { grid-template-columns: 1fr 1fr; }
   .split, .product-main, .detail-grid, .form-layout { grid-template-columns: 1fr; }
   .capability-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -259,7 +267,7 @@ button { cursor: pointer; }
   .hero-actions { align-items: stretch; flex-direction: column; }
   .hero-actions .btn { width: 100%; }
   .hero-actions .text-link { justify-content: center; }
-  .proof-grid, .product-grid, .collection-grid, .feature-grid, .process-list, .quality-grid, .footer-grid { grid-template-columns: 1fr; }
+  .proof-grid, .product-grid, .collection-grid, .feature-grid, .process-list, .quality-grid, .case-study-grid, .footer-grid { grid-template-columns: 1fr; }
   .proof-item { padding-left: 0; border-right: 0; border-bottom: 1px solid var(--line); }
   .product-card h3 { min-height: 0; }
   .photo-collage { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; height: auto; }
@@ -281,6 +289,7 @@ button { cursor: pointer; }
   .product-meta, .form-two { grid-template-columns: 1fr; }
   .detail-grid { gap: 24px; }
   .timeline-item { grid-template-columns: 54px 1fr; gap: 14px; }
+  .case-study-outcome { grid-template-columns: 1fr; gap: 8px; padding: 22px; }
   .footer-bottom { flex-direction: column; }
 }
 @media (prefers-reduced-motion: reduce) {
