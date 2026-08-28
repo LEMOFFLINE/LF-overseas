@@ -8,7 +8,7 @@ const collections = JSON.parse(await readFile(path.join(root, "data", "collectio
 const styles = await readFile(path.join(root, "site-src", "styles.css"), "utf8");
 const siteJs = await readFile(path.join(root, "site-src", "site.js"), "utf8");
 const baseUrl = "https://lfclothing.com";
-const today = "2026-08-12";
+const today = new Date().toISOString().slice(0, 10);
 
 const partners = [
   ["3M", "3m.jpg"], ["All Nippon Airways", "ana.jpg"], ["Apple", "apple.jpg"], ["BMW", "bmw.jpg"],
@@ -22,7 +22,14 @@ const projectDisclaimer = "These logos identify selected organisations whose app
 
 const escapeHtml = (value = "") => String(value)
   .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
-const absolute = (url) => `${baseUrl}${url}`;
+function canonicalPath(url = "/") {
+  if (!url.startsWith("/") || url.startsWith("//")) return url;
+  const parsed = new URL(url, baseUrl);
+  const pathname = parsed.pathname === "/" ? "/" : `${parsed.pathname.replace(/\/+$/, "")}/`;
+  return `${pathname}${parsed.search}${parsed.hash}`;
+}
+const absolute = (url) => `${baseUrl}${canonicalPath(url)}`;
+const normalizeInternalLinks = (html) => html.replace(/href="(\/(?!\/)[^"]*)"/g, (_match, url) => `href="${canonicalPath(url)}"`);
 const collectionBySlug = new Map(collections.map((item) => [item.slug, item]));
 const productBySku = new Map(products.map((item) => [item.sku, item]));
 const productUrl = (product) => `/products/${product.slug}`;
@@ -78,11 +85,12 @@ function layout({ title, description, pathName, active, body, schema = [], robot
     address: { "@type": "PostalAddress", streetAddress: "Room 203, Building 1, No. 18 Jia, Longtai Road, Jiugong Industrial Park, Daxing District", addressLocality: "Beijing", addressCountry: "CN" },
     sameAs: ["https://www.linkedin.com/in/kai-wang-b6aa79420/", "https://www.facebook.com/profile.php?id=61591964337372"],
   };
+  const pageContent = normalizeInternalLinks(`${header(active)}<main id="main">${body}</main>${footer()}`);
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(description)}"><meta name="robots" content="${robots}"><link rel="canonical" href="${url}">
     <meta property="og:type" content="website"><meta property="og:site_name" content="LF Clothing"><meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${url}"><meta property="og:image" content="${absolute(image)}">
     <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${escapeHtml(title)}"><meta name="twitter:description" content="${escapeHtml(description)}"><meta name="twitter:image" content="${absolute(image)}">
     <link rel="icon" type="image/png" sizes="48x48" href="/assets/brand/lf-icon-48.png"><link rel="icon" type="image/png" sizes="192x192" href="/assets/brand/lf-icon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/apple-touch-icon.png"><link rel="stylesheet" href="/styles.css">
-    ${jsonLd(organization)}${schema.map(jsonLd).join("")}</head><body>${header(active)}<main id="main">${body}</main>${footer()}<script src="/site.js" defer></script></body></html>`;
+    ${jsonLd(organization)}${schema.map(jsonLd).join("")}</head><body>${pageContent}<script src="/site.js" defer></script></body></html>`;
 }
 
 function breadcrumb(items, current) {

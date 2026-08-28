@@ -4,6 +4,16 @@ import path from "node:path";
 const root = path.resolve(process.argv[2] || "dist");
 const products = JSON.parse(await readFile(path.resolve("data/products.json"), "utf8"));
 const errors = [];
+const baseUrl = "https://lfclothing.com";
+
+function hasTrailingSlash(url) {
+  try {
+    const parsed = new URL(url);
+    return parsed.pathname === "/" || parsed.pathname.endsWith("/");
+  } catch {
+    return false;
+  }
+}
 
 async function walk(dir) {
   const result = [];
@@ -32,6 +42,7 @@ for (const file of htmlFiles) {
   if (!title || title.length < 20 || title.length > 72) errors.push(`${rel}: title length ${title?.length || 0}`);
   if (!description || description.length < 70 || description.length > 190) errors.push(`${rel}: description length ${description?.length || 0}`);
   if (!is404 && !canonical?.startsWith("https://lfclothing.com/")) errors.push(`${rel}: invalid canonical`);
+  if (!is404 && !hasTrailingSlash(canonical)) errors.push(`${rel}: canonical must use a trailing slash`);
   if (!is404 && !/index,follow/.test(html)) errors.push(`${rel}: not indexable`);
   if (is404 && !/noindex,follow/.test(html)) errors.push(`${rel}: 404 must be noindex`);
   if (!/<meta property="og:title"/.test(html) || !/<meta name="twitter:card"/.test(html)) errors.push(`${rel}: social metadata missing`);
@@ -44,6 +55,12 @@ for (const file of htmlFiles) {
     const candidate = url === "/" ? path.join(root, "index.html") : path.join(root, url.slice(1));
     const target = path.extname(candidate) ? candidate : path.join(candidate, "index.html");
     if (!await exists(target)) errors.push(`${rel}: broken internal reference ${url}`);
+  }
+  for (const match of html.matchAll(/href="(\/(?!\/)[^"]*)"/g)) {
+    const url = match[1];
+    if (url.startsWith("/assets/") || url === "/styles.css") continue;
+    const parsed = new URL(url, baseUrl);
+    if (parsed.pathname !== "/" && !parsed.pathname.endsWith("/")) errors.push(`${rel}: internal link must use a trailing slash: ${url}`);
   }
   for (const json of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
     try { JSON.parse(json[1]); } catch (error) { errors.push(`${rel}: invalid JSON-LD ${error.message}`); }
@@ -67,6 +84,7 @@ const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((item) => item[1]);
 if (sitemapUrls.length !== 62) errors.push(`expected 62 sitemap URLs, found ${sitemapUrls.length}`);
 if (new Set(sitemapUrls).size !== sitemapUrls.length) errors.push("sitemap has duplicate URLs");
+for (const url of sitemapUrls) if (!hasTrailingSlash(url)) errors.push(`sitemap URL must use a trailing slash: ${url}`);
 
 if (errors.length) {
   console.error(errors.join("\n"));
