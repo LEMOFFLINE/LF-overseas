@@ -7,6 +7,7 @@ const products = JSON.parse(await readFile(path.join(root, "data", "products.jso
 const collections = JSON.parse(await readFile(path.join(root, "data", "collections.json"), "utf8"));
 const styles = await readFile(path.join(root, "site-src", "styles.css"), "utf8");
 const siteJs = await readFile(path.join(root, "site-src", "site.js"), "utf8");
+const analyticsJs = await readFile(path.join(root, "site-src", "analytics.js"), "utf8");
 const baseUrl = "https://lfclothing.com";
 const aviationRoute = "/collections/aviation-flight-suits";
 
@@ -148,8 +149,12 @@ function footer() {
       </div></div>
       <div><h3>Explore</h3><div class="footer-links"><a href="/products">Products</a><a href="/customization">Customization</a><a href="/process-quality">Process &amp; Quality</a><a href="/about">About</a></div></div>
       <div><h3>Contact</h3><div class="footer-links"><a href="mailto:sales@lfclothing.com">sales@lfclothing.com</a><a href="https://wa.me/8613901335518">+86 139 0133 5518</a><span>Room 203, Building 1, No. 18 Jia, Longtai Road, Jiugong Industrial Park, Daxing District, Beijing, China.</span></div></div>
-    </div><div class="footer-bottom"><span>© 2026 Beijing Lingfeng Apparel Co., Ltd. All rights reserved.</span></div>
+    </div><div class="footer-bottom"><span>© 2026 Beijing Lingfeng Apparel Co., Ltd. All rights reserved.</span><span><a href="/privacy">Privacy &amp; Cookies</a><button class="footer-cookie-button" type="button" data-cookie-settings>Cookie settings</button></span></div>
   </div></footer>`;
+}
+
+function cookieBanner() {
+  return `<aside class="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description" aria-hidden="true" data-cookie-banner hidden><div><h2 id="cookie-title">Analytics preferences</h2><p id="cookie-description">We use Google Analytics to understand which pages and campaigns lead to business inquiries. You can allow analytics or reject optional tracking.</p><a href="/privacy/">Privacy &amp; Cookies</a></div><div class="cookie-actions"><button class="btn btn-primary" type="button" data-cookie-accept>Allow analytics</button><button class="btn btn-outline" type="button" data-cookie-reject>Reject optional</button></div></aside>`;
 }
 
 function jsonLd(value) { return `<script type="application/ld+json">${JSON.stringify(value).replace(/</g, "\\u003c")}</script>`; }
@@ -172,8 +177,8 @@ function layout({ title, description, pathName, active, body, schema = [], robot
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(description)}"><meta name="robots" content="${robots}"><link rel="canonical" href="${url}">
     <meta property="og:type" content="website"><meta property="og:site_name" content="LF Clothing"><meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${url}"><meta property="og:image" content="${absoluteAsset(image)}">
     <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${escapeHtml(title)}"><meta name="twitter:description" content="${escapeHtml(description)}"><meta name="twitter:image" content="${absoluteAsset(image)}">
-    <link rel="icon" type="image/png" sizes="48x48" href="/assets/brand/lf-icon-48.png"><link rel="icon" type="image/png" sizes="192x192" href="/assets/brand/lf-icon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/apple-touch-icon.png"><link rel="stylesheet" href="/styles.css">
-    ${jsonLd(organization)}${schema.map(jsonLd).join("")}</head><body>${pageContent}<script src="/site.js" defer></script></body></html>`;
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/brand/lf-icon-48.png"><link rel="icon" type="image/png" sizes="192x192" href="/assets/brand/lf-icon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/apple-touch-icon.png"><link rel="stylesheet" href="/styles.css"><script src="/analytics.js"></script>
+    ${jsonLd(organization)}${schema.map(jsonLd).join("")}</head><body>${pageContent}${cookieBanner()}<script src="/site.js" defer></script></body></html>`;
 }
 
 function breadcrumb(items, current) {
@@ -421,6 +426,7 @@ await rm(dist, { recursive: true, force: true });
 await mkdir(path.join(dist, "assets"), { recursive: true });
 await writeFile(path.join(dist, "styles.css"), styles, "utf8");
 await writeFile(path.join(dist, "site.js"), siteJs, "utf8");
+await writeFile(path.join(dist, "analytics.js"), analyticsJs, "utf8");
 
 await cp(path.join(root, "assets", "brand"), path.join(dist, "assets", "brand"), { recursive: true });
 await cp(path.join(root, "assets", "products"), path.join(dist, "assets", "products"), { recursive: true });
@@ -441,6 +447,9 @@ for (const page of priorityPages) await writePage(page.route, priorityLandingPag
 for (const collection of collections) await writePage(`/collections/${collection.slug}`, collectionPage(collection));
 await writePage(aviationRoute, aviationFlightSuitsPage());
 for (const page of ["customization", "process-quality", "projects", "about", "inquiry"]) await writePage(`/${page}`, standardPage(page));
+
+const privacyBody = `${pageHero("Privacy & cookies", "How LF Clothing Uses Website and Inquiry Data", "This notice explains the information used to operate the website, respond to sourcing inquiries and measure website performance.")}<section class="section"><div class="container legal-content"><h2>Information You Submit</h2><p>When you send an inquiry, LF receives the contact details, project information and optional reference file you provide. We also retain the landing page, referral and campaign parameters attached to the inquiry so we can understand how the request reached us and respond appropriately.</p><h2>Website Analytics</h2><p>LF uses Google Analytics 4 to understand page usage and campaign performance. Analytics and advertising storage are denied by default. If you allow analytics, Google Analytics may process information about your visit, such as pages viewed, approximate location, device and browser information, referral source and campaign parameters. Local development visits are excluded from the production analytics property.</p><h2>Consent and Your Choice</h2><p>You can allow or reject optional analytics from the website notice. Your choice is stored in your browser so the site can remember it. Use the Cookie settings control in the footer to review or change the preference on this device.</p><h2>Service Providers</h2><p>LF uses Netlify to host the website and process the inquiry endpoint, Brevo to deliver inquiry email, and Google Analytics when analytics is allowed. These providers process information under their own security, retention and privacy terms.</p><h2>Contact</h2><p>For a question about website or inquiry data, email <a class="text-link" href="mailto:sales@lfclothing.com">sales@lfclothing.com</a>.</p></div></section>`;
+await writePage("/privacy", layout({ title: "Privacy & Cookies | LF Clothing", description: "Learn how LF Clothing handles website analytics, cookie preferences and information submitted with custom workwear and uniform inquiries.", pathName: "/privacy", body: privacyBody, robots: "noindex,follow" }));
 
 const errorBody = `<section class="page-hero"><div class="container"><p class="eyebrow">404</p><h1>Page Not Found</h1><p>The requested page is not part of the current LF Clothing product range.</p><p style="margin-top:28px"><a class="btn btn-light" href="/products">Browse Products</a></p></div></section>`;
 await writeFile(path.join(dist, "404.html"), layout({ title: "Page Not Found | LF Clothing", description: "The requested LF Clothing page could not be found. Browse the current workwear and uniform range or send LF Clothing a sourcing brief.", pathName: "/404", body: errorBody, robots: "noindex,follow" }), "utf8");

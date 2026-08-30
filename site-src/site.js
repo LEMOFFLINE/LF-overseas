@@ -138,6 +138,14 @@ const getFirstTouch = () => {
 
 const firstTouch = getFirstTouch();
 
+document.querySelectorAll('a[href^="https://wa.me"], a[href^="mailto:"], a[href^="tel:"]').forEach((link) => {
+  link.addEventListener("click", () => {
+    const href = link.getAttribute("href") || "";
+    const contactMethod = href.startsWith("https://wa.me") ? "whatsapp" : href.startsWith("mailto:") ? "email" : "phone";
+    window.lfTrackEvent?.("contact_click", { contact_method: contactMethod, page_path: location.pathname });
+  });
+});
+
 document.querySelectorAll("[data-inquiry-form]").forEach((rfqForm) => {
   const params = new URLSearchParams(location.search);
   const skus = params.get("skus") || params.get("sku");
@@ -193,7 +201,12 @@ document.querySelectorAll("[data-inquiry-form]").forEach((rfqForm) => {
       if (!response.ok) throw new Error(result.error || "Unable to send the inquiry right now.");
       rfqForm.reset();
       showMessage("Thank you. Your inquiry has been sent to LF Clothing.");
-      if (typeof window.gtag === "function") window.gtag("event", "generate_lead", { source_category: firstTouch.sourceCategory });
+      window.lfTrackEvent?.("generate_lead", {
+        source_category: firstTouch.sourceCategory,
+        campaign_source: firstTouch.utmSource || "",
+        campaign_name: firstTouch.utmCampaign || "",
+        form_location: location.pathname,
+      });
     } catch (error) {
       showMessage(`${error.message} You can also email sales@lfclothing.com.`, true);
     } finally {

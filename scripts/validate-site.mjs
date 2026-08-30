@@ -40,6 +40,7 @@ for (const file of htmlFiles) {
   const rel = path.relative(root, file).replaceAll("\\", "/");
   const html = await readFile(file, "utf8");
   const is404 = rel === "404.html";
+  const isPrivacy = rel === "privacy/index.html";
   const title = decodeHtml(html.match(/<title>([\s\S]*?)<\/title>/i)?.[1]?.trim());
   const description = html.match(/<meta name="description" content="([^"]+)"/i)?.[1]?.trim();
   const canonical = html.match(/<link rel="canonical" href="([^"]+)"/i)?.[1]?.trim();
@@ -49,8 +50,8 @@ for (const file of htmlFiles) {
   if (!description || description.length < 70 || description.length > 190) errors.push(`${rel}: description length ${description?.length || 0}`);
   if (!is404 && !canonical?.startsWith("https://lfclothing.com/")) errors.push(`${rel}: invalid canonical`);
   if (!is404 && !hasTrailingSlash(canonical)) errors.push(`${rel}: canonical must use a trailing slash`);
-  if (!is404 && !/index,follow/.test(html)) errors.push(`${rel}: not indexable`);
-  if (is404 && !/noindex,follow/.test(html)) errors.push(`${rel}: 404 must be noindex`);
+  if (!is404 && !isPrivacy && !/index,follow/.test(html)) errors.push(`${rel}: not indexable`);
+  if ((is404 || isPrivacy) && !/noindex,follow/.test(html)) errors.push(`${rel}: auxiliary page must be noindex`);
   if (!/<meta property="og:title"/.test(html) || !/<meta name="twitter:card"/.test(html)) errors.push(`${rel}: social metadata missing`);
   if (!/<script type="application\/ld\+json">/.test(html)) errors.push(`${rel}: structured data missing`);
   for (const match of html.matchAll(/https:\/\/lfclothing\.com\/[^"'<>\s]+\.(?:png|jpe?g|webp|svg)\//gi)) errors.push(`${rel}: asset URL must not have a trailing slash: ${match[0]}`);
@@ -102,6 +103,11 @@ for (const product of products.filter((item) => !item.homepage)) if (!redirects.
 
 const allText = await Promise.all(files.filter((file) => /\.(html|js|css|xml)$/.test(file)).map((file) => readFile(file, "utf8")));
 const combined = allText.join("\n");
+const analytics = await readFile(path.join(root, "analytics.js"), "utf8");
+if (!analytics.includes('G-D5XWSW9S5V')) errors.push("GA4 measurement ID is missing");
+if (!analytics.includes('window.gtag("consent", "default"')) errors.push("Consent Mode default is missing");
+if (!analytics.includes('lfProductionHosts.has(location.hostname)')) errors.push("GA4 must be limited to production hosts");
+if (!analytics.includes('window.lfTrackEvent')) errors.push("consent-aware event helper is missing");
 if (/[\u3400-\u9fff]|[，。；（）]/.test(combined)) errors.push("public build contains Chinese product or interface text");
 for (const banned of ["Request Full Catalog", "Download Catalogue", "700,000", "200+ Production", "Aviation & Special Projects", "LF-BW-", "LF-IW-", "LF-CA-"]) {
   if (combined.includes(banned)) errors.push(`banned legacy content remains: ${banned}`);
@@ -133,6 +139,8 @@ for (const [rel, expectedTitle] of expectedSeoTitles) {
 }
 
 const homepage = await readFile(path.join(root, "index.html"), "utf8");
+if (!homepage.includes('<script src="/analytics.js"></script>')) errors.push("homepage is missing the analytics bootstrap");
+if (!homepage.includes('data-cookie-banner')) errors.push("homepage is missing analytics consent controls");
 const homepageRequirements = [
   ["representative product tiles", (homepage.match(/class="home-product-tile"/g) || []).length, 9],
   ["homepage capability cards", (homepage.match(/class="home-capability-card"/g) || []).length, 6],
@@ -150,6 +158,10 @@ const aboutPage = await readFile(path.join(root, "about", "index.html"), "utf8")
 if (!aboutPage.includes("Quick Answers About LF Clothing")) errors.push("about page is missing the relocated FAQ section");
 if (!aboutPage.includes('"@type":"FAQPage"')) errors.push("about page is missing FAQ structured data");
 if ((aboutPage.match(/class="faq-grid"/g) || []).length !== 1) errors.push("about page must contain exactly one FAQ grid");
+const privacyPage = await readFile(path.join(root, "privacy", "index.html"), "utf8");
+if (!privacyPage.includes("How LF Clothing Uses Website and Inquiry Data")) errors.push("privacy page content is missing");
+if (!privacyPage.includes('noindex,follow')) errors.push("privacy page must remain outside the search index");
+if (sitemapUrls.includes(`${baseUrl}/privacy/`)) errors.push("privacy page must not be included in the SEO sitemap");
 
 const productsPage = await readFile(path.join(root, "products", "index.html"), "utf8");
 if ((productsPage.match(/class="product-category-link"/g) || []).length !== collections.length + 1) errors.push("products page must link to every product collection and the aviation collection");
