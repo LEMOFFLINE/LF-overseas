@@ -44,6 +44,19 @@ if (carousel) {
   start();
 }
 
+const mobileQuoteBar = document.querySelector(".mobile-quote-bar");
+const homeHero = document.querySelector(".home-hero");
+if (mobileQuoteBar && homeHero) {
+  if ("IntersectionObserver" in window) {
+    const quoteObserver = new IntersectionObserver(([entry]) => {
+      mobileQuoteBar.classList.toggle("is-visible", !entry.isIntersecting);
+    }, { threshold: 0.05 });
+    quoteObserver.observe(homeHero);
+  } else {
+    mobileQuoteBar.classList.add("is-visible");
+  }
+}
+
 const productGrid = document.querySelector("[data-product-grid]");
 if (productGrid) {
   const cards = [...productGrid.querySelectorAll("[data-product-card]")];
@@ -88,8 +101,44 @@ if (gallery) {
   }));
 }
 
-const rfqForm = document.querySelector("[data-inquiry-form]");
-if (rfqForm) {
+const attributionKey = "lf_inquiry_attribution";
+const classifySource = (referrer, utmSource) => {
+  const source = String(utmSource || "").toLowerCase();
+  const host = (() => { try { return new URL(referrer).hostname.toLowerCase(); } catch { return ""; } })();
+  if (source.includes("chatgpt") || host.includes("chatgpt.com") || host.includes("openai.com")) return "ChatGPT";
+  if (source.includes("perplexity") || host.includes("perplexity.ai")) return "Perplexity";
+  if (source.includes("google") || host.includes("google.")) return "Google";
+  if (source.includes("bing") || source.includes("copilot") || host.includes("bing.com") || host.includes("copilot.microsoft.com")) return "Bing / Copilot";
+  if (source.includes("claude") || host.includes("claude.ai")) return "Claude";
+  if (source.includes("gemini") || host.includes("gemini.google.com")) return "Gemini";
+  if (source) return `Campaign: ${utmSource}`;
+  if (host) return `Referral: ${host}`;
+  return "Direct / unavailable";
+};
+
+const getFirstTouch = () => {
+  try {
+    const stored = sessionStorage.getItem(attributionKey);
+    if (stored) return JSON.parse(stored);
+  } catch {}
+  const params = new URLSearchParams(location.search);
+  const attribution = {
+    landingPage: location.href,
+    firstReferrer: document.referrer || "Direct / unavailable",
+    utmSource: params.get("utm_source") || "",
+    utmMedium: params.get("utm_medium") || "",
+    utmCampaign: params.get("utm_campaign") || "",
+    utmContent: params.get("utm_content") || "",
+    utmTerm: params.get("utm_term") || "",
+  };
+  attribution.sourceCategory = classifySource(attribution.firstReferrer, attribution.utmSource);
+  try { sessionStorage.setItem(attributionKey, JSON.stringify(attribution)); } catch {}
+  return attribution;
+};
+
+const firstTouch = getFirstTouch();
+
+document.querySelectorAll("[data-inquiry-form]").forEach((rfqForm) => {
   const params = new URLSearchParams(location.search);
   const skus = params.get("skus") || params.get("sku");
   const product = params.get("product");
@@ -101,7 +150,7 @@ if (rfqForm) {
   if (context) initialMessage.push(`Context: ${context}`);
   if (initialMessage.length && rfqForm.elements.message) rfqForm.elements.message.value = initialMessage.join("\n");
 
-  const message = document.querySelector("[data-form-message]");
+  const message = rfqForm.querySelector("[data-form-message]");
   const submit = rfqForm.querySelector("button[type=submit]");
   const maxBytes = 4 * 1024 * 1024;
   const fileToAttachment = (file) => new Promise((resolve, reject) => {
@@ -131,11 +180,20 @@ if (rfqForm) {
       payload.attachment = await fileToAttachment(file);
       payload.pageUrl = location.href;
       payload.referrer = document.referrer || "Direct / unavailable";
+      payload.landingPage = firstTouch.landingPage;
+      payload.firstReferrer = firstTouch.firstReferrer;
+      payload.sourceCategory = firstTouch.sourceCategory;
+      payload.utmSource = firstTouch.utmSource;
+      payload.utmMedium = firstTouch.utmMedium;
+      payload.utmCampaign = firstTouch.utmCampaign;
+      payload.utmContent = firstTouch.utmContent;
+      payload.utmTerm = firstTouch.utmTerm;
       const response = await fetch("/.netlify/functions/rfq", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(payload) });
       const result = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(result.error || "Unable to send the inquiry right now.");
       rfqForm.reset();
       showMessage("Thank you. Your inquiry has been sent to LF Clothing.");
+      if (typeof window.gtag === "function") window.gtag("event", "generate_lead", { source_category: firstTouch.sourceCategory });
     } catch (error) {
       showMessage(`${error.message} You can also email sales@lfclothing.com.`, true);
     } finally {
@@ -143,4 +201,4 @@ if (rfqForm) {
       submit.textContent = original;
     }
   });
-}
+});

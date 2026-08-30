@@ -5,8 +5,8 @@ Static B2B workwear and uniform website for Beijing Lingfeng Apparel.
 ## Site structure
 
 - `data/products.source.json` — locked extraction of the reviewed 50-SKU business workbook.
-- `data/products.json` — curated public product data used by the site generator.
-- `data/collections.json` — five public buyer-led collections.
+- `data/products.json` — archived product data retained for future curation; only selected references are currently displayed.
+- `data/collections.json` — five public buyer-led product collections and their SEO metadata.
 - `assets/products/` — 50 front images, 50 back images and three inner-construction images.
 - `assets/operations/` — 23 real office, sample and production-environment photos.
 - `assets/site/` — the three approved legacy Hero images only.
@@ -23,7 +23,7 @@ Netlify runs:
 node scripts/generate-site.mjs && node scripts/validate-site.mjs
 ```
 
-The generated site contains 62 indexable URLs plus a noindex 404 page, including 50 canonical product pages and five collection pages.
+The generated site contains 25 indexable URLs plus a noindex 404 page. It includes four priority product pages, a selected-products overview, five supporting collection pages, one aviation flight-suit landing page, eight retained product detail pages, project content and inquiry pages. The remaining 42 legacy product URLs redirect to the most relevant active category or service page.
 
 ## Product data review flow
 

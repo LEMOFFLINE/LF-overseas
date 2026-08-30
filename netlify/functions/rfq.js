@@ -37,9 +37,11 @@ function buildEmailHtml(data) {
         ${row("Name", data.name)}
         ${row("WhatsApp / Phone", data.phone)}
         ${row("Message", data.message)}
+        ${row("First-touch Source", data.sourceCategory)}
         ${row("Landing Page", data.landingPage)}
+        ${row("First Referrer", data.firstReferrer)}
         ${row("Form Page", data.pageUrl)}
-        ${row("Referrer", data.referrer)}
+        ${row("Current Referrer", data.referrer)}
         ${row("UTM Source", data.utmSource)}
         ${row("UTM Medium", data.utmMedium)}
         ${row("UTM Campaign", data.utmCampaign)}

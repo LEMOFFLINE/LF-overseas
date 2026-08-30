@@ -4,6 +4,8 @@
     "name": "Industrial Workwear",
     "shortName": "Industrial",
     "description": "Work jackets, coveralls, trousers, coats and denim layers for manufacturing, maintenance, logistics and general industrial programs.",
+    "seoTitle": "Industrial Workwear Supplier China | LF Clothing",
+    "seoDescription": "Source custom industrial workwear from China, including work jackets, coveralls, trousers and coats, with B2B sampling, quality control and export support.",
     "intro": "Start with the working environment, movement, pocket needs and laundering plan. LF then coordinates fabric, construction, sampling and production around the agreed specification.",
     "factors": [
       "Daily task and movement",
@@ -17,6 +19,8 @@
     "name": "Protective & Hi-Vis",
     "shortName": "Protective & Hi-Vis",
     "description": "High-visibility and performance-oriented garments configured around the buyer's target material, construction and verification requirements.",
+    "seoTitle": "Protective & Hi-Vis Workwear Supplier China | LF Clothing",
+    "seoDescription": "Custom protective and hi-vis workwear supply from China, including reflective, FR-option and anti-static-option garments developed to project requirements.",
     "intro": "Performance is specified project by project. Fabric properties, reflective layouts and garment testing are confirmed against the destination market and intended use.",
     "factors": [
       "Risk assessment and end use",
@@ -30,6 +34,8 @@
     "name": "Cold Weather & Outdoor Workwear",
     "shortName": "Cold Weather",
     "description": "Shells, insulated jackets and weather-ready workwear for outdoor teams, field service and cold-season operations.",
+    "seoTitle": "Cold Weather Workwear & Outdoor Jackets Supplier China | LF Clothing",
+    "seoDescription": "Source custom cold-weather workwear and outdoor jackets from China, including insulated coveralls, softshells and weather-ready shells for B2B programs.",
     "intro": "Outer fabric, insulation, hood, liner and weather-protection details are balanced against climate, activity level and the buyer's delivery program.",
     "factors": [
       "Climate and activity level",
@@ -43,6 +49,8 @@
     "name": "Corporate & Service Uniforms",
     "shortName": "Corporate Uniforms",
     "description": "Tailored jackets and trousers for corporate, reception, hospitality, institutional and service uniform programs.",
+    "seoTitle": "Custom Corporate Uniform Supplier China | LF Clothing",
+    "seoDescription": "Custom corporate and service uniforms from China for offices, reception, hospitality and institutions, with coordinated sampling, sizing and branding.",
     "intro": "Fabric, silhouette, grading, lining and presentation details are coordinated across roles so a program reads as one consistent uniform system.",
     "factors": [
       "Role and presentation level",
@@ -53,12 +61,14 @@
   },
   {
     "slug": "team-staff-apparel",
-    "name": "Team & Staff Apparel",
-    "shortName": "Team & Staff",
-    "description": "Track jackets, trousers, hoodies, softshells and polos for staff, education, team and branded apparel programs.",
-    "intro": "Colour blocking, decoration placement, size mix and repeat-order practicality are reviewed together before samples are developed.",
+    "name": "School, Team & Staff Apparel",
+    "shortName": "School & Team",
+    "description": "Track jackets, trousers, hoodies, softshells and polos for school uniforms, staff, education, team and branded apparel programs.",
+    "seoTitle": "Custom School Uniform & Team Apparel Supplier China | LF Clothing",
+    "seoDescription": "Custom school uniforms, staff apparel and teamwear from China, including polos, hoodies, softshells and tracksuits with B2B sizing and branding support.",
+    "intro": "School identity, colour blocking, decoration placement, size mix and repeat-order practicality are reviewed together before samples are developed.",
     "factors": [
-      "Team identity and colour blocking",
+      "School or team identity and colour blocking",
       "Decoration method and placement",
       "Size mix and grading",
       "Fabric hand feel and care"

@@ -16,6 +16,72 @@
   force = true
 
 [[redirects]]
+  from = "/business-professional-wear"
+  to = "/custom-suits/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/business-professional-wear.html"
+  to = "/custom-suits/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/corporate-logo-apparel"
+  to = "/products/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/corporate-logo-apparel.html"
+  to = "/products/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industrial-workwear"
+  to = "/custom-workwear/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industrial-workwear.html"
+  to = "/custom-workwear/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/team-jackets-hoodies"
+  to = "/custom-jackets/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/team-jackets-hoodies.html"
+  to = "/custom-jackets/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/outdoor-apparel"
+  to = "/custom-jackets/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/outdoor-apparel.html"
+  to = "/custom-jackets/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/school-uniforms.html"
+  to = "/school-uniforms/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/manufacturing.html"
   to = "/process-quality"
   status = 301
