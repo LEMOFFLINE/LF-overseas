@@ -35,7 +35,9 @@ function buildEmailHtml(data) {
       <h2 style="color:#17212b;margin:0 0 16px;">New Inquiry from LF Clothing Website</h2>
       <table cellspacing="0" cellpadding="0" style="border-collapse:collapse;width:100%;max-width:760px;">
         ${row("Name", data.name)}
+        ${row("Email", data.email)}
         ${row("WhatsApp / Phone", data.phone)}
+        ${row("Country", data.country)}
         ${row("Message", data.message)}
         ${row("First-touch Source", data.sourceCategory)}
         ${row("Landing Page", data.landingPage)}
@@ -78,8 +80,13 @@ exports.handler = async (event) => {
     return json(200, { ok: true });
   }
 
-  if (!data.name || !data.phone || !data.message) {
-    return json(400, { error: "Name, WhatsApp or phone number, and message are required." });
+  const email = String(data.email || "").trim();
+  if (!data.name || !email || !data.phone || !data.country || !data.message) {
+    return json(400, { error: "Name, email, WhatsApp or phone number, country, and message are required." });
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return json(400, { error: "Please enter a valid email address." });
   }
 
   const attachment = data.attachment;
@@ -106,9 +113,11 @@ exports.handler = async (event) => {
       email: senderEmail,
     },
     to: [{ email: toEmail, name: "Lingfeng Sales" }],
+    replyTo: { email, name: String(data.name).slice(0, 70) },
     subject: `Website Inquiry - ${data.name}`,
     htmlContent: buildEmailHtml({
       ...data,
+      email,
       functionRequirements: data.functionRequirements || data.function,
       attachmentName: attachment?.name,
       attachmentSize: attachment?.size,

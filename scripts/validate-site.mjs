@@ -162,6 +162,12 @@ const privacyPage = await readFile(path.join(root, "privacy", "index.html"), "ut
 if (!privacyPage.includes("How LF Clothing Uses Website and Inquiry Data")) errors.push("privacy page content is missing");
 if (!privacyPage.includes('noindex,follow')) errors.push("privacy page must remain outside the search index");
 if (sitemapUrls.includes(`${baseUrl}/privacy/`)) errors.push("privacy page must not be included in the SEO sitemap");
+const inquiryPage = await readFile(path.join(root, "inquiry", "index.html"), "utf8");
+for (const field of ["name", "email", "phone", "country", "message"]) {
+  const fieldPattern = new RegExp(`name=["']${field}["'][^>]*\\brequired\\b`, "i");
+  if (!fieldPattern.test(inquiryPage)) errors.push(`inquiry page is missing required field: ${field}`);
+}
+if (!/<input[^>]*name=["']email["'][^>]*type=["']email["']/i.test(inquiryPage)) errors.push("inquiry email field must use type=email");
 
 const productsPage = await readFile(path.join(root, "products", "index.html"), "utf8");
 if ((productsPage.match(/class="product-category-link"/g) || []).length !== collections.length + 1) errors.push("products page must link to every product collection and the aviation collection");
