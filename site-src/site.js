@@ -146,7 +146,51 @@ document.querySelectorAll('a[href^="https://wa.me"], a[href^="mailto:"], a[href^
   });
 });
 
+const countryCodes = "AD AE AF AG AI AL AM AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO BQ BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CW CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR SS ST SV SX SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS YE YT ZA ZM ZW".split(" ");
+const countryCodeSet = new Set(countryCodes);
+const countryNames = typeof Intl.DisplayNames === "function"
+  ? new Intl.DisplayNames(["en"], { type: "region" })
+  : null;
+const countryChoices = countryCodes
+  .map((code) => ({ code, name: countryNames?.of(code) || code }))
+  .sort((a, b) => a.name.localeCompare(b.name, "en"));
+
+const readCookie = (name) => {
+  const item = document.cookie.split(";").map((part) => part.trim()).find((part) => part.startsWith(`${name}=`));
+  if (!item) return "";
+  try { return decodeURIComponent(item.slice(name.length + 1)); } catch { return ""; }
+};
+
+const saveCountryCookie = (countryCode) => {
+  if (!countryCodeSet.has(countryCode)) return;
+  const secure = location.protocol === "https:" ? "; Secure" : "";
+  document.cookie = `lf_country=${encodeURIComponent(countryCode)}; Max-Age=31536000; Path=/; SameSite=Lax${secure}`;
+};
+
+const browserCountry = () => {
+  if (typeof Intl.Locale !== "function") return "";
+  for (const language of navigator.languages || [navigator.language]) {
+    try {
+      const region = new Intl.Locale(language).region?.toUpperCase();
+      if (countryCodeSet.has(region)) return region;
+    } catch {}
+  }
+  return "";
+};
+
 document.querySelectorAll("[data-inquiry-form]").forEach((rfqForm) => {
+  const countrySelect = rfqForm.querySelector("[data-country-select]");
+  if (countrySelect) {
+    countryChoices.forEach(({ code, name }) => countrySelect.add(new Option(name, code)));
+    const savedCountry = readCookie("lf_country").toUpperCase();
+    const initialCountry = countryCodeSet.has(savedCountry) ? savedCountry : browserCountry();
+    if (initialCountry) {
+      countrySelect.value = initialCountry;
+      if (!savedCountry) saveCountryCookie(initialCountry);
+    }
+    countrySelect.addEventListener("change", () => saveCountryCookie(countrySelect.value));
+  }
+
   const params = new URLSearchParams(location.search);
   const skus = params.get("skus") || params.get("sku");
   const product = params.get("product");
@@ -185,6 +229,7 @@ document.querySelectorAll("[data-inquiry-form]").forEach((rfqForm) => {
       const data = new FormData(rfqForm);
       const file = data.get("attachment");
       const payload = Object.fromEntries([...data.entries()].filter(([key]) => key !== "attachment"));
+      payload.country = countrySelect?.selectedOptions[0]?.textContent?.trim() || payload.countryCode || "";
       payload.attachment = await fileToAttachment(file);
       payload.pageUrl = location.href;
       payload.referrer = document.referrer || "Direct / unavailable";
@@ -199,7 +244,9 @@ document.querySelectorAll("[data-inquiry-form]").forEach((rfqForm) => {
       const response = await fetch("/.netlify/functions/rfq", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(payload) });
       const result = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(result.error || "Unable to send the inquiry right now.");
+      const selectedCountry = countrySelect?.value;
       rfqForm.reset();
+      if (countrySelect && selectedCountry) countrySelect.value = selectedCountry;
       showMessage("Thank you. Your inquiry has been sent to LF Clothing.");
       window.lfTrackEvent?.("generate_lead", {
         source_category: firstTouch.sourceCategory,

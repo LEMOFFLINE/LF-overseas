@@ -160,14 +160,16 @@ if (!aboutPage.includes('"@type":"FAQPage"')) errors.push("about page is missing
 if ((aboutPage.match(/class="faq-grid"/g) || []).length !== 1) errors.push("about page must contain exactly one FAQ grid");
 const privacyPage = await readFile(path.join(root, "privacy", "index.html"), "utf8");
 if (!privacyPage.includes("How LF Clothing Uses Website and Inquiry Data")) errors.push("privacy page content is missing");
+if (!privacyPage.includes("lf_country")) errors.push("privacy page is missing the country preference cookie disclosure");
 if (!privacyPage.includes('noindex,follow')) errors.push("privacy page must remain outside the search index");
 if (sitemapUrls.includes(`${baseUrl}/privacy/`)) errors.push("privacy page must not be included in the SEO sitemap");
 const inquiryPage = await readFile(path.join(root, "inquiry", "index.html"), "utf8");
-for (const field of ["name", "email", "phone", "country", "message"]) {
+for (const field of ["name", "email", "phone", "countryCode", "message"]) {
   const fieldPattern = new RegExp(`name=["']${field}["'][^>]*\\brequired\\b`, "i");
   if (!fieldPattern.test(inquiryPage)) errors.push(`inquiry page is missing required field: ${field}`);
 }
 if (!/<input[^>]*name=["']email["'][^>]*type=["']email["']/i.test(inquiryPage)) errors.push("inquiry email field must use type=email");
+if (!/<select[^>]*name=["']countryCode["'][^>]*data-country-select/i.test(inquiryPage)) errors.push("inquiry country field must use the country selector");
 
 const productsPage = await readFile(path.join(root, "products", "index.html"), "utf8");
 if ((productsPage.match(/class="product-category-link"/g) || []).length !== collections.length + 1) errors.push("products page must link to every product collection and the aviation collection");

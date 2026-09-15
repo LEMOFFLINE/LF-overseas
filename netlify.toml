@@ -3,6 +3,14 @@
   publish = "dist"
   functions = "netlify/functions"
 
+[[edge_functions]]
+  function = "visitor-country"
+  path = "/"
+
+[[edge_functions]]
+  function = "visitor-country"
+  path = "/inquiry"
+
 [[redirects]]
   from = "/index.html"
   to = "/"

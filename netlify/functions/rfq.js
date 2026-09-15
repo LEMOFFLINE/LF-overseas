@@ -37,7 +37,7 @@ function buildEmailHtml(data) {
         ${row("Name", data.name)}
         ${row("Email", data.email)}
         ${row("WhatsApp / Phone", data.phone)}
-        ${row("Country", data.country)}
+        ${row("Country / Region", data.country ? `${data.country} (${data.countryCode})` : data.countryCode)}
         ${row("Message", data.message)}
         ${row("First-touch Source", data.sourceCategory)}
         ${row("Landing Page", data.landingPage)}
@@ -81,12 +81,17 @@ exports.handler = async (event) => {
   }
 
   const email = String(data.email || "").trim();
-  if (!data.name || !email || !data.phone || !data.country || !data.message) {
+  const countryCode = String(data.countryCode || "").trim().toUpperCase();
+  if (!data.name || !email || !data.phone || !countryCode || !data.message) {
     return json(400, { error: "Name, email, WhatsApp or phone number, country, and message are required." });
   }
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return json(400, { error: "Please enter a valid email address." });
+  }
+
+  if (!/^[A-Z]{2}$/.test(countryCode)) {
+    return json(400, { error: "Please select a valid country or region." });
   }
 
   const attachment = data.attachment;
@@ -114,10 +119,11 @@ exports.handler = async (event) => {
     },
     to: [{ email: toEmail, name: "Lingfeng Sales" }],
     replyTo: { email, name: String(data.name).slice(0, 70) },
-    subject: `Website Inquiry - ${data.name}`,
+    subject: `Website Inquiry - ${data.name} - ${countryCode}`,
     htmlContent: buildEmailHtml({
       ...data,
       email,
+      countryCode,
       functionRequirements: data.functionRequirements || data.function,
       attachmentName: attachment?.name,
       attachmentSize: attachment?.size,
