@@ -1,0 +1,99 @@
+{
+  "home": {
+    "title": "Custom Clothing Manufacturer in China | LF Clothing",
+    "description": "Custom clothing manufacturer in China for staff uniforms, workwear and event clothing. LF manages development, samples and production through specialist partners.",
+    "eyebrow": "Staff uniforms, workwear & event clothing",
+    "intro": "LF is a custom clothing manufacturer in China with 20 years of clothing experience. We manage materials, garment development, samples and production through specialist manufacturing partners. Bring your company's clothing and related supplies together, from staff uniforms and workwear to event clothing, caps, footwear and towels.",
+    "targetPhrases": [
+      "custom clothing manufacturer in China",
+      "Chinese clothing manufacturer",
+      "garment manufacturing in China",
+      "custom staff uniforms",
+      "corporate uniform supplier",
+      "bespoke uniforms",
+      "custom event staff uniforms"
+    ],
+    "faqs": [
+      {
+        "q": "Can we start with a reference image and no technical specification?",
+        "a": "Yes. Send a photo, sketch or AI concept and tell us who will wear the clothing and how it will be used. We help work out the fabric, fit and construction, then develop a sample you can check. You do not need a finished tech pack to begin."
+      },
+      {
+        "q": "Can suits, polos, workwear and caps share the same brand identity?",
+        "a": "Yes. Your reception, service and operations teams can wear different garments while sharing one brand identity. We use your colour references and artwork across the range, choosing suitable embroidery, printing or labels for each fabric. Samples let you check the items together before production."
+      },
+      {
+        "q": "How do semi-custom and fully custom orders differ in cost, minimums and timing?",
+        "a": "If an existing garment already suits your team, start with logo, label or selected detail changes. Choose full development when you need a different fabric, fit, pocket layout or construction. Price depends on the development work, garment quantity and materials. Minimums and timing depend on the chosen style and changes."
+      },
+      {
+        "q": "Can you provide fabric reports or arrange finished-garment testing?",
+        "a": "We can provide relevant fabric reports and arrange finished-garment testing. Include any required standard or performance requirement in your brief so the quote can account for it. Testing of custom finished garments carries an additional fee. Fabric reports cover the material; they do not certify the finished garment."
+      },
+      {
+        "q": "When does sampling start, and can you work to our event date?",
+        "a": "Clothing samples take 7–12 days after order confirmation and sample payment. Tell us the date the garments need to arrive and the delivery destination, rather than only the event date. We plan backwards through shipping, production and sample approval. Production time depends on the products, materials, quantities and customisation."
+      },
+      {
+        "q": "Can we order one product category or a coordinated range?",
+        "a": "Both are welcome. Send one list covering the clothing, caps, footwear, towels or PPE your team needs, with quantities for each item. LF brings the requirements together and coordinates the relevant suppliers, so your purchasing team has one point of contact. Options, minimums and schedules can vary by item."
+      },
+      {
+        "q": "How does LF manage clothing manufacturing in China?",
+        "a": "Your garments are made by specialist production partners matched to the product. LF manages the specification, materials, samples, production follow-up, quality checks and packing. Your team stays in contact with LF throughout the order, including when it covers several garment types or related products."
+      },
+      {
+        "q": "How are PPE and construction safety helmets reviewed?",
+        "a": "Tell us the product, intended use, destination and required standard. We check the supporting documents and whether the proposed colour, logo or other changes are suitable. PPE and helmet requirements are assessed for each product; clothing or fabric certificates do not automatically cover them."
+      }
+    ],
+    "h1": "Custom Clothing Manufacturer in China",
+    "heroIntro": "Bring your team’s clothing together—from workwear and polos to suits, jackets and caps—with one contact in China. Start with an existing style or your own concept. LF manages materials, garment development, samples and production through specialist manufacturing partners."
+  },
+  "customization": {
+    "title": "Bespoke Staff Uniforms & Clothing Customization | LF Clothing",
+    "description": "Turn a reference image into custom staff uniforms or event clothing. Explore fabric, fit, pockets and branding, with real flight-suit details from LF's work.",
+    "eyebrow": "Staff uniforms & event clothing customisation",
+    "h1": "From your reference image to your team’s clothing.",
+    "intro": "You do not need a finished technical specification to begin. Bring an image, an existing garment or an idea for your team. LF helps turn it into wearable clothing, from fabric and fit to pockets, lining and branding, with samples to check before production.",
+    "targetPhrases": [
+      "bespoke staff uniforms",
+      "custom staff clothing",
+      "corporate uniform customisation",
+      "custom event clothing"
+    ],
+    "groupTitles": [
+      "Fabrics, colours, linings and trims",
+      "Patterns, fit, pockets and garment construction",
+      "Logos, labels and product-specific decoration",
+      "Samples, feasibility review and specification approval"
+    ],
+    "faqs": [
+      {
+        "q": "Can we develop uniforms from reference photos without a tech pack?",
+        "a": "Yes. Photos, sketches and AI concept images can all start a project. Tell us the staff roles, working conditions and details that matter most. We work out how the concept can be made and prepare a physical sample for you to assess."
+      },
+      {
+        "q": "Should we choose semi-custom or full garment development?",
+        "a": "If your current uniform works well, start with branding or selected detail changes. For a different fabric, fit or construction, discuss full development. Send the reference and mark what you want to keep or change; we can explain which route fits the brief and how the changes affect price, quantity and timing."
+      },
+      {
+        "q": "Can different staff roles have different garments with coordinated branding?",
+        "a": "Yes. Suits for reception, polos for service staff and workwear for operations can share colours and branding while keeping the fit and details each role needs. Check the fabric and logo samples together to see how the range works as a whole."
+      },
+      {
+        "q": "Can products other than clothing be customised?",
+        "a": "Yes. Include caps, footwear, towels or other related items in the same brief. Available materials, colours, dimensions and branding vary by product. For PPE and safety helmets, include the required standard and destination so we can check suitable products and permitted changes."
+      },
+      {
+        "q": "What information helps you quote our uniforms or event clothing?",
+        "a": "Start with your item list, estimated quantities, reference images, destination and required arrival date. Add sizes, artwork and any testing requirements if you have them. If some details are still undecided, tell us your priorities and we will help you narrow the options."
+      }
+    ]
+  },
+  "targetMarkets": [
+    "United Kingdom",
+    "Europe",
+    "North America"
+  ]
+}

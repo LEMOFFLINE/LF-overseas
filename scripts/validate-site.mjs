@@ -4,6 +4,7 @@ import path from "node:path";
 const root = path.resolve(process.argv[2] || "dist");
 const products = JSON.parse(await readFile(path.resolve("data/products.json"), "utf8"));
 const collections = JSON.parse(await readFile(path.resolve("data/collections.json"), "utf8"));
+const buyerPrograms = JSON.parse(await readFile(path.resolve("data/buyer-programs.json"), "utf8"));
 const featuredProducts = products.filter((product) => product.homepage);
 const errors = [];
 const baseUrl = "https://lfclothing.com";
@@ -19,6 +20,47 @@ function hasTrailingSlash(url) {
   } catch {
     return false;
   }
+}
+
+function robotsTokens(html) {
+  const tokens = new Set();
+  for (const match of html.matchAll(/<meta\b[^>]*\bname=["']robots["'][^>]*>/gi)) {
+    const content = match[0].match(/\bcontent=(["'])(.*?)\1/i)?.[2] || "";
+    for (const token of decodeHtml(content).toLowerCase().split(/[,\s]+/).filter(Boolean)) tokens.add(token);
+  }
+  return tokens;
+}
+
+function expectedCanonicalFor(rel) {
+  return `${baseUrl}${rel === "index.html" ? "/" : `/${rel.replace(/\/index\.html$/, "/")}`}`;
+}
+
+function internalLinkPaths(html, pageUrl) {
+  const paths = new Set();
+  const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1] || "";
+  for (const match of main.matchAll(/<a\b[^>]*\bhref=(["'])(.*?)\1/gi)) {
+    try {
+      const url = new URL(decodeHtml(match[2]), pageUrl);
+      if (url.origin === baseUrl) paths.add(url.pathname);
+    } catch {}
+  }
+  return paths;
+}
+
+async function validateSchemaImages(value, rel) {
+  if (value && typeof value === "object") {
+    for (const child of Object.values(value)) await validateSchemaImages(child, rel);
+    return;
+  }
+  if (typeof value !== "string") return;
+  let url;
+  let pathname;
+  try {
+    url = new URL(value, expectedCanonicalFor(rel));
+    pathname = decodeURIComponent(url.pathname);
+  } catch { return; }
+  if (url.origin !== baseUrl || !/\.(?:avif|gif|ico|jpe?g|png|svg|webp)\/?$/i.test(pathname)) return;
+  if (!await exists(path.join(root, pathname.slice(1)))) errors.push(`${rel}: missing local JSON-LD image ${value}`);
 }
 
 async function walk(dir) {
@@ -44,14 +86,16 @@ for (const file of htmlFiles) {
   const title = decodeHtml(html.match(/<title>([\s\S]*?)<\/title>/i)?.[1]?.trim());
   const description = html.match(/<meta name="description" content="([^"]+)"/i)?.[1]?.trim();
   const canonical = html.match(/<link rel="canonical" href="([^"]+)"/i)?.[1]?.trim();
+  const robots = robotsTokens(html);
   const h1Count = (html.match(/<h1\b/gi) || []).length;
   if (h1Count !== 1) errors.push(`${rel}: expected one H1, found ${h1Count}`);
   if (!title || title.length < 20 || title.length > 72) errors.push(`${rel}: title length ${title?.length || 0}`);
   if (!description || description.length < 70 || description.length > 190) errors.push(`${rel}: description length ${description?.length || 0}`);
   if (!is404 && !canonical?.startsWith("https://lfclothing.com/")) errors.push(`${rel}: invalid canonical`);
   if (!is404 && !hasTrailingSlash(canonical)) errors.push(`${rel}: canonical must use a trailing slash`);
-  if (!is404 && !isPrivacy && !/index,follow/.test(html)) errors.push(`${rel}: not indexable`);
-  if ((is404 || isPrivacy) && !/noindex,follow/.test(html)) errors.push(`${rel}: auxiliary page must be noindex`);
+  if (!is404 && canonical !== expectedCanonicalFor(rel)) errors.push(`${rel}: canonical must point to ${expectedCanonicalFor(rel)}`);
+  if (!is404 && !isPrivacy && (!robots.has("index") || !robots.has("follow") || robots.has("noindex") || robots.has("nofollow") || robots.has("none"))) errors.push(`${rel}: not indexable`);
+  if ((is404 || isPrivacy) && (!robots.has("noindex") || !robots.has("follow") || robots.has("index") || robots.has("nofollow") || robots.has("none"))) errors.push(`${rel}: auxiliary page must be noindex,follow`);
   if (!/<meta property="og:title"/.test(html) || !/<meta name="twitter:card"/.test(html)) errors.push(`${rel}: social metadata missing`);
   if (!/<script type="application\/ld\+json">/.test(html)) errors.push(`${rel}: structured data missing`);
   for (const match of html.matchAll(/https:\/\/lfclothing\.com\/[^"'<>\s]+\.(?:png|jpe?g|webp|svg)\//gi)) errors.push(`${rel}: asset URL must not have a trailing slash: ${match[0]}`);
@@ -71,7 +115,7 @@ for (const file of htmlFiles) {
     if (parsed.pathname !== "/" && !parsed.pathname.endsWith("/")) errors.push(`${rel}: internal link must use a trailing slash: ${url}`);
   }
   for (const json of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
-    try { JSON.parse(json[1]); } catch (error) { errors.push(`${rel}: invalid JSON-LD ${error.message}`); }
+    try { await validateSchemaImages(JSON.parse(json[1]), rel); } catch (error) { errors.push(`${rel}: invalid JSON-LD ${error.message}`); }
   }
 }
 
@@ -114,7 +158,7 @@ for (const banned of ["Request Full Catalog", "Download Catalogue", "700,000", "
 }
 const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((item) => item[1]);
-const expectedSitemapUrls = collections.length + 12 + featuredProducts.length;
+const expectedSitemapUrls = collections.length + 13 + featuredProducts.length;
 if (sitemapUrls.length !== expectedSitemapUrls) errors.push(`expected ${expectedSitemapUrls} sitemap URLs, found ${sitemapUrls.length}`);
 if (new Set(sitemapUrls).size !== sitemapUrls.length) errors.push("sitemap has duplicate URLs");
 if (sitemap.includes("<lastmod>")) errors.push("sitemap must not emit an unreliable build-date lastmod value");
@@ -122,14 +166,18 @@ for (const url of sitemapUrls) if (!hasTrailingSlash(url)) errors.push(`sitemap 
 for (const product of featuredProducts) if (!sitemapUrls.includes(`${baseUrl}/products/${product.slug}/`)) errors.push(`retained product missing from sitemap: ${product.slug}`);
 for (const product of products.filter((item) => !item.homepage)) if (sitemapUrls.includes(`${baseUrl}/products/${product.slug}/`)) errors.push(`redirected product must not appear in sitemap: ${product.slug}`);
 if (!sitemapUrls.includes(`${baseUrl}/collections/aviation-flight-suits/`)) errors.push("aviation flight suits landing page missing from sitemap");
+if (!sitemapUrls.includes(`${baseUrl}/event-staff-uniforms/`)) errors.push("event staff uniforms landing page missing from sitemap");
 
 const expectedSeoTitles = new Map([
-  ["index.html", "OEM/ODM Custom Workwear & Uniform Manufacturer China | LF Clothing"],
-  ["custom-workwear/index.html", "Custom Workwear Supplier in China | LF Clothing"],
+  ["index.html", "Custom Clothing Manufacturer in China | LF Clothing"],
+  ["custom-workwear/index.html", buyerPrograms.workwear.title],
+  ["event-staff-uniforms/index.html", buyerPrograms.eventStaff.title],
+  ["customization/index.html", "Bespoke Staff Uniforms & Clothing Customization | LF Clothing"],
   ["custom-jackets/index.html", "Custom Jacket Supplier in China | LF Clothing"],
   ["custom-suits/index.html", "Custom Corporate Suit Supplier China | LF Clothing"],
   ["school-uniforms/index.html", "Custom School Uniform Supplier China | LF Clothing"],
   ...collections.map((collection) => [`collections/${collection.slug}/index.html`, collection.seoTitle]),
+  ["collections/corporate-service-uniforms/index.html", buyerPrograms.corporate.title],
   ["collections/aviation-flight-suits/index.html", "Custom Flight Suit & Aviation Uniform Supplier China | LF Clothing"],
 ]);
 for (const [rel, expectedTitle] of expectedSeoTitles) {
@@ -146,7 +194,7 @@ const homepageRequirements = [
   ["homepage capability cards", (homepage.match(/class="home-capability-card"/g) || []).length, 6],
   ["visual process steps", (homepage.match(/class="visual-process-card"/g) || []).length, 7],
   ["visual process detail links", (homepage.match(/class="visual-process-more"/g) || []).length, 1],
-  ["certificate logos", (homepage.match(/class="certificate-logo"/g) || []).length, 8],
+  ["certificate logos", (homepage.match(/class="certificate-logo"/g) || []).length, 3],
   ["why choose reasons", (homepage.match(/class="why-choose-card"/g) || []).length, 5],
 ];
 for (const [label, actual, expected] of homepageRequirements) if (actual !== expected) errors.push(`homepage expected ${expected} ${label}, found ${actual}`);
@@ -161,7 +209,7 @@ if ((aboutPage.match(/class="faq-grid"/g) || []).length !== 1) errors.push("abou
 const privacyPage = await readFile(path.join(root, "privacy", "index.html"), "utf8");
 if (!privacyPage.includes("How LF Clothing Uses Website and Inquiry Data")) errors.push("privacy page content is missing");
 if (!privacyPage.includes("lf_country")) errors.push("privacy page is missing the country preference cookie disclosure");
-if (!privacyPage.includes('noindex,follow')) errors.push("privacy page must remain outside the search index");
+if (!robotsTokens(privacyPage).has("noindex")) errors.push("privacy page must remain outside the search index");
 if (sitemapUrls.includes(`${baseUrl}/privacy/`)) errors.push("privacy page must not be included in the SEO sitemap");
 const inquiryPage = await readFile(path.join(root, "inquiry", "index.html"), "utf8");
 for (const field of ["name", "email", "phone", "countryCode", "message"]) {
@@ -172,9 +220,18 @@ if (!/<input[^>]*name=["']email["'][^>]*type=["']email["']/i.test(inquiryPage)) 
 if (!/<select[^>]*name=["']countryCode["'][^>]*data-country-select/i.test(inquiryPage)) errors.push("inquiry country field must use the country selector");
 
 const productsPage = await readFile(path.join(root, "products", "index.html"), "utf8");
-if ((productsPage.match(/class="product-category-link"/g) || []).length !== collections.length + 1) errors.push("products page must link to every product collection and the aviation collection");
+if ((productsPage.match(/class="product-category-link"/g) || []).length !== collections.length + 2) errors.push("products page must link to every product collection, aviation and event staff uniforms");
 for (const collection of collections) if (!productsPage.includes(`href="/collections/${collection.slug}/"`)) errors.push(`products page is missing collection link: ${collection.slug}`);
 if (!productsPage.includes(`href="/collections/aviation-flight-suits/"`)) errors.push("products page is missing aviation collection link");
+if (!productsPage.includes(`href="/event-staff-uniforms/"`)) errors.push("products page is missing event staff uniforms link");
+const buyerRoutes = ["/collections/corporate-service-uniforms/", "/event-staff-uniforms/", "/custom-workwear/"];
+for (const [rel, html] of [["index.html", homepage], ["products/index.html", productsPage]]) {
+  const links = internalLinkPaths(html, expectedCanonicalFor(rel));
+  for (const route of buyerRoutes) if (!links.has(route)) errors.push(`${rel}: missing buyer route link ${route}`);
+}
+const eventStaffPage = await readFile(path.join(root, "event-staff-uniforms", "index.html"), "utf8");
+const eventStaffLinks = internalLinkPaths(eventStaffPage, `${baseUrl}/event-staff-uniforms/`);
+for (const route of ["/customization/", "/inquiry/"]) if (!eventStaffLinks.has(route)) errors.push(`event-staff-uniforms/index.html: missing next-step link ${route}`);
 if (/\/assets\/(?:cases|capabilities)\/[^"'<>\s]+\.png/i.test(combined)) errors.push("public pages still reference an unoptimized case or capability PNG");
 
 if (errors.length) {

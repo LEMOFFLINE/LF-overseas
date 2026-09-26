@@ -151,9 +151,9 @@ button { cursor: pointer; }
 .company-profile-media img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
 .company-profile-media figcaption { padding: 16px 19px; color: var(--muted); font-size: .82rem; }
 .certificate-band { padding: 42px 0; background: #fff; border-block: 1px solid var(--line); }
-.certificate-band-inner { display: grid; grid-template-columns: 155px minmax(0, 1fr); gap: 30px; align-items: center; }
-.certificate-band h2 { max-width: 150px; margin: 0; color: var(--navy); font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.02; }
-.certificate-strip { display: grid; grid-template-columns: repeat(8, minmax(62px, 1fr)); gap: 14px; align-items: center; }
+.certificate-band-inner { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 30px; align-items: center; }
+.certificate-band h2 { max-width: 220px; margin: 0; color: var(--navy); font-size: clamp(1.6rem, 2.5vw, 2.1rem); line-height: 1.12; }
+.certificate-strip { display: grid; grid-template-columns: repeat(3, minmax(62px, 140px)); gap: 24px; align-items: center; justify-content: center; }
 .certificate-logo { min-width: 0; margin: 0; }
 .certificate-logo img { width: 100%; height: 76px; object-fit: contain; }
 .why-choose { position: relative; isolation: isolate; padding: 88px 0; background: url('/assets/capabilities/home-apparel-range.webp') center 45% / cover; }
@@ -194,6 +194,19 @@ button { cursor: pointer; }
 .collection-card .text-link { margin-top: 16px; }
 .capability-intro { padding-bottom: 72px; }
 .capability-intro .section-head { margin-bottom: 0; }
+.flight-details { scroll-margin-top: 100px; }
+.flight-detail-grid { display: grid; grid-template-columns: minmax(240px, .8fr) minmax(0, 1.2fr); gap: 48px; align-items: start; }
+.flight-details figure { margin: 0; }
+.flight-sample > img { width: 100%; max-height: 650px; object-fit: contain; background: #e6e7e5; border-radius: var(--radius); }
+.flight-details figcaption { margin-top: 12px; color: var(--muted); font-size: .85rem; line-height: 1.5; }
+.flight-detail-copy > h3 { margin: 0 0 14px; color: var(--navy); font-size: 1.35rem; }
+.flight-detail-copy > .content-list { margin-bottom: 28px; }
+.flight-vent-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.flight-vent-frame { position: relative; overflow: hidden; aspect-ratio: 1.6; background: #e6e7e5; border-radius: var(--radius); }
+.flight-vent-frame img { position: absolute; left: 50%; top: 50%; width: 80%; height: auto; max-width: none; transform: translate(-50%, -50%) rotate(-90deg); }
+.flight-vent-grid figcaption strong, .flight-vent-grid figcaption span { display: block; }
+.flight-vent-grid figcaption strong { color: var(--ink); }
+.flight-detail-copy > .disclaimer { margin-top: 24px; }
 .capability-group { padding: 82px 0; }
 .capability-group-head { display: grid; grid-template-columns: 80px minmax(0, 760px); gap: 24px; align-items: start; margin-bottom: 38px; }
 .capability-group-head > span { color: #c9d9e7; font-size: 3rem; font-weight: 800; line-height: 1; }
@@ -390,6 +403,8 @@ button { cursor: pointer; }
   .process-list { grid-template-columns: 1fr 1fr; }
   .split, .product-main, .detail-grid, .form-layout { grid-template-columns: 1fr; }
   .capability-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .flight-detail-grid { grid-template-columns: 1fr 1.2fr; gap: 28px; }
+  .flight-vent-grid { grid-template-columns: 1fr; }
   .product-copy, .contact-panel { position: static; }
   .logo-grid { grid-template-columns: repeat(3, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -440,6 +455,8 @@ button { cursor: pointer; }
   .photo-collage img, .photo-collage img:first-child { height: auto; aspect-ratio: 4 / 3; grid-row: auto; }
   .photo-collage img:first-child { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
   .capability-group { padding: 66px 0; }
+  .flight-detail-grid { grid-template-columns: 1fr; gap: 30px; }
+  .flight-sample > img { max-height: 560px; }
   .capability-group-head { grid-template-columns: 1fr; gap: 12px; }
   .capability-group-head > span { font-size: 2.35rem; }
   .capability-card-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
