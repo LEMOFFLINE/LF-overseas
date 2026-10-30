@@ -1,0 +1,18 @@
+{
+  "additionalDetailSkus": [
+    "GAR-WJ-002", "GAR-WP-001", "GAR-WP-002", "GAR-CO-001",
+    "GAR-PO-001", "GAR-KN-004", "GAR-OJ-001", "GAR-BL-001"
+  ],
+  "seoOverrides": {
+    "GAR-WJ-001": { "title": "Custom Cotton Work Jackets for Staff | LF Clothing", "description": "Explore a cotton twill work jacket for manufacturing and maintenance teams. Review fabric weight, pockets, sizing and branding before requesting a custom sample." },
+    "GAR-WJ-002": { "title": "Custom Cotton Work Jackets with Reflective Detail | LF Clothing", "description": "Review a cotton work jacket with reflective details for staff uniforms. Adapt colours, pockets, fit and logos, with performance requirements confirmed by project." },
+    "GAR-WP-001": { "title": "Custom Reflective Bib Work Trousers | LF Clothing", "description": "Explore bib work trousers with reflective details for industrial teams. Review fabric, pocket access, fit and branding, with any safety requirements assessed separately." },
+    "GAR-WP-002": { "title": "Custom Work Trousers with Anti-Static Fabric Options | LF Clothing", "description": "Review cotton-rich work trousers for industrial staff. Explore fit, pockets and conductive-fibre fabric options, with required performance and testing agreed by project." },
+    "GAR-CO-001": { "title": "Custom Cotton Work Coveralls for Industrial Teams | LF Clothing", "description": "Explore long-sleeve cotton work coveralls for manufacturing and maintenance teams. Review fabric, closures, pockets, sizing and company branding before sampling." },
+    "GAR-PO-001": { "title": "Custom Colour-Block Staff Polo Shirts | LF Clothing", "description": "Develop colour-block polo shirts for event crews and staff uniforms. Review cotton-blend fabric, panel colours, logo placement and size requirements before sampling." },
+    "GAR-PO-002": { "title": "Custom Staff Polo Shirts with Side Panels | LF Clothing", "description": "Explore side-panel polo shirts for service staff, events and team uniforms. Coordinate panel colours, sizing and logo applications with your wider clothing range." },
+    "GAR-KN-004": { "title": "Custom Branded Pullover Hoodies for Staff & Events | LF Clothing", "description": "Explore cotton-blend pullover hoodies for staff and event teams. Review fabric weight, fit, kangaroo pockets, artwork placement and sample options for your order." },
+    "GAR-OJ-001": { "title": "Custom Hooded Shell Jackets for Outdoor Teams | LF Clothing", "description": "Develop hooded shell jackets for outdoor staff and event crews. Review fabric, layering, pockets and branding, with weather-performance targets confirmed before sampling." },
+    "GAR-BL-001": { "title": "Custom Men's Wool-Blend Corporate Suits | LF Clothing", "description": "Explore single-breasted wool-blend suits for reception and company uniforms. Coordinate fabric, lapels, lining and size grading with the rest of your staff clothing." }
+  }
+}

@@ -78,6 +78,10 @@
         "a": "If your current uniform works well, start with branding or selected detail changes. For a different fabric, fit or construction, discuss full development. Send the reference and mark what you want to keep or change; we can explain which route fits the brief and how the changes affect price, quantity and timing."
       },
       {
+        "q": "What are your minimum order quantities?",
+        "a": "The usual MOQ for regular clothing is 50 garments per style/colour. For specialist, complex garments such as flight suits and racing suits, quantities as low as 10 may be possible after review of the design, materials and production requirements. The lower minimum is limited to suitable specialist projects; it does not apply to ordinary event clothing."
+      },
+      {
         "q": "Can different staff roles have different garments with coordinated branding?",
         "a": "Yes. Suits for reception, polos for service staff and workwear for operations can share colours and branding while keeping the fit and details each role needs. Check the fabric and logo samples together to see how the range works as a whole."
       },
@@ -87,7 +91,15 @@
       },
       {
         "q": "What information helps you quote our uniforms or event clothing?",
-        "a": "Start with your item list, estimated quantities, reference images, destination and required arrival date. Add sizes, artwork and any testing requirements if you have them. If some details are still undecided, tell us your priorities and we will help you narrow the options."
+        "a": "Start with your item list, estimated quantities, reference images, destination and required arrival date. Add sizes, artwork and any testing requirements if you have them. If some details are still undecided, tell us your priorities and we will help you narrow the options. Sample fees are quoted for the project. For orders of 100 pieces or more, the sample fee can be credited against the bulk order payment."
+      },
+      {
+        "q": "Can you arrange fabric and finished-garment test reports?",
+        "a": "Yes. We can arrange fabric and finished-garment testing and provide the resulting reports. Tell us the properties or standards you need to assess. Custom finished-garment tests carry an additional fee, with scope and cost discussed before testing. The report applies to the tested material or garment, rather than certifying every product in the range."
+      },
+      {
+        "q": "How do you keep a reference for repeat orders?",
+        "a": "We retain one garment from each bulk order as a physical reference. It helps us align fit, construction and branding when you order again. Share the previous order reference and any required changes. Materials and trims are checked for availability before the repeat order is arranged."
       }
     ]
   },

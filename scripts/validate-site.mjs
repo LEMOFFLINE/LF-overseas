@@ -5,9 +5,37 @@ const root = path.resolve(process.argv[2] || "dist");
 const products = JSON.parse(await readFile(path.resolve("data/products.json"), "utf8"));
 const collections = JSON.parse(await readFile(path.resolve("data/collections.json"), "utf8"));
 const buyerPrograms = JSON.parse(await readFile(path.resolve("data/buyer-programs.json"), "utf8"));
+const projectStudies = JSON.parse(await readFile(path.resolve("data/project-studies.json"), "utf8"));
+const catalogPages = JSON.parse(await readFile(path.resolve("data/catalog-pages.json"), "utf8"));
 const featuredProducts = products.filter((product) => product.homepage);
 const errors = [];
 const baseUrl = "https://lfclothing.com";
+const productBySku = new Map(products.map((product) => [product.sku, product]));
+const originalDetailSkus = ["GAR-WJ-001", "GAR-CO-003", "GAR-HV-001", "GAR-OJ-004", "GAR-KN-003", "GAR-OJ-006", "GAR-BL-002", "GAR-PO-002"];
+const additionalDetailSkus = Array.isArray(catalogPages.additionalDetailSkus) ? catalogPages.additionalDetailSkus : [];
+if (!Array.isArray(catalogPages.additionalDetailSkus)) errors.push("catalog-pages.additionalDetailSkus must be an array");
+if (new Set(additionalDetailSkus).size !== additionalDetailSkus.length) errors.push("additional detail SKUs must be unique");
+for (const sku of additionalDetailSkus) {
+  if (!productBySku.has(sku)) errors.push(`unknown additional detail SKU: ${sku}`);
+  if (featuredProducts.some((product) => product.sku === sku)) errors.push(`additional detail SKU already belongs to the featured set: ${sku}`);
+}
+const detailProductSkus = new Set([...featuredProducts.map((product) => product.sku), ...additionalDetailSkus]);
+const detailProducts = products.filter((product) => detailProductSkus.has(product.sku));
+const redirectedProducts = products.filter((product) => !detailProductSkus.has(product.sku));
+const detailProductsByPath = new Map(detailProducts.map((product) => [`products/${product.slug}/index.html`, product]));
+const detailUrlPaths = new Set(detailProducts.map((product) => `/products/${product.slug}/`));
+for (const sku of originalDetailSkus) if (!detailProductSkus.has(sku)) errors.push(`original retained product detail must remain published: ${sku}`);
+for (const [sku, seo] of Object.entries(catalogPages.seoOverrides || {})) {
+  if (!detailProductSkus.has(sku) || !productBySku.has(sku)) errors.push(`SEO override requires a published detail SKU: ${sku}`);
+  if (!seo || typeof seo.title !== "string" || typeof seo.description !== "string" || !seo.title.trim() || !seo.description.trim()) errors.push(`SEO override must contain a title and description: ${sku}`);
+}
+const productProgramRoutes = {
+  "industrial-workwear": ["/custom-workwear/"],
+  "protective-hi-vis": ["/collections/protective-hi-vis/", "/custom-workwear/"],
+  "cold-weather-outdoor-workwear": ["/custom-jackets/", "/custom-workwear/", "/event-staff-uniforms/"],
+  "corporate-service-uniforms": ["/collections/corporate-service-uniforms/", "/custom-suits/"],
+  "team-staff-apparel": ["/event-staff-uniforms/", "/collections/corporate-service-uniforms/", "/school-uniforms/"],
+};
 
 function decodeHtml(value = "") {
   return value.replace(/&amp;/g, "&").replace(/&quot;/g, "\"").replace(/&#039;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
@@ -45,6 +73,35 @@ function internalLinkPaths(html, pageUrl) {
     } catch {}
   }
   return paths;
+}
+
+function bodyProgramLinkPaths(html, pageUrl) {
+  // Navigation, breadcrumb links and unrelated product cards must not satisfy the
+  // requirement for an intentional link from a product to a purchasing program.
+  const content = html
+    .replace(/<nav\b[^>]*\bclass=["'][^"']*\bbreadcrumb\b[^"']*["'][^>]*>[\s\S]*?<\/nav>/gi, "")
+    .replace(/<article\b[^>]*\bclass=["'][^"']*\bproduct-card\b[^"']*["'][^>]*>[\s\S]*?<\/article>/gi, "");
+  return internalLinkPaths(content, pageUrl);
+}
+
+function validateOutfitTable(html, program, rel) {
+  const plan = program.outfitPlan;
+  if (!plan || !Array.isArray(plan.rows) || plan.rows.length < 3 || !Array.isArray(plan.columns) || plan.columns.length < 3) {
+    errors.push(`${rel}: outfit plan needs at least three staff-role rows and three columns`);
+    return;
+  }
+  const table = html.match(/<table\b[^>]*\bclass=["'][^"']*\boutfit-table\b[^"']*["'][^>]*>([\s\S]*?)<\/table>/i)?.[1];
+  if (!table) { errors.push(`${rel}: staff-role outfit table is missing`); return; }
+  const head = table.match(/<thead\b[^>]*>([\s\S]*?)<\/thead>/i)?.[1] || "";
+  const body = table.match(/<tbody\b[^>]*>([\s\S]*?)<\/tbody>/i)?.[1] || "";
+  const rows = [...body.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)].map((match) => match[1]);
+  if ((head.match(/<th\b[^>]*\bscope=["']col["']/gi) || []).length !== plan.columns.length) errors.push(`${rel}: outfit table needs scoped column headings`);
+  if (rows.length !== plan.rows.length) errors.push(`${rel}: expected ${plan.rows.length} outfit-plan rows, found ${rows.length}`);
+  for (const [index, row] of rows.entries()) {
+    if ((row.match(/<th\b[^>]*\bscope=["']row["']/gi) || []).length !== 1) errors.push(`${rel}: outfit row ${index + 1} needs one staff-role heading`);
+    const cells = [...row.matchAll(/<(?:th|td)\b[^>]*>([\s\S]*?)<\/(?:th|td)>/gi)];
+    if (cells.length !== plan.columns.length || cells.some((match) => !decodeHtml(match[1].replace(/<[^>]+>/g, "")).trim())) errors.push(`${rel}: outfit row ${index + 1} has missing or empty cells`);
+  }
 }
 
 async function validateSchemaImages(value, rel) {
@@ -127,7 +184,7 @@ const generatedProductDetails = htmlFiles.filter((file) => {
   const rel = path.relative(root, file).replaceAll("\\", "/");
   return rel.startsWith("products/") && rel !== "products/index.html";
 });
-const expectedProductDetails = new Set(featuredProducts.map((product) => `products/${product.slug}/index.html`));
+const expectedProductDetails = new Set(detailProductsByPath.keys());
 const actualProductDetails = new Set(generatedProductDetails.map((file) => path.relative(root, file).replaceAll("\\", "/")));
 if (featuredProducts.length !== 8) errors.push(`expected 8 featured products, found ${featuredProducts.length}`);
 for (const rel of expectedProductDetails) if (!actualProductDetails.has(rel)) errors.push(`missing retained product detail page: ${rel}`);
@@ -137,13 +194,22 @@ for (const file of generatedProductDetails) {
   const html = await readFile(file, "utf8");
   if (html.includes('"@type":"Product"')) errors.push(`${rel}: product rich-result schema must not be emitted without truthful offers or reviews`);
   if (!html.includes('"@type":"BreadcrumbList"')) errors.push(`${rel}: breadcrumb structured data missing`);
+  const product = detailProductsByPath.get(rel);
+  if (product) {
+    const expectedSeo = { ...product.seo, ...(catalogPages.seoOverrides?.[product.sku] || {}) };
+    const actualTitle = decodeHtml(html.match(/<title>([\s\S]*?)<\/title>/i)?.[1]?.trim());
+    if (actualTitle !== expectedSeo.title) errors.push(`${rel}: expected product SEO title "${expectedSeo.title}", found "${actualTitle}"`);
+    const links = bodyProgramLinkPaths(html, expectedCanonicalFor(rel));
+    const expectedRoutes = productProgramRoutes[product.primaryCollection] || [];
+    if (!expectedRoutes.some((route) => links.has(route))) errors.push(`${rel}: missing contextual body link to an applicable purchasing program (${expectedRoutes.join(", ")})`);
+  }
 }
 
 const redirects = await readFile(path.join(root, "_redirects"), "utf8");
 const productRedirectLines = redirects.split(/\r?\n/).filter((line) => line.startsWith("/products/"));
-if (productRedirectLines.length !== products.length - featuredProducts.length) errors.push(`expected ${products.length - featuredProducts.length} product redirects, found ${productRedirectLines.length}`);
-for (const product of featuredProducts) if (redirects.includes(`/products/${product.slug}/ `)) errors.push(`retained product must not redirect: ${product.slug}`);
-for (const product of products.filter((item) => !item.homepage)) if (!redirects.includes(`/products/${product.slug}/ `)) errors.push(`missing legacy product redirect: ${product.slug}`);
+if (productRedirectLines.length !== redirectedProducts.length) errors.push(`expected ${redirectedProducts.length} product redirects, found ${productRedirectLines.length}`);
+for (const product of detailProducts) if (redirects.includes(`/products/${product.slug}/ `)) errors.push(`retained product must not redirect: ${product.slug}`);
+for (const product of redirectedProducts) if (!redirects.includes(`/products/${product.slug}/ `)) errors.push(`missing legacy product redirect: ${product.slug}`);
 
 const allText = await Promise.all(files.filter((file) => /\.(html|js|css|xml)$/.test(file)).map((file) => readFile(file, "utf8")));
 const combined = allText.join("\n");
@@ -158,13 +224,14 @@ for (const banned of ["Request Full Catalog", "Download Catalogue", "700,000", "
 }
 const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((item) => item[1]);
-const expectedSitemapUrls = collections.length + 13 + featuredProducts.length;
+const expectedSitemapUrls = collections.length + 13 + detailProducts.length + projectStudies.length;
 if (sitemapUrls.length !== expectedSitemapUrls) errors.push(`expected ${expectedSitemapUrls} sitemap URLs, found ${sitemapUrls.length}`);
+for (const study of projectStudies) if (!sitemapUrls.includes(`${baseUrl}/projects/${study.slug}/`)) errors.push(`project study missing from sitemap: ${study.slug}`);
 if (new Set(sitemapUrls).size !== sitemapUrls.length) errors.push("sitemap has duplicate URLs");
 if (sitemap.includes("<lastmod>")) errors.push("sitemap must not emit an unreliable build-date lastmod value");
 for (const url of sitemapUrls) if (!hasTrailingSlash(url)) errors.push(`sitemap URL must use a trailing slash: ${url}`);
-for (const product of featuredProducts) if (!sitemapUrls.includes(`${baseUrl}/products/${product.slug}/`)) errors.push(`retained product missing from sitemap: ${product.slug}`);
-for (const product of products.filter((item) => !item.homepage)) if (sitemapUrls.includes(`${baseUrl}/products/${product.slug}/`)) errors.push(`redirected product must not appear in sitemap: ${product.slug}`);
+for (const product of detailProducts) if (!sitemapUrls.includes(`${baseUrl}/products/${product.slug}/`)) errors.push(`retained product missing from sitemap: ${product.slug}`);
+for (const product of redirectedProducts) if (sitemapUrls.includes(`${baseUrl}/products/${product.slug}/`)) errors.push(`redirected product must not appear in sitemap: ${product.slug}`);
 if (!sitemapUrls.includes(`${baseUrl}/collections/aviation-flight-suits/`)) errors.push("aviation flight suits landing page missing from sitemap");
 if (!sitemapUrls.includes(`${baseUrl}/event-staff-uniforms/`)) errors.push("event staff uniforms landing page missing from sitemap");
 
@@ -232,10 +299,49 @@ for (const [rel, html] of [["index.html", homepage], ["products/index.html", pro
 const eventStaffPage = await readFile(path.join(root, "event-staff-uniforms", "index.html"), "utf8");
 const eventStaffLinks = internalLinkPaths(eventStaffPage, `${baseUrl}/event-staff-uniforms/`);
 for (const route of ["/customization/", "/inquiry/"]) if (!eventStaffLinks.has(route)) errors.push(`event-staff-uniforms/index.html: missing next-step link ${route}`);
+const corporatePage = await readFile(path.join(root, "collections/corporate-service-uniforms/index.html"), "utf8");
+validateOutfitTable(corporatePage, buyerPrograms.corporate, "collections/corporate-service-uniforms/index.html");
+validateOutfitTable(eventStaffPage, buyerPrograms.eventStaff, "event-staff-uniforms/index.html");
+
+for (const route of buyerRoutes) {
+  const rel = `${route.slice(1)}index.html`;
+  const html = await readFile(path.join(root, rel), "utf8");
+  const cards = [...html.matchAll(/<article\b[^>]*\bclass=["'][^"']*\bproduct-card\b[^"']*["'][^>]*>([\s\S]*?)<\/article>/gi)];
+  if (!cards.length) errors.push(`${rel}: selected product references are missing`);
+  for (const [index, card] of cards.entries()) {
+    const mediaLinks = [...card[1].matchAll(/<a\b[^>]*>/gi)].filter((match) => /\bclass=["'][^"']*\bproduct-media\b[^"']*["']/i.test(match[0]));
+    const href = mediaLinks[0]?.[0].match(/\bhref=(["'])(.*?)\1/i)?.[2];
+    let destination;
+    try { destination = new URL(decodeHtml(href), `${baseUrl}${route}`); } catch {}
+    if (mediaLinks.length !== 1 || !href || destination?.origin !== baseUrl || !detailUrlPaths.has(destination?.pathname)) errors.push(`${rel}: selected product ${index + 1} image must link to a published detail page, not an inquiry or redirect`);
+  }
+}
+
+const aviationPage = await readFile(path.join(root, "collections/aviation-flight-suits/index.html"), "utf8");
+const flightProject = aviationPage.match(/<section\b[^>]*\bid=["']flight-suit-project["'][^>]*>([\s\S]*?)<\/section>/i)?.[1];
+if (!flightProject) errors.push("aviation page is missing its completed flight-suit project section");
+else {
+  const projectText = decodeHtml(flightProject.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ");
+  const projectFacts = [
+    ["ten-suit completed order", /\b(?:10|ten)\s+(?:custom\s+flight\s+|flight\s+)?suits\b/i],
+    ["98% cotton material", /\b98\s*%\s*cotton\b/i],
+    ["2% conductive fibre material", /\b2\s*%\s*conductive\s+fib(?:re|er)\b/i],
+    ["one sample-revision round", /\b(?:one|1)\s+round\b/i],
+    ["28-day project interval", /\b28\s+days?\b/i],
+    ["order-to-arrival context", /\border\s+to\s+arrival\b/i],
+    ["Friedrichshafen destination", /\bFriedrichshafen\b/i],
+    ["Germany destination", /\bGermany\b/i],
+    ["FedEx International Priority service", /\bFedEx\s+International\s+Priority\b/i],
+    ["material-versus-garment evidence boundary", /fabric\s+reports?\s+(?:do(?:es)?\s+not|cannot)\s+certify\s+(?:the\s+)?finished\s+(?:suit|garment)/i],
+  ];
+  for (const [label, pattern] of projectFacts) if (!pattern.test(projectText)) errors.push(`aviation project is missing its confirmed ${label}`);
+  if (!/\bhref=["']\/assets\/cases\/flight-suit-sample-original\.jpg["']/i.test(flightProject)) errors.push("aviation project must link to the original sample photograph");
+  if (!/\bAI\b/i.test(projectText)) errors.push("aviation project must disclose the AI visualization accompanying the original-photo link");
+}
 if (/\/assets\/(?:cases|capabilities)\/[^"'<>\s]+\.png/i.test(combined)) errors.push("public pages still reference an unoptimized case or capability PNG");
 
 if (errors.length) {
   console.error(errors.join("\n"));
   process.exit(1);
 }
-console.log(`Validated ${htmlFiles.length} HTML pages, ${featuredProducts.length} retained product details, ${productRedirectLines.length} product redirects, ${sitemapUrls.length} sitemap URLs and all referenced local assets.`);
+console.log(`Validated ${htmlFiles.length} HTML pages, ${detailProducts.length} retained product details (${featuredProducts.length} featured), ${productRedirectLines.length} product redirects, ${sitemapUrls.length} sitemap URLs and all referenced local assets.`);

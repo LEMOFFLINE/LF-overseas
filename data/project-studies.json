@@ -1,0 +1,96 @@
+[
+  {
+    "slug": "winter-event-clothing-2019",
+    "image": "/assets/cases/mercedes-event-jacket.webp",
+    "imageAlt": "Black Mercedes-Benz event jacket with red trim from LF's 2019 winter clothing program",
+    "imageCaption": "Jacket reference from the 2019 winter event clothing program.",
+    "title": "Winter Event Clothing Case Study: 2,000 Sets | LF Clothing",
+    "description": "How LF coordinated 2,000 winter event outfits for a 2019 Mercedes-Benz program: jackets, trousers, matching gloves and branded knitted hats, delivered in 30 days.",
+    "eyebrow": "Mercedes-Benz event program / 2019",
+    "heading": "2,000 winter event outfits, coordinated as one.",
+    "intro": "LF brought jackets, cold-weather trousers, gloves and knitted hats into one winter clothing program, with matched materials, coordinated branding and a shared black colour direction.",
+    "summary": "In 2019, LF supplied 2,000 winter event clothing sets for a Mercedes-Benz program: jackets, cold-weather trousers, gloves and knitted hats, delivered in 30 days.",
+    "facts": [
+      {
+        "value": "2,000",
+        "label": "Complete winter outfits"
+      },
+      {
+        "value": "4",
+        "label": "Product types in each set"
+      },
+      {
+        "value": "30 days",
+        "label": "Project delivery"
+      },
+      {
+        "value": "2019",
+        "label": "Project year"
+      }
+    ],
+    "outfit": [
+      [
+        "Jacket",
+        "Black hooded outerwear with red trim, providing the shell fabric reference for the gloves."
+      ],
+      [
+        "Cold-weather trousers",
+        "Trousers completing the black winter outfit."
+      ],
+      [
+        "Gloves",
+        "Outer fabric matched to the jacket for consistent colour and texture."
+      ],
+      [
+        "Knitted hat",
+        "Black knitwear with custom logo branding."
+      ]
+    ],
+    "sections": [
+      {
+        "heading": "Matching Colour and Surface Texture",
+        "body": "LF used the same outer fabric for the jacket and the gloves. Matching the actual fabric kept the shade of black and surface texture consistent across two different products."
+      },
+      {
+        "heading": "A Warmth Solution for Cold Conditions",
+        "body": "The project used 3M Thinsulate insulation with fleece on the inside. This warmth solution followed the cold-weather brief alongside the appearance of the complete outfit."
+      },
+      {
+        "heading": "What LF Brought Together",
+        "body": "The order combined clothing and accessories in one event program. LF brought the material choices, shared colour direction, custom branding and delivery requirements together across the range.",
+        "items": [
+          "A jacket, cold-weather trousers, gloves and a knitted hat in each set.",
+          "A common black colour direction across the range.",
+          "Shared shell fabric for the jacket and glove outer.",
+          "The insulation and fleece approach for the cold-weather brief.",
+          "Custom logo branding on the knitted hats."
+        ]
+      }
+    ],
+    "outcome": "The 2019 program was completed in 30 days. This is the delivery record for this project; a new schedule is confirmed around the products, materials, quantities, approvals and destination.",
+    "buyerHeading": "Plan a complete outfit for your team.",
+    "buyerText": "Share your garment and accessory list, quantities, references and required arrival date. Tell us which items need matching fabrics or branding, and we can review the range together.",
+    "visuals": {
+      "overview": {
+        "src": "/assets/cases/winter-outfit-overview-ai-v1.jpg",
+        "alt": "AI visualization of the coordinated winter outfit: jacket, trousers, fabric gloves and knitted hat",
+        "caption": "Based on the project brief and jacket reference. Trousers, gloves and hat are illustrative."
+      },
+      "matching": {
+        "src": "/assets/cases/shared-shell-detail-ai-v1.jpg",
+        "alt": "AI detail visualization of matching black shell fabric on a jacket sleeve and winter glove",
+        "caption": "AI detail visualization · shared shell fabric"
+      },
+      "insulation": {
+        "src": "/assets/cases/winter-insulation-materials-ai-v1.jpg",
+        "alt": "AI material illustration of a black woven shell, white synthetic insulation and black fleece",
+        "caption": "AI material illustration · representative swatches"
+      }
+    },
+    "coordinationPoints": [
+      "Matched shell material across jacket and glove production.",
+      "Coordinated clothing and accessories around a common black colour direction.",
+      "Brought four product types into a 2,000-set delivery."
+    ]
+  }
+]
