@@ -207,8 +207,57 @@ for (const file of generatedProductDetails) {
 
 const redirects = await readFile(path.join(root, "_redirects"), "utf8");
 const productRedirectLines = redirects.split(/\r?\n/).filter((line) => line.startsWith("/products/"));
-if (productRedirectLines.length !== redirectedProducts.length) errors.push(`expected ${redirectedProducts.length} product redirects, found ${productRedirectLines.length}`);
-for (const product of detailProducts) if (redirects.includes(`/products/${product.slug}/ `)) errors.push(`retained product must not redirect: ${product.slug}`);
+// Keep an independent migration contract so a removed or mistargeted rule
+// cannot silently reintroduce the old URLs' 404s.
+const expectedLegacyNamedTargets = {
+  "mens-professional-suit": "/custom-suits/",
+  "womens-professional-suit": "/custom-suits/",
+  "coordinated-team-suit-program": "/custom-suits/",
+  "business-long-sleeve-shirts": "/collections/corporate-service-uniforms/",
+  "mens-business-trousers": "/custom-suits/",
+  "quick-dry-corporate-polo": "/collections/team-staff-apparel/",
+  "230-gsm-cotton-polo": "/collections/team-staff-apparel/",
+  "130-gsm-quick-dry-t-shirt": "/event-staff-uniforms/",
+  "200-gsm-cooling-feel-t-shirt": "/event-staff-uniforms/",
+  "cotton-team-t-shirt": "/event-staff-uniforms/",
+  "summer-short-sleeve-workwear-set": "/custom-workwear/",
+  "spring-autumn-workwear-set": "/custom-workwear/",
+  "engineering-short-sleeve-workwear-set": "/custom-workwear/",
+  "dark-workshop-workwear-set": "/custom-workwear/",
+  "breathable-short-sleeve-workwear-set": "/custom-workwear/",
+  "custom-pullover-hoodie": "/collections/team-staff-apparel/",
+  "colorblock-varsity-jacket": "/collections/team-staff-apparel/",
+  "cotton-rich-crewneck-sweatshirt": "/collections/team-staff-apparel/",
+  "stand-collar-zip-team-jacket": "/collections/team-staff-apparel/",
+  "unisex-crewneck-sweatshirt": "/collections/team-staff-apparel/",
+  "college-varsity-team-jacket": "/collections/team-staff-apparel/",
+  "fleece-zip-team-jacket": "/collections/team-staff-apparel/",
+  "three-in-one-outdoor-jacket": "/custom-jackets/",
+  "lightweight-summer-cover-jacket": "/custom-jackets/",
+  "lightweight-stand-collar-jacket": "/custom-jackets/",
+  "three-layer-taped-seam-shell": "/custom-jackets/",
+  "secondary-school-sports-set": "/school-uniforms/",
+  "waffle-knit-school-sweatshirt": "/school-uniforms/",
+  "quick-dry-school-sports-t-shirt": "/school-uniforms/",
+};
+const expectedProductRedirectCount = redirectedProducts.length + Object.keys(expectedLegacyNamedTargets).length * 2;
+if (productRedirectLines.length !== expectedProductRedirectCount) errors.push(`expected ${expectedProductRedirectCount} product redirects, found ${productRedirectLines.length}`);
+const productRedirectRules = new Map();
+for (const line of productRedirectLines) {
+  const [source, target, status] = line.trim().split(/\s+/);
+  if (productRedirectRules.has(source)) errors.push(`duplicate product redirect source: ${source}`);
+  if (source.includes("*") || source.includes(":")) errors.push(`product redirects must name an exact historical URL: ${source}`);
+  productRedirectRules.set(source, { target, status });
+}
+for (const [slug, expectedTarget] of Object.entries(expectedLegacyNamedTargets)) {
+  for (const suffix of ["", "/"]) {
+    const source = `/products/${slug}${suffix}`;
+    const rule = productRedirectRules.get(source);
+    if (rule?.target !== expectedTarget || rule?.status !== "301!") errors.push(`legacy product requires a direct permanent redirect: ${source} -> ${expectedTarget}`);
+  }
+  if (!await exists(path.join(root, expectedTarget.slice(1), "index.html"))) errors.push(`legacy redirect target page is missing: ${expectedTarget}`);
+}
+for (const product of detailProducts) if (productRedirectRules.has(`/products/${product.slug}`) || productRedirectRules.has(`/products/${product.slug}/`)) errors.push(`retained product must not redirect: ${product.slug}`);
 for (const product of redirectedProducts) if (!redirects.includes(`/products/${product.slug}/ `)) errors.push(`missing legacy product redirect: ${product.slug}`);
 
 const allText = await Promise.all(files.filter((file) => /\.(html|js|css|xml)$/.test(file)).map((file) => readFile(file, "utf8")));
@@ -228,6 +277,7 @@ const expectedSitemapUrls = collections.length + 13 + detailProducts.length + pr
 if (sitemapUrls.length !== expectedSitemapUrls) errors.push(`expected ${expectedSitemapUrls} sitemap URLs, found ${sitemapUrls.length}`);
 for (const study of projectStudies) if (!sitemapUrls.includes(`${baseUrl}/projects/${study.slug}/`)) errors.push(`project study missing from sitemap: ${study.slug}`);
 if (new Set(sitemapUrls).size !== sitemapUrls.length) errors.push("sitemap has duplicate URLs");
+for (const slug of Object.keys(expectedLegacyNamedTargets)) if (sitemapUrls.some((url) => url.replace(/\/$/, "") === `${baseUrl}/products/${slug}`)) errors.push(`redirected historical product must not appear in sitemap: ${slug}`);
 if (sitemap.includes("<lastmod>")) errors.push("sitemap must not emit an unreliable build-date lastmod value");
 for (const url of sitemapUrls) if (!hasTrailingSlash(url)) errors.push(`sitemap URL must use a trailing slash: ${url}`);
 for (const product of detailProducts) if (!sitemapUrls.includes(`${baseUrl}/products/${product.slug}/`)) errors.push(`retained product missing from sitemap: ${product.slug}`);

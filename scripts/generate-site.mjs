@@ -61,6 +61,40 @@ const legacyProductTargets = {
   "team-staff-apparel": "/collections/team-staff-apparel/",
 };
 
+// Earlier product URLs observed in Bing's submission history. These predate
+// the GAR catalogue and have no verified one-to-one SKU replacement.
+const legacyNamedProductTargets = {
+  "mens-professional-suit": "/custom-suits/",
+  "womens-professional-suit": "/custom-suits/",
+  "coordinated-team-suit-program": "/custom-suits/",
+  "business-long-sleeve-shirts": "/collections/corporate-service-uniforms/",
+  "mens-business-trousers": "/custom-suits/",
+  "quick-dry-corporate-polo": "/collections/team-staff-apparel/",
+  "230-gsm-cotton-polo": "/collections/team-staff-apparel/",
+  "130-gsm-quick-dry-t-shirt": "/event-staff-uniforms/",
+  "200-gsm-cooling-feel-t-shirt": "/event-staff-uniforms/",
+  "cotton-team-t-shirt": "/event-staff-uniforms/",
+  "summer-short-sleeve-workwear-set": "/custom-workwear/",
+  "spring-autumn-workwear-set": "/custom-workwear/",
+  "engineering-short-sleeve-workwear-set": "/custom-workwear/",
+  "dark-workshop-workwear-set": "/custom-workwear/",
+  "breathable-short-sleeve-workwear-set": "/custom-workwear/",
+  "custom-pullover-hoodie": "/collections/team-staff-apparel/",
+  "colorblock-varsity-jacket": "/collections/team-staff-apparel/",
+  "cotton-rich-crewneck-sweatshirt": "/collections/team-staff-apparel/",
+  "stand-collar-zip-team-jacket": "/collections/team-staff-apparel/",
+  "unisex-crewneck-sweatshirt": "/collections/team-staff-apparel/",
+  "college-varsity-team-jacket": "/collections/team-staff-apparel/",
+  "fleece-zip-team-jacket": "/collections/team-staff-apparel/",
+  "three-in-one-outdoor-jacket": "/custom-jackets/",
+  "lightweight-summer-cover-jacket": "/custom-jackets/",
+  "lightweight-stand-collar-jacket": "/custom-jackets/",
+  "three-layer-taped-seam-shell": "/custom-jackets/",
+  "secondary-school-sports-set": "/school-uniforms/",
+  "waffle-knit-school-sweatshirt": "/school-uniforms/",
+  "quick-dry-school-sports-t-shirt": "/school-uniforms/",
+};
+
 const priorityPages = [
   { route: "/custom-workwear", label: "Custom Workwear", short: "Workwear", skus: ["GAR-WJ-001", "GAR-WJ-002", "GAR-WP-001", "GAR-WP-002", "GAR-CO-001", "GAR-CO-003"], title: "Custom Workwear Supplier in China | LF Clothing", description: "Custom work jackets, coveralls, trousers and industrial uniforms from China with MOQ guidance from 50 pieces per style/colour, sampling and export delivery support.", hero: "Custom Workwear for Industrial and Service Teams", intro: "LF supplies custom work jackets, coveralls, trousers and coordinated industrial uniforms for importers, distributors, uniform companies and corporate buyers. Start with a photo, drawing, reference garment or technical brief.", uses: ["Manufacturing and maintenance teams", "Logistics, warehousing and field service", "Service-station and infrastructure uniforms", "Summer, winter and repeat-supply programs"] },
   { route: "/custom-jackets", label: "Custom Jackets", short: "Jackets", skus: ["GAR-OJ-001", "GAR-OJ-003", "GAR-KN-003", "GAR-OJ-005", "GAR-OJ-008", "GAR-OJ-010"], title: "Custom Jacket Supplier in China | LF Clothing", description: "Custom work jackets, insulated jackets, softshells, shells and down jackets from China for corporate, staff, event and outdoor programs.", hero: "Custom Jackets for Work, Staff and Corporate Programs", intro: "LF develops work jackets, insulated outerwear, softshells, shells and down jackets with the fabric, lining, logo method, sizing and packing confirmed for each order. Fashion-led jackets can also be reviewed, but our main focus is functional B2B supply.", uses: ["Work and staff jackets", "Insulated and cold-weather outerwear", "Corporate events and branded programs", "Softshell, shell and removable-liner options"] },
@@ -584,6 +618,11 @@ await writeFile(path.join(dist, "robots.txt"), `User-agent: *\nAllow: /\nSitemap
 const legacyProductRedirects = products
   .filter((product) => !detailProductSkus.has(product.sku))
   .map((product) => `${canonicalPath(productUrl(product))} ${legacyProductTargets[product.primaryCollection] || "/products/"} 301!`);
-await writeFile(path.join(dist, "_redirects"), `${legacyProductRedirects.join("\n")}\n/product-pages/* /products/ 301!\n`, "utf8");
+const legacyNamedProductRedirects = Object.entries(legacyNamedProductTargets)
+  .flatMap(([slug, target]) => [
+    `/products/${slug} ${target} 301!`,
+    `/products/${slug}/ ${target} 301!`,
+  ]);
+await writeFile(path.join(dist, "_redirects"), `${[...legacyProductRedirects, ...legacyNamedProductRedirects].join("\n")}\n/product-pages/* /products/ 301!\n`, "utf8");
 for (const file of (await readdir(root)).filter((name) => name.endsWith(".txt"))) await cp(path.join(root, file), path.join(dist, file));
-console.log(`Generated ${routes.length + 1} pages, ${detailProducts.length} product detail pages and ${legacyProductRedirects.length} targeted product redirects.`);
+console.log(`Generated ${routes.length + 1} pages, ${detailProducts.length} product detail pages and ${legacyProductRedirects.length + legacyNamedProductRedirects.length} targeted product redirects.`);
