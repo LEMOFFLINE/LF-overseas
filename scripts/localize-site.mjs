@@ -24,6 +24,7 @@ for (const language of locales) {
   if (language !== 'en') for(const {id} of source) if(typeof dictionary[id] !== 'string' || !dictionary[id].trim()) missing.add(`${language}:${id}`);
   const translate = value => {
     const text = normalize(value);
+    if(language !== 'en' && /^\d{1,3}(,\d{3})+$/.test(text)) return new Intl.NumberFormat(language === 'ar' ? 'ar-u-nu-latn' : language, {useGrouping:'always'}).format(Number(text.replaceAll(',','')));
     if(language === 'en' || !needsTranslation(text)) return value;
     const found = dictionary[keyFor(text)];
     if(!found) { missing.add(`${language}:${text}`); return value; }
