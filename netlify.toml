@@ -1,15 +1,11 @@
 [build]
-  command = "node scripts/generate-site.mjs && node scripts/validate-site.mjs"
+  command = "node scripts/generate-site.mjs && node scripts/localize-site.mjs && node scripts/validate-site.mjs && node scripts/validate-localization.mjs && node --test scripts/language-policy.test.mjs"
   publish = "dist"
   functions = "netlify/functions"
 
 [[edge_functions]]
   function = "visitor-country"
-  path = "/"
-
-[[edge_functions]]
-  function = "visitor-country"
-  path = "/inquiry"
+  path = "/*"
 
 [[redirects]]
   from = "/index.html"

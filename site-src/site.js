@@ -1,3 +1,26 @@
+const pageLanguage = document.documentElement.lang || 'en';
+const localizedCopy = JSON.parse(document.getElementById('lf-translations')?.textContent || '{}');
+const t = (value) => localizedCopy[value] || value;
+const languageMenu = document.querySelector('.language-switcher');
+document.querySelectorAll('[data-language]').forEach((link) => {
+  const target = new URL(link.href);
+  target.search = location.search;
+  target.searchParams.set('lang', link.dataset.language);
+  target.hash = location.hash;
+  link.href = target.href;
+  link.addEventListener('click', () => {
+    document.cookie = `lf_language=${link.dataset.language}; Max-Age=31536000; Path=/; SameSite=Lax${location.protocol === 'https:' ? '; Secure' : ''}`;
+  });
+});
+document.addEventListener('click', (event) => {
+  if (!languageMenu?.contains(event.target)) languageMenu?.removeAttribute('open');
+});
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && languageMenu?.open) {
+    languageMenu.removeAttribute('open');
+    languageMenu.querySelector('summary')?.focus();
+  }
+});
 const header = document.querySelector(".site-header");
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
@@ -11,7 +34,7 @@ function setProductMenu(open) {
 function setMainMenu(open) {
   navLinks?.classList.toggle("is-open", open);
   menuToggle?.setAttribute("aria-expanded", String(open));
-  menuToggle?.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  menuToggle?.setAttribute("aria-label", t(open ? "Close menu" : "Open menu"));
   document.body.classList.toggle("menu-open", open);
   if (!open) setProductMenu(false);
 }
@@ -100,7 +123,7 @@ if (productGrid) {
       card.hidden = !match;
       if (match) visible += 1;
     });
-    count.textContent = `${visible} product${visible === 1 ? "" : "s"}`;
+    count.textContent = pageLanguage === 'en' ? `${visible} product${visible === 1 ? "" : "s"}` : t('{count} products').replace('{count}', visible);
     empty.hidden = visible !== 0;
   };
   [search, collection, type, feature].forEach((control) => control?.addEventListener(control.tagName === "INPUT" ? "input" : "change", apply));
@@ -169,11 +192,11 @@ document.querySelectorAll('a[href^="https://wa.me"], a[href^="mailto:"], a[href^
 const countryCodes = "AD AE AF AG AI AL AM AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO BQ BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CW CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR SS ST SV SX SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS YE YT ZA ZM ZW".split(" ");
 const countryCodeSet = new Set(countryCodes);
 const countryNames = typeof Intl.DisplayNames === "function"
-  ? new Intl.DisplayNames(["en"], { type: "region" })
+  ? new Intl.DisplayNames([pageLanguage], { type: "region" })
   : null;
 const countryChoices = countryCodes
   .map((code) => ({ code, name: countryNames?.of(code) || code }))
-  .sort((a, b) => a.name.localeCompare(b.name, "en"));
+  .sort((a, b) => a.name.localeCompare(b.name, pageLanguage));
 
 const readCookie = (name) => {
   const item = document.cookie.split(";").map((part) => part.trim()).find((part) => part.startsWith(`${name}=`));
@@ -199,6 +222,11 @@ const browserCountry = () => {
 };
 
 document.querySelectorAll("[data-inquiry-form]").forEach((rfqForm) => {
+  rfqForm.addEventListener('invalid', (event) => {
+    const field = event.target;
+    field.setCustomValidity(field.validity.valueMissing ? t('Please complete all required fields.') : field.validity.typeMismatch && field.type === 'email' ? t('Please enter a valid email address.') : t('Please check this field.'));
+  }, true);
+  for (const eventName of ['input', 'change']) rfqForm.addEventListener(eventName, (event) => event.target.setCustomValidity?.(''));
   const countrySelect = rfqForm.querySelector("[data-country-select]");
   if (countrySelect) {
     countryChoices.forEach(({ code, name }) => countrySelect.add(new Option(name, code)));
@@ -217,9 +245,9 @@ document.querySelectorAll("[data-inquiry-form]").forEach((rfqForm) => {
   const context = params.get("context");
   const request = params.get("request");
   const initialMessage = [];
-  if (request) initialMessage.push(`Request: ${request}`);
-  if (skus) initialMessage.push(`Selected product: ${product ? `${skus} — ${product}` : skus}`);
-  if (context) initialMessage.push(`Context: ${context}`);
+  if (request) initialMessage.push(`${t('Request')}: ${t(request)}`);
+  if (skus) initialMessage.push(`${t('Selected product')}: ${product ? `${skus} — ${product}` : skus}`);
+  if (context) initialMessage.push(`${t('Context')}: ${context}`);
   if (initialMessage.length && rfqForm.elements.message) rfqForm.elements.message.value = initialMessage.join("\n");
 
   const message = rfqForm.querySelector("[data-form-message]");
@@ -244,7 +272,7 @@ document.querySelectorAll("[data-inquiry-form]").forEach((rfqForm) => {
     if (!rfqForm.reportValidity()) return;
     submit.disabled = true;
     const original = submit.textContent;
-    submit.textContent = "Sending…";
+    submit.textContent = t("Sending…");
     try {
       const data = new FormData(rfqForm);
       const file = data.get("attachment");
@@ -263,11 +291,11 @@ document.querySelectorAll("[data-inquiry-form]").forEach((rfqForm) => {
       payload.utmTerm = firstTouch.utmTerm;
       const response = await fetch("/.netlify/functions/rfq", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(payload) });
       const result = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(result.error || "Unable to send the inquiry right now.");
+      if (!response.ok) throw new Error(response.status === 413 ? "Please upload a file under 4 MB." : "Unable to send the inquiry right now.");
       const selectedCountry = countrySelect?.value;
       rfqForm.reset();
       if (countrySelect && selectedCountry) countrySelect.value = selectedCountry;
-      showMessage("Thank you. Your inquiry has been sent to LF Clothing.");
+      showMessage(t("Thank you. Your inquiry has been sent to LF Clothing."));
       window.lfTrackEvent?.("generate_lead", {
         source_category: firstTouch.sourceCategory,
         campaign_source: firstTouch.utmSource || "",
@@ -275,7 +303,8 @@ document.querySelectorAll("[data-inquiry-form]").forEach((rfqForm) => {
         form_location: location.pathname,
       });
     } catch (error) {
-      showMessage(`${error.message} You can also email sales@lfclothing.com.`, true);
+      const errorText = localizedCopy[error.message] ? t(error.message) : t('Unable to send the inquiry right now.');
+      showMessage(`${errorText} ${t('You can also email sales@lfclothing.com.')}`, true);
     } finally {
       submit.disabled = false;
       submit.textContent = original;

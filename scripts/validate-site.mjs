@@ -131,7 +131,7 @@ async function walk(dir) {
 
 async function exists(file) { try { await access(file); return true; } catch { return false; } }
 const files = await walk(root);
-const htmlFiles = files.filter((file) => file.endsWith(".html"));
+const htmlFiles = files.filter((file) => file.endsWith(".html") && !/^(de|fr|ar|es|pt|ja|ko)\//.test(path.relative(root,file).replaceAll('\\','/')));
 const titles = new Map();
 const canonicals = new Map();
 
@@ -267,13 +267,14 @@ if (!analytics.includes('G-D5XWSW9S5V')) errors.push("GA4 measurement ID is miss
 if (!analytics.includes('window.gtag("consent", "default"')) errors.push("Consent Mode default is missing");
 if (!analytics.includes('lfProductionHosts.has(location.hostname)')) errors.push("GA4 must be limited to production hosts");
 if (!analytics.includes('window.lfTrackEvent')) errors.push("consent-aware event helper is missing");
-if (/[\u3400-\u9fff]|[，。；（）]/.test(combined)) errors.push("public build contains Chinese product or interface text");
+const englishPageText = (await Promise.all(htmlFiles.map(async file => (await readFile(file,'utf8')).replace(/<details class="language-switcher">[\s\S]*?<\/details>/g,'')))).join('\n');
+if (/[\u3400-\u9fff]|[，。；（）]/.test(englishPageText)) errors.push("English pages contain Chinese product or interface text outside the language selector");
 for (const banned of ["Request Full Catalog", "Download Catalogue", "700,000", "200+ Production", "Aviation & Special Projects", "LF-BW-", "LF-IW-", "LF-CA-"]) {
   if (combined.includes(banned)) errors.push(`banned legacy content remains: ${banned}`);
 }
 const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((item) => item[1]);
-const expectedSitemapUrls = collections.length + 13 + detailProducts.length + projectStudies.length;
+const expectedSitemapUrls = (collections.length + 13 + detailProducts.length + projectStudies.length) * 8;
 if (sitemapUrls.length !== expectedSitemapUrls) errors.push(`expected ${expectedSitemapUrls} sitemap URLs, found ${sitemapUrls.length}`);
 for (const study of projectStudies) if (!sitemapUrls.includes(`${baseUrl}/projects/${study.slug}/`)) errors.push(`project study missing from sitemap: ${study.slug}`);
 if (new Set(sitemapUrls).size !== sitemapUrls.length) errors.push("sitemap has duplicate URLs");

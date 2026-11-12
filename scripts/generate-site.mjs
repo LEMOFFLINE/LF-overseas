@@ -13,6 +13,7 @@ const buyerCommon = JSON.parse(await readFile(path.join(root, "data", "buyer-com
 const catalogPages = JSON.parse(await readFile(path.join(root, "data", "catalog-pages.json"), "utf8"));
 const projectStudies = JSON.parse(await readFile(path.join(root, "data", "project-studies.json"), "utf8"));
 const styles = await readFile(path.join(root, "site-src", "styles.css"), "utf8") + "\n" + await readFile(path.join(root, "site-src", "apparel-editorial.css"), "utf8") + "\n" + await readFile(path.join(root, "site-src", "corporate-pages.css"), "utf8");
+const localizationStyles = await readFile(path.join(root, "site-src", "localization.css"), "utf8");
 const siteJs = await readFile(path.join(root, "site-src", "site.js"), "utf8");
 const analyticsJs = await readFile(path.join(root, "site-src", "analytics.js"), "utf8");
 const baseUrl = "https://lfclothing.com";
@@ -473,7 +474,7 @@ async function writePage(route, html) {
 
 await rm(dist, { recursive: true, force: true });
 await mkdir(path.join(dist, "assets"), { recursive: true });
-await writeFile(path.join(dist, "styles.css"), styles, "utf8");
+await writeFile(path.join(dist, "styles.css"), styles + "\n" + localizationStyles, "utf8");
 await writeFile(path.join(dist, "site.js"), siteJs, "utf8");
 await writeFile(path.join(dist, "analytics.js"), analyticsJs, "utf8");
 
