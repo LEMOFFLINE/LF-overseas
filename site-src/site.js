@@ -1,20 +1,40 @@
 const header = document.querySelector(".site-header");
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
+const productDropdown = document.querySelector(".nav-dropdown");
+const productToggle = productDropdown?.querySelector("button");
 
-if (menuToggle && navLinks) {
-  menuToggle.addEventListener("click", () => {
-    const open = navLinks.classList.toggle("is-open");
-    menuToggle.setAttribute("aria-expanded", String(open));
-    menuToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-    document.body.classList.toggle("menu-open", open);
-  });
-  navLinks.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
-    navLinks.classList.remove("is-open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    document.body.classList.remove("menu-open");
-  }));
+function setProductMenu(open) {
+  productDropdown?.classList.toggle("is-open", open);
+  productToggle?.setAttribute("aria-expanded", String(open));
 }
+function setMainMenu(open) {
+  navLinks?.classList.toggle("is-open", open);
+  menuToggle?.setAttribute("aria-expanded", String(open));
+  menuToggle?.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  document.body.classList.toggle("menu-open", open);
+  if (!open) setProductMenu(false);
+}
+menuToggle?.addEventListener("click", () => setMainMenu(menuToggle.getAttribute("aria-expanded") !== "true"));
+productToggle?.addEventListener("click", () => setProductMenu(productToggle.getAttribute("aria-expanded") !== "true"));
+navLinks?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMainMenu(false)));
+document.addEventListener("click", (event) => {
+  if (!productDropdown?.contains(event.target)) setProductMenu(false);
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape") return;
+  if (productToggle?.getAttribute("aria-expanded") === "true") {
+    setProductMenu(false);
+    productToggle.focus();
+  } else if (menuToggle?.getAttribute("aria-expanded") === "true") {
+    setMainMenu(false);
+    menuToggle.focus();
+  }
+});
+productDropdown?.addEventListener("focusout", (event) => {
+  if (!productDropdown.contains(event.relatedTarget)) setProductMenu(false);
+});
+matchMedia("(max-width: 860px)").addEventListener("change", () => setMainMenu(false));
 
 const carousel = document.querySelector("[data-hero-carousel]");
 if (carousel) {

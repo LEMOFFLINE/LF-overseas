@@ -1,0 +1,61 @@
+{
+  "retrievedOn": "2026-11-11",
+  "purpose": "Illustrative stock photography for four homepage themes. The photos do not depict LF staff, LF-owned facilities or documented LF customer projects.",
+  "licenses": {
+    "Unsplash": "https://unsplash.com/license",
+    "Pexels": "https://www.pexels.com/license/"
+  },
+  "processing": "Mechanical crop to 3:2 and resize to 1536x1024 / 960x640 WebP. No generative edits or logo removal.",
+  "photos": [
+    {
+      "theme": "Complete solutions / hero",
+      "asset": "complete-solutions-stock-v3",
+      "candidate": "studio-unsplash.jpg",
+      "author": "Vitaly Gariev",
+      "platform": "Unsplash",
+      "photoId": "1lg6Gn0-o54",
+      "sourcePage": "https://unsplash.com/photos/a-fashion-design-studio-with-sewing-materials-1lg6Gn0-o54",
+      "downloadUrl": "https://images.unsplash.com/photo-1753164597544-a2736833357e?auto=format&fit=crop&fm=jpg&q=85&w=1800",
+      "reason": "Patterns, samples, sewing equipment and garments show the apparel development journey in one coherent setting."
+    },
+    {
+      "theme": "Professional design",
+      "asset": "professional-design-stock-v3",
+      "candidate": "design-unsplash.jpg",
+      "author": "Vitaly Gariev",
+      "platform": "Unsplash",
+      "photoId": "1jfs4-VsDNg",
+      "sourcePage": "https://unsplash.com/photos/two-fashion-designers-work-in-a-design-studio-1jfs4-VsDNg",
+      "downloadUrl": "https://images.unsplash.com/photo-1753162657219-e4e48c56afbc?auto=format&fit=crop&fm=jpg&q=85&w=1800",
+      "reason": "A clear pattern-making action, fabric and garment references; same shoot and palette as the hero."
+    },
+    {
+      "theme": "Enterprise project experience",
+      "asset": "enterprise-projects-stock-v3",
+      "candidate": "sewing-pexels.jpg",
+      "author": "Cemrecan Yurtman",
+      "platform": "Pexels",
+      "photoId": "17710109",
+      "sourcePage": "https://www.pexels.com/photo/sewing-machines-17710109/",
+      "downloadUrl": "https://images.pexels.com/photos/17710109/pexels-photo-17710109.jpeg?auto=compress&cs=srgb&w=1800",
+      "reason": "Repeated embroidery heads suggest coordinated production. Actual LF enterprise evidence remains in the project facts and links, independent of this illustrative image."
+    },
+    {
+      "theme": "Reliable logistics",
+      "asset": "coordinated-logistics-stock-v3",
+      "candidate": "port-unsplash.jpg",
+      "author": "CHUTTERSNAP",
+      "platform": "Unsplash",
+      "photoId": "M3yYOCob6kE",
+      "sourcePage": "https://unsplash.com/photos/aerial-photography-of-port-M3yYOCob6kE",
+      "downloadUrl": "https://images.unsplash.com/photo-1508404999913-79a3a2e75437?auto=format&fit=crop&fm=jpg&q=85&w=1800",
+      "reason": "An active port with water, cranes and container movement; clear international shipping context."
+    }
+  ],
+  "rejectedCandidates": [
+    {"file": "complete-unsplash.jpg", "sourcePage": "https://unsplash.com/photos/womens-assorted-clothes-Q-72wa9-7Dg", "reason": "Prominent third-party garment branding and portrait composition."},
+    {"file": "outfit-pexels.jpg", "sourcePage": "https://www.pexels.com/photo/flat-lay-of-clothing-and-accessories-3927390/", "reason": "Large central empty area, consumer styling and visible shoe branding."},
+    {"file": "production-unsplash.jpg", "sourcePage": "https://unsplash.com/photos/factory-workers-are-stitching-fabric-in-a-production-line-O792cXMJzy0", "reason": "Visual inspection shows mat/home-textile packing rather than apparel production."},
+    {"file": "logistics-pexels.jpg", "sourcePage": "https://www.pexels.com/photo/containers-in-warehouse-19492667/", "reason": "Dense container pattern less suitable than the selected port view."}
+  ]
+}

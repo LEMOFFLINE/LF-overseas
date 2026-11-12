@@ -286,7 +286,7 @@ if (!sitemapUrls.includes(`${baseUrl}/collections/aviation-flight-suits/`)) erro
 if (!sitemapUrls.includes(`${baseUrl}/event-staff-uniforms/`)) errors.push("event staff uniforms landing page missing from sitemap");
 
 const expectedSeoTitles = new Map([
-  ["index.html", "Custom Clothing Manufacturer in China | LF Clothing"],
+  ["index.html", "Custom Clothing & Related Products Supplier in China | LF Clothing"],
   ["custom-workwear/index.html", buyerPrograms.workwear.title],
   ["event-staff-uniforms/index.html", buyerPrograms.eventStaff.title],
   ["customization/index.html", "Bespoke Staff Uniforms & Clothing Customization | LF Clothing"],
@@ -306,15 +306,14 @@ for (const [rel, expectedTitle] of expectedSeoTitles) {
 const homepage = await readFile(path.join(root, "index.html"), "utf8");
 if (!homepage.includes('<script src="/analytics.js"></script>')) errors.push("homepage is missing the analytics bootstrap");
 if (!homepage.includes('data-cookie-banner')) errors.push("homepage is missing analytics consent controls");
-const homepageRequirements = [
-  ["representative product tiles", (homepage.match(/class="home-product-tile"/g) || []).length, 9],
-  ["homepage capability cards", (homepage.match(/class="home-capability-card"/g) || []).length, 6],
-  ["visual process steps", (homepage.match(/class="visual-process-card"/g) || []).length, 7],
-  ["visual process detail links", (homepage.match(/class="visual-process-more"/g) || []).length, 1],
-  ["certificate logos", (homepage.match(/class="certificate-logo"/g) || []).length, 3],
-  ["why choose reasons", (homepage.match(/class="why-choose-card"/g) || []).length, 5],
-];
-for (const [label, actual, expected] of homepageRequirements) if (actual !== expected) errors.push(`homepage expected ${expected} ${label}, found ${actual}`);
+// Category links must remain visible without scripting; the homepage has six content sections.
+const categories = [...homepage.matchAll(/data-range-category="([^"]+)"/g)].map((match) => match[1]);
+if (categories.length !== 4 || new Set(categories).size !== 4) errors.push("homepage must show four distinct category links");
+const homeMain = homepage.match(/<main id="main">([\s\S]*?)<\/main>/)?.[1] || "";
+if ((homeMain.match(/<section\b/g) || []).length !== 6) errors.push("homepage must contain six content sections");
+for (const text of ["China-based custom apparel supplier", "20 years of clothing industry experience", "procurement partners", "Industry photography illustrates applications"]) if (!homepage.includes(text)) errors.push(`homepage missing positioning or image context: ${text}`);
+if (!homepage.includes('href="/inquiry/"') || !homepage.includes('href="/projects/"')) errors.push("homepage requires inquiry and project routes");
+for (const oldClass of ["home-product-tile", "home-capability-card", "visual-process-card", "why-choose-card"]) if (homepage.includes(`class="${oldClass}"`)) errors.push(`homepage still has the retired long layout: ${oldClass}`);
 if (homepage.includes("Four main product lines") || homepage.includes("Start with the Product You Need")) errors.push("homepage still contains the removed four-product-line section");
 if (homepage.includes("Flexible Customization with One Accountable Contact")) errors.push("homepage still contains the replaced long why-choose section");
 for (const removedFact of ["100,000 pcs", "10,000+", "Representative export markets", "coordinated production personnel", "1.5 million pieces"]) if (homepage.includes(removedFact)) errors.push(`homepage still contains removed company fact: ${removedFact}`);
@@ -322,7 +321,7 @@ if (homepage.includes("Quick Answers About LF Clothing") || homepage.includes('"
 const aboutPage = await readFile(path.join(root, "about", "index.html"), "utf8");
 if (!aboutPage.includes("Quick Answers About LF Clothing")) errors.push("about page is missing the relocated FAQ section");
 if (!aboutPage.includes('"@type":"FAQPage"')) errors.push("about page is missing FAQ structured data");
-if ((aboutPage.match(/class="faq-grid"/g) || []).length !== 1) errors.push("about page must contain exactly one FAQ grid");
+if ((aboutPage.match(/class="faq-list"/g) || []).length !== 1) errors.push("about page must contain exactly one FAQ section");
 const privacyPage = await readFile(path.join(root, "privacy", "index.html"), "utf8");
 if (!privacyPage.includes("How LF Clothing Uses Website and Inquiry Data")) errors.push("privacy page content is missing");
 if (!privacyPage.includes("lf_country")) errors.push("privacy page is missing the country preference cookie disclosure");
@@ -337,7 +336,8 @@ if (!/<input[^>]*name=["']email["'][^>]*type=["']email["']/i.test(inquiryPage)) 
 if (!/<select[^>]*name=["']countryCode["'][^>]*data-country-select/i.test(inquiryPage)) errors.push("inquiry country field must use the country selector");
 
 const productsPage = await readFile(path.join(root, "products", "index.html"), "utf8");
-if ((productsPage.match(/class="product-category-link"/g) || []).length !== collections.length + 2) errors.push("products page must link to every product collection, aviation and event staff uniforms");
+if ((productsPage.match(/class="range-collection-item"/g) || []).length !== 4) errors.push("products overview must contain four visual category groups");
+if (productsPage.includes('class="product-card"')) errors.push("products overview still contains the retired SKU grid");
 for (const collection of collections) if (!productsPage.includes(`href="/collections/${collection.slug}/"`)) errors.push(`products page is missing collection link: ${collection.slug}`);
 if (!productsPage.includes(`href="/collections/aviation-flight-suits/"`)) errors.push("products page is missing aviation collection link");
 if (!productsPage.includes(`href="/event-staff-uniforms/"`)) errors.push("products page is missing event staff uniforms link");

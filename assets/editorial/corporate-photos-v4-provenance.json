@@ -1,0 +1,133 @@
+{
+  "retrievedOn": "2026-11-11",
+  "purpose": "Illustrative real stock photography for LF homepage and category overview. Not LF staff, facilities, customers or delivered products.",
+  "photos": [
+    {
+      "theme": "Workwear & outerwear",
+      "assetSuggested": "range-workwear-stock-v4",
+      "sourcePage": "https://www.pexels.com/photo/industrial-workers-in-safety-gear-at-steel-factory-32845683/",
+      "author": "Sergey Sergeev",
+      "platform": "Pexels",
+      "photoId": "32845683",
+      "downloadUrl": "https://images.pexels.com/photos/32845683/pexels-photo-32845683/free-photo-of-industrial-workers-in-safety-gear-at-steel-factory.jpeg?auto=compress&w=1800",
+      "suitability": "Strong industrial context, three coordinated blue/grey jackets clearly visible; 4:3 crop works at centre.",
+      "limitations": "Small third-party helmet marks and Russian sign visible. Use as stock workwear context, not LF customer or factory.",
+      "recommended": true,
+      "cropPosition": "50% 58%",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "licenseEvidence": "Official photo page explicitly labels image Free/Download free and links platform license; reviewed 2026-11-11.",
+      "visuallyInspected": true,
+      "dimensions": [
+        1800,
+        1197
+      ],
+      "asset": "/assets/editorial/range-workwear-stock-v4.webp"
+    },
+    {
+      "theme": "Corporate & service uniforms",
+      "assetSuggested": "range-corporate-stock-v4",
+      "sourcePage": "https://unsplash.com/photos/person-standing-near-the-stairs-MYbhN8KaaEc",
+      "author": "Hunters Race",
+      "platform": "Unsplash",
+      "photoId": "MYbhN8KaaEc",
+      "downloadUrl": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&fm=jpg&q=85&w=1800",
+      "suitability": "Navy suit, shirt and tie detail; sober colour palette; product-focused composition without a business meeting.",
+      "limitations": "Watch visible; wearer is not an LF representative or client. Stock example only.",
+      "recommended": true,
+      "cropPosition": "50% 50%",
+      "licenseUrl": "https://unsplash.com/license",
+      "licenseEvidence": "Official photo page explicitly labels image Free/Download free and links platform license; reviewed 2026-11-11.",
+      "visuallyInspected": true,
+      "dimensions": [
+        1800,
+        1200
+      ],
+      "asset": "/assets/editorial/range-corporate-stock-v4.webp"
+    },
+    {
+      "theme": "School, team & event clothing",
+      "assetSuggested": "range-team-stock-v4",
+      "sourcePage": "https://unsplash.com/photos/white-crew-neck-t-shirt-acn5ERAeSb4",
+      "author": "Haryo Setyadi",
+      "platform": "Unsplash",
+      "photoId": "acn5ERAeSb4",
+      "downloadUrl": "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&fm=jpg&q=85&w=1800",
+      "suitability": "Plain white team/event apparel blank, grey background, clear textile shape.",
+      "limitations": "Portrait image has large empty area above shirt; select lower-centred crop. Represents T-shirt subset rather than all team/school garments. Tiny collar label remains.",
+      "recommended": true,
+      "cropPosition": "50% 80%",
+      "licenseUrl": "https://unsplash.com/license",
+      "licenseEvidence": "Official photo page explicitly labels image Free/Download free and links platform license; reviewed 2026-11-11.",
+      "visuallyInspected": true,
+      "dimensions": [
+        1800,
+        2700
+      ],
+      "asset": "/assets/editorial/range-team-stock-v4.webp"
+    },
+    {
+      "theme": "Accessories & related products",
+      "assetSuggested": "range-accessories-stock-v4",
+      "sourcePage": "https://www.pexels.com/photo/black-tote-bag-1214212/",
+      "author": "Stephanie Ho",
+      "platform": "Pexels",
+      "photoId": "1214212",
+      "downloadUrl": "https://images.pexels.com/photos/1214212/pexels-photo-1214212.jpeg?auto=compress&w=1800",
+      "suitability": "Plain unbranded black textile bag against restrained geometric grey background; good material and category signal.",
+      "limitations": "Represents bag subset; not an LF supplied product. Crop lower half to retain bag rather than blank wall.",
+      "recommended": true,
+      "cropPosition": "42% 77%",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "licenseEvidence": "Official photo page explicitly labels image Free/Download free and links platform license; reviewed 2026-11-11.",
+      "visuallyInspected": true,
+      "dimensions": [
+        1800,
+        1800
+      ],
+      "asset": "/assets/editorial/range-accessories-stock-v4.webp"
+    },
+    {
+      "theme": "Supply & logistics",
+      "assetSuggested": "coordinated-logistics-stock-v4",
+      "sourcePage": "https://www.pexels.com/photo/warehouse-workers-carrying-boxes-4487361/",
+      "author": "Tiger Lily",
+      "platform": "Pexels",
+      "photoId": "4487361",
+      "downloadUrl": "https://images.pexels.com/photos/4487361/pexels-photo-4487361.jpeg?auto=compress&w=1800",
+      "suitability": "Bright orderly warehouse and staff carrying cartons; a practical logistics alternative to dark port aerial.",
+      "limitations": "Warehouse contains paint containers, not clothing. Illustrates logistics only; not an LF warehouse or staff.",
+      "recommended": true,
+      "cropPosition": "50% 50%",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "licenseEvidence": "Official photo page explicitly labels image Free/Download free and links platform license; reviewed 2026-11-11.",
+      "visuallyInspected": true,
+      "dimensions": [
+        1800,
+        1200
+      ],
+      "asset": "/assets/editorial/coordinated-logistics-stock-v4.webp"
+    },
+    {
+      "theme": "Hero / apparel development",
+      "author": "Michael Burrows",
+      "platform": "Pexels",
+      "photoId": "7147652",
+      "sourcePage": "https://www.pexels.com/photo/crop-seamstress-creating-garment-using-sewing-machine-in-workshop-7147652/",
+      "downloadUrl": "https://images.pexels.com/photos/7147652/pexels-photo-7147652.jpeg?auto=compress&w=2000",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "licenseEvidence": "Official photo page explicitly Free and linked Pexels License, reviewed 2026-11-11.",
+      "suitability": "Clean wide close-up of garment sample sewing, fabric and paper patterns; action lies centre-right, with cloth and paper on left for text overlay. More apparel-focused than the empty studio hero.",
+      "limitations": "An atelier-scale sample-making scene, not evidence of a large factory. Treat as illustrative stock photography. Machine and hands must remain visible after wide crop.",
+      "recommended": true,
+      "visuallyInspected": true,
+      "dimensions": [
+        2000,
+        1333
+      ],
+      "cropPosition": "50% 48%",
+      "asset": "/assets/editorial/apparel-development-hero-stock-v4.webp"
+    }
+  ],
+  "processing": "Mechanical crop and resize to responsive WebP. No generative edits. Category images: 960x720 and 640x480; logistics: 1536x1024 and 960x640; hero: 1920x1280 and 960x640.",
+  "retainedThemeSources": "stock-photos-v3-provenance.json (design and embroidery photography)"
+}
