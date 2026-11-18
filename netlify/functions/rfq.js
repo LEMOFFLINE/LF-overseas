@@ -38,6 +38,11 @@ function buildEmailHtml(data) {
         ${row("Email", data.email)}
         ${row("WhatsApp / Phone", data.phone)}
         ${row("Country / Region", data.country ? `${data.country} (${data.countryCode})` : data.countryCode)}
+        ${row("Company", data.company)}
+        ${row("Product category", data.category)}
+        ${row("Estimated quantity", data.quantity)}
+        ${row("Target delivery date", data.deliveryDate)}
+        ${row("Delivery destination", data.destination)}
         ${row("Message", data.message)}
         ${row("First-touch Source", data.sourceCategory)}
         ${row("Landing Page", data.landingPage)}

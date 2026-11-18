@@ -1,7 +1,8 @@
+import { portfolio, capabilities } from "./apparel-portfolio-data.mjs";
 import { cp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { renderProjectStudyBody } from "./render-project-study.mjs";
-import { renderHome, renderProductsOverview } from "./render-apparel-range.mjs";
+import { renderHome, renderProductsOverview, homeTitle, homeDescription, productTitle, productDescription, newPages, renderNewPage } from "./render-apparel-range.mjs";
 import { corporateHero, corporateCta, corporateFaqs, renderCustomization, renderProcess, renderAbout, renderProjects, renderInquiry } from "./render-corporate-pages.mjs";
 import { renderDevelopmentScope, renderReferenceNote, renderGuidesIndex, renderCustomizationGuide, guidesIntro } from "./render-customization-guides.mjs";
 
@@ -149,7 +150,7 @@ const productCopy = {
 };
 
 const projectCases = [
-  { name: "ANA", id: "ana-ground-crew", image: "/assets/cases/ana-ground-crew-coverall.webp", alt: "ANA ground crew coverall supplied through an apparel program", fact: "LF supplied 500 one-piece ground-crew coveralls for an ANA program.", referenceDetails: "The project reference shows a grey long-sleeve coverall with a covered front opening, zipped chest pockets, waist adjustment tabs and leg pockets. Chest branding and blue sleeve panels carry the team identity across a practical one-piece uniform.", planningNote: "For a similar ground-crew order, we review movement, pocket access, size distribution and laundering requirements before sampling. Any required protective performance is specified and verified separately for the new order." },
+  { name: "ANA", id: "ana-ground-crew", image: "/assets/cases/ana-ground-crew-coverall.webp", alt: "ANA ground crew coverall supplied through an apparel program", fact: "LF supplied long-sleeve coveralls for an ANA ground-crew uniform programme.", referenceDetails: "The project reference shows a grey long-sleeve coverall with a covered front opening, zipped chest pockets, waist adjustment tabs and leg pockets. Chest branding and blue sleeve panels carry the team identity across a practical one-piece uniform.", planningNote: "For a similar ground-crew order, we review movement, pocket access, size distribution and laundering requirements before sampling. Any required protective performance is specified and verified separately for the new order." },
   { name: "Mercedes-Benz", image: winterEventStudy.image, alt: winterEventStudy.imageAlt, label: "2019 winter event program", fact: winterEventStudy.summary, route: winterEventRoute, linkLabel: "Explore the complete winter outfit" },
   { name: "SMS group", image: "/assets/cases/sms-group-work-jacket.webp", alt: "SMS group branded industrial work jacket", fact: "LF has supported repeat supply of branded industrial work jackets for an SMS group program." },
   { name: "PetroChina", image: "/assets/cases/petrochina-yellow-down-jacket.webp", alt: "PetroChina yellow insulated service-station jacket project", fact: "LF has provided long-term apparel supply for PetroChina service-station programs, covering summer uniforms, winter uniforms and down jackets." },
@@ -183,12 +184,14 @@ function header(active = "") {
     <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">
       <a${activeClass(active, "home")} href="/">Home</a>
       <div class="nav-dropdown"><button${activeClass(active, "products")} type="button" aria-expanded="false" aria-controls="product-navigation">Products</button><div class="dropdown-menu" id="product-navigation">
-        <a href="/products">All Product Categories</a><a href="/custom-workwear">Workwear &amp; Outerwear</a><a href="${corporateRoute}">Corporate &amp; Service Uniforms</a><a href="/collections/team-staff-apparel">School, Team &amp; Event Clothing</a><a href="/products#accessories">Accessories &amp; Related Products</a><a href="${aviationRoute}">Aviation Uniforms</a>
+        <a href="/products">All Product Categories</a>${portfolio.map(([id,title]) => `<a href="/products#${id}">${escapeHtml(title)}</a>`).join("")}
       </div></div>
+      <a${activeClass(active, "industries")} href="/industries">Industries</a>
+      <a${activeClass(active, "manufacturing-capabilities")} href="/manufacturing-capabilities">Manufacturing capabilities</a>
       <a${activeClass(active, "customization")} href="/customization">Customization</a>
-      <a${activeClass(active, "process")} href="/process-quality">Process &amp; Quality</a>
+      <a${activeClass(active, "process")} href="/process-quality">Quality &amp; delivery assurance</a>
       <a${activeClass(active, "projects")} href="/projects">Projects</a>
-      <a${activeClass(active, "guides")} href="/guides">Guides</a>
+      <a${activeClass(active, "guides")} href="/guides">Resources</a>
       <a${activeClass(active, "about")} href="/about">About</a>
       <a${activeClass(active, "inquiry")} href="/inquiry">Contact</a>
     </nav>
@@ -198,15 +201,16 @@ function header(active = "") {
 function footer() {
   return `<footer class="site-footer"><div class="container">
     <div class="footer-grid">
-      <div class="footer-brand"><h3>LF Clothing</h3><p>Custom workwear, uniforms and branded apparel for brands, businesses and teams. Clothing and accessories coordinated through one contact.</p><div class="social-links">
+      <div class="footer-brand"><h3>LF Clothing</h3><p>Custom apparel manufacturing and supply</p><div class="social-links">
         <a class="social-link social-linkedin" href="https://www.linkedin.com/in/kai-wang-b6aa79420/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.61 0 4.27 2.37 4.27 5.46v6.28ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.1 20.45H3.54V9H7.1v11.45Z"/></svg></a>
         <a class="social-link social-facebook" href="https://www.facebook.com/profile.php?id=61591964337372" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.03 4.39 11.02 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.03 1.79-4.7 4.53-4.7 1.31 0 2.69.24 2.69.24v2.97h-1.52c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.09 24 18.1 24 12.07Z"/></svg></a>
         <a class="social-link social-whatsapp" href="https://wa.me/8613901335518" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.48a8.97 8.97 0 0 1-1.65-2.07c-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35ZM12.04 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.22-3.74.98 1-3.65-.23-.37A9.86 9.86 0 1 1 12.04 21.79ZM20.43 3.49A11.8 11.8 0 0 0 12.05 0 11.91 11.91 0 0 0 1.72 17.84L.05 24l6.3-1.65A11.9 11.9 0 0 0 24 11.91a11.82 11.82 0 0 0-3.57-8.42Z"/></svg></a>
       </div></div>
-      <div><h3>Product Range</h3><div class="footer-links"><a href="/custom-workwear">Workwear &amp; Outerwear</a><a href="${corporateRoute}">Corporate Uniforms</a><a href="/school-uniforms">School Uniforms</a><a href="${eventRoute}">Team &amp; Event Clothing</a><a href="/products#accessories">Accessories &amp; More</a></div></div>
-      <div><h3>Company &amp; Services</h3><div class="footer-links"><a href="/about">About LF Clothing</a><a href="/customization">Customization</a><a href="/process-quality">Process &amp; Quality</a><a href="/projects">Our Projects</a><a href="/guides">Customization guides</a><a href="/inquiry">Request a Quote</a></div></div>
-      <div class="footer-contact"><h3>Contact Our Team</h3><div class="footer-links"><a href="mailto:sales@lfclothing.com">sales@lfclothing.com</a><a href="https://wa.me/8613901335518">WhatsApp: +86 139 0133 5518</a><span>Room 203, Building 1, No. 18 Jia, Longtai Road, Jiugong Industrial Park, Daxing District, Beijing, China.</span></div></div>
-    </div><div class="footer-bottom"><span>© 2026 Beijing Lingfeng Apparel Co., Ltd. All rights reserved.</span><span><a href="/privacy">Privacy &amp; Cookies</a><button class="footer-cookie-button" type="button" data-cookie-settings>Cookie settings</button></span></div>
+      <div><h3>Product Range</h3><div class="footer-links">${portfolio.map(([id,title])=>`<a href="/products#${id}">${escapeHtml(title)}</a>`).join("")}</div></div>
+      <div><h3>Manufacturing capabilities</h3><div class="footer-links">${capabilities.map(([title],i)=>`<a href="/manufacturing-capabilities#topic-${i+1}">${escapeHtml(title)}</a>`).join("")}</div></div>
+      <div><h3>Company &amp; Services</h3><div class="footer-links"><a href="/about">About LF Clothing</a><a href="/industries">Industries</a><a href="/customization">Customization</a><a href="/process-quality">Quality &amp; delivery assurance</a><a href="/projects">Our Projects</a><a href="/guides">Resources</a></div></div>
+      <div class="footer-contact"><h3>Contact Our Team</h3><div class="footer-links"><a href="mailto:sales@lfclothing.com">sales@lfclothing.com</a><a href="https://wa.me/8613901335518">WhatsApp: +86 139 0133 5518</a><span>Beijing, China</span></div></div>
+    </div><div class="footer-bottom"><span>© 2026 Beijing Lingfeng Clothing Co., Ltd. All rights reserved.</span><span><a href="/privacy">Privacy &amp; Cookies</a><button class="footer-cookie-button" type="button" data-cookie-settings>Cookie settings</button></span></div>
   </div></footer>`;
 }
 
@@ -223,9 +227,9 @@ function metaDescription(value) {
 
 function layout({ title, description, pathName, active, body, schema = [], robots = "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1", image = "/assets/operations/fabric-cutting-table.webp" }) {
   const url = absolute(pathName);
-  description = metaDescription(description);
+  description = pathName === "/" ? description : metaDescription(description);
   const organization = {
-    "@context": "https://schema.org", "@type": "Organization", "@id": `${baseUrl}/#organization`, name: "Beijing Lingfeng Apparel Co., Ltd.", alternateName: "LF Clothing", url: `${baseUrl}/`,
+    "@context": "https://schema.org", "@type": "Organization", "@id": `${baseUrl}/#organization`, name: "Beijing Lingfeng Clothing Co., Ltd.", alternateName: "LF Clothing", url: `${baseUrl}/`,
     logo: absoluteAsset("/assets/brand/lingfeng-logo.webp"), email: "sales@lfclothing.com", telephone: "+86 139 0133 5518",
     address: { "@type": "PostalAddress", streetAddress: "Room 203, Building 1, No. 18 Jia, Longtai Road, Jiugong Industrial Park, Daxing District", addressLocality: "Beijing", addressCountry: "CN" },
     sameAs: ["https://www.linkedin.com/in/kai-wang-b6aa79420/", "https://www.facebook.com/profile.php?id=61591964337372"],
@@ -279,6 +283,13 @@ function inquiryForm(prefix = "inquiry") {
       <div class="inquiry-extra-fields">
         <div class="field"><label for="${prefix}-attachment">Reference file</label><input id="${prefix}-attachment" name="attachment" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg,.jpeg,.webp"><small>Photo, drawing, tech pack, artwork or size chart. One file, maximum 4 MB.</small></div>
         <div class="field"><label for="${prefix}-country">Country / Region</label><select id="${prefix}-country" name="countryCode" autocomplete="country" data-country-select><option value="">Select country or region</option></select><small>Selected automatically where location information is available. You can change it.</small></div>
+        <div class="field"><label for="${prefix}-company">Company name</label><input id="${prefix}-company" name="company" autocomplete="organization"></div>
+        <div class="form-two">
+          <div class="field"><label for="${prefix}-category">Product category</label><select id="${prefix}-category" name="category"><option value=""></option>${portfolio.map(([,title])=>`<option value="${escapeHtml(title)}">${escapeHtml(title)}</option>`).join("")}</select></div>
+          <div class="field"><label for="${prefix}-quantity">Estimated quantity</label><input id="${prefix}-quantity" name="quantity" type="number" min="1" step="1"></div>
+          <div class="field"><label for="${prefix}-date">Target delivery date</label><input id="${prefix}-date" name="deliveryDate" type="date"></div>
+          <div class="field"><label for="${prefix}-destination">Delivery destination</label><input id="${prefix}-destination" name="destination"></div>
+        </div>
         <div class="form-two">
           <div class="field"><label for="${prefix}-name">Name</label><input id="${prefix}-name" name="name" autocomplete="name"></div>
           <div class="field"><label for="${prefix}-phone">WhatsApp / Phone</label><input id="${prefix}-phone" name="phone" type="tel" autocomplete="tel" placeholder="Include country code"></div>
@@ -286,7 +297,7 @@ function inquiryForm(prefix = "inquiry") {
       </div>
     </details>
     <div class="visually-hidden" aria-hidden="true"><label for="${prefix}-website">Leave blank</label><input id="${prefix}-website" name="website" tabindex="-1" autocomplete="off"></div>
-    <button class="btn btn-primary" type="submit">Send Inquiry</button>
+    <button class="btn btn-primary" type="submit">Submit your inquiry</button>
     <div class="form-message" role="status" tabindex="-1" data-form-message></div>
   </form>`;
 }
@@ -301,14 +312,14 @@ function certificationGrid() {
   return `<div class="certificate-strip">${certifications.map(([name, file]) => `<figure class="certificate-logo"><img src="/assets/certifications/${file}" width="320" height="220" loading="lazy" alt="${escapeHtml(name)} certification logo" title="${escapeHtml(name)}"></figure>`).join("")}</div>`;
 }
 
-const homeBody = renderHome(buyerCommon.home);
+const homeBody = renderHome();
 const websiteSchema = { "@context": "https://schema.org", "@type": "WebSite", name: "LF Clothing", url: `${baseUrl}/`, publisher: { "@id": `${baseUrl}/#organization` }, inLanguage: "en" };
 
 
 const buyerFaqSchema = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: homeFaqs.map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })) };
 
 function productsPage() {
-  return layout({ title: "Custom Apparel, Workwear & Uniforms | LF Clothing", description: "Explore custom workwear, corporate uniforms, school and event apparel, plus caps, bags, footwear and related products from a China-based supplier.", pathName: "/products", active: "products", body: renderProductsOverview(), image: "/assets/editorial/range-workwear-stock-v4.webp", schema: [{ "@context": "https://schema.org", "@type": "CollectionPage", name: "LF Clothing Custom Workwear, Uniforms and Branded Apparel", url: absolute("/products") }] });
+  return layout({ title: productTitle, description: productDescription, pathName: "/products", active: "products", body: renderProductsOverview(), image: "/assets/editorial/range-workwear-stock-v4.webp", schema: [{ "@context": "https://schema.org", "@type": "CollectionPage", name: "Product portfolio", url: absolute("/products") }] });
 }
 
 function customizationGuidePage(guide) {
@@ -355,7 +366,7 @@ function programContext(product) {
 }
 
 function flightSuitProjectSummary() {
-  return `<section class="section section-soft flight-project" id="flight-suit-project"><div class="container split"><figure class="flight-project-media"><img src="/assets/cases/flight-suit-sample-ai-studio-v2.jpg" width="1086" height="1448" loading="lazy" alt="AI studio visualization based on LF's white flight-suit sample"><figcaption>AI visualization based on the actual LF sample. <a class="text-link" href="/assets/cases/flight-suit-sample-original.jpg" target="_blank" rel="noopener noreferrer">View original sample photograph</a></figcaption></figure><div><div class="section-head"><p class="eyebrow">Completed flight-suit project</p><h2>Ten flight suits, developed from one concept</h2><p>The customer started with a concept image, without a technical pack or fabric specification. LF developed the sample, selected the fabric and worked through one round of refinements.</p></div><ul class="content-list"><li>Flame-resistant ripstop: 98% cotton and 2% conductive fibre, with material test reports.</li><li>Offset chest zip pockets, a flight-chart leg pocket, sleeve pockets and fleece at the back neck.</li><li>Customer-requested back and underarm ventilation; LF incorporated zips into the underarm vents.</li><li>Sample refinements: narrower leg openings, longer epaulettes and a larger back vent.</li></ul><p><strong>28 days from order to arrival:</strong> 10 suits delivered to Friedrichshafen, Germany, by FedEx International Priority.</p><p class="disclaimer">Timing describes this completed project. Fabric reports do not certify the finished suit.</p><div class="style-actions"><a class="text-link" href="/customization#flight-suit-details">Explore the development and ventilation details</a><a class="text-link" href="/inquiry?request=Aviation%20Flight%20Suit">Discuss a flight-suit brief</a></div></div></div></section>`;
+  return `<section class="section section-soft flight-project" id="flight-suit-project"><div class="container split"><figure class="flight-project-media"><img src="/assets/cases/flight-suit-sample-original.jpg" width="1086" height="1448" loading="lazy" alt="Original photograph of the white LF flight-suit sample"><figcaption><a class="text-link" href="/assets/cases/flight-suit-sample-original.jpg" target="_blank" rel="noopener noreferrer">View original sample photograph</a></figcaption></figure><div><div class="section-head"><p class="eyebrow">Completed flight-suit project</p><h2>Ten flight suits, developed from one concept</h2><p>The customer started with a concept image, without a technical pack or fabric specification. LF developed the sample, selected the fabric and worked through one round of refinements.</p></div><ul class="content-list"><li>Flame-resistant and anti-static fabric supported by material test reports.</li><li>Offset chest zip pockets, a flight-chart leg pocket, sleeve pockets and fleece at the back neck.</li><li>Customer-requested back and underarm ventilation; LF incorporated zips into the underarm vents.</li><li>Sample refinements: narrower leg openings, longer epaulettes and a larger back vent.</li></ul><p><strong>28 days from order to arrival:</strong> 10 suits delivered to Friedrichshafen, Germany, by FedEx International Priority.</p><p class="disclaimer">Timing describes this completed project. Fabric reports do not certify the finished suit.</p><div class="style-actions"><a class="text-link" href="/customization#flight-suit-details">Explore the development and ventilation details</a><a class="text-link" href="/inquiry?request=Aviation%20Flight%20Suit">Discuss a flight-suit brief</a></div></div></div></section>`;
 }
 
 function projectStudyPage(study) {
@@ -478,11 +489,11 @@ function aviationFlightSuitsPage() {
 function flightSuitDetails() {
   return `<section class="section section-soft flight-details" id="flight-suit-details" aria-labelledby="flight-details-heading"><div class="container">
     <div class="section-head"><p class="eyebrow">Real garment development</p><h2 id="flight-details-heading">From One Concept Image to 10 Custom Flight Suits</h2><p>The customer supplied a single concept image, without a technical pack or fabric specification. LF developed the first sample, selected materials and refined the garment details before production.</p></div>
-    <div class="flight-detail-grid"><figure class="flight-sample"><img src="/assets/cases/flight-suit-sample-ai-studio-v2.jpg" width="1086" height="1448" loading="lazy" alt="AI visualization of a white LF flight suit with offset chest zip pockets, sleeve pockets and a leg pocket"><figcaption>AI visualization based on an LF sample developed from a customer’s concept image. <a class="text-link" href="/assets/cases/flight-suit-sample-original.jpg" target="_blank" rel="noopener noreferrer">View original sample photograph</a></figcaption></figure>
-    <div class="flight-detail-copy"><h3>Material selection</h3><p>Considering the intended appearance and flight application, LF selected a flame-resistant ripstop fabric made from 98% cotton and 2% conductive fibre.</p>
+    <div class="flight-detail-grid"><figure class="flight-sample"><img src="/assets/cases/flight-suit-sample-original.jpg" width="1086" height="1448" loading="lazy" alt="Original photograph of the white LF flight-suit sample"><figcaption><a class="text-link" href="/assets/cases/flight-suit-sample-original.jpg" target="_blank" rel="noopener noreferrer">View original sample photograph</a></figcaption></figure>
+    <div class="flight-detail-copy"><h3>Material selection</h3><p>Flame-resistant and anti-static fabric supported by material test reports.</p>
     <h3>Turning the brief into garment details</h3><p>The customer requested back and underarm ventilation. Drawing on previous flight-suit and racing-garment experience, LF incorporated zips into the underarm vents.</p><ul class="content-list"><li>Offset chest zip pockets for the requested appearance</li><li>A leg pocket positioned for flight-chart access</li><li>Sleeve pockets and fleece at the back neck</li><li>Mesh ventilation openings at the back and underarms</li></ul>
     <h3>One round of sample refinements</h3><p>The sample revisions narrowed the leg openings, lengthened the epaulettes and enlarged the back-ventilation area.</p>
-    <div class="flight-vent-grid"><figure><div class="flight-vent-frame"><img src="/assets/cases/flight-suit-back-vent-ai-studio-v2.jpg" width="1536" height="1024" loading="lazy" alt="AI visualization of back ventilation with mesh beneath an overlapping fabric panel"></div><figcaption><strong>Covered back vent</strong><span>Mesh beneath the outer panel. AI visualization based on the sample.</span></figcaption></figure><figure><div class="flight-vent-frame"><img src="/assets/cases/flight-suit-underarm-vent-ai-studio-v2.jpg" width="1536" height="1024" loading="lazy" alt="AI visualization of underarm ventilation with a zip opening and inner mesh panel"></div><figcaption><strong>Zipped underarm vent</strong><span>A zip opening with an inner mesh panel. AI visualization based on the sample.</span></figcaption></figure></div>
+    <div class="flight-vent-grid"><figure><div class="flight-vent-frame"><img src="/assets/cases/flight-suit-back-vent-original.jpg" width="1536" height="1024" loading="lazy" alt="Covered back vent"></div><figcaption><strong>Covered back vent</strong><span>Mesh beneath the outer panel.</span></figcaption></figure><figure><div class="flight-vent-frame"><img src="/assets/cases/flight-suit-underarm-vent-original.jpg" width="1536" height="1024" loading="lazy" alt="Zipped underarm vent"></div><figcaption><strong>Zipped underarm vent</strong><span>A zip opening with an inner mesh panel.</span></figcaption></figure></div>
     <p>The 10-piece order was delivered to Friedrichshafen, Germany, via FedEx International Priority, 28 days after order placement. This was the complete order-to-arrival interval for this project.</p>
     <p class="disclaimer">The ripstop fabric has test reports for flame-resistant and anti-static properties. These are material reports, not certification of the finished suit.</p></div></div>
   </div></section>`;
@@ -526,9 +537,12 @@ for (const file of ["process-table-hero.webp", "hero-factory-hero.webp", "worksh
 await mkdir(path.join(dist, "assets", "partners"), { recursive: true });
 for (const [, file] of partners) await cp(path.join(root, "assets", "partners", file), path.join(dist, "assets", "partners", file));
 
-await writePage("/", layout({ title: buyerCommon.home.title, description: buyerCommon.home.description, pathName: "/", active: "home", body: homeBody, image: "/assets/editorial/apparel-development-hero-stock-v4.webp", schema: [websiteSchema] }));
+await writePage("/", layout({ title: homeTitle, description: homeDescription, pathName: "/", active: "home", body: homeBody, image: "/assets/editorial/apparel-development-hero-stock-v4.webp", schema: [websiteSchema] }));
 await writePage("/products", productsPage());
-await writePage("/guides", layout({ title: "Custom Clothing Guides & Buyer Briefs | LF Clothing", description: guidesIntro, pathName: "/guides", active: "guides", body: renderGuidesIndex(customizationGuides), schema: [{ "@context": "https://schema.org", "@type": "CollectionPage", name: "Customization guides", url: absolute("/guides") }] }));
+await writePage("/guides", layout({ title: "Apparel Sourcing & Development Resources | LF Clothing", description: guidesIntro, pathName: "/guides", active: "guides", body: renderGuidesIndex(customizationGuides), schema: [{ "@context": "https://schema.org", "@type": "CollectionPage", name: "Customization guides", url: absolute("/guides") }] }));
+for (const [slug, page] of Object.entries(newPages)) {
+  await writePage(`/${slug}`, layout({ title: page.title, description: page.intro, pathName: `/${slug}`, active: slug, body: renderNewPage(slug), image: page.image }));
+}
 for (const guide of customizationGuides) await writePage(`/guides/${guide.slug}`, customizationGuidePage(guide));
 for (const product of detailProducts) await writePage(productUrl(product), productPage(product));
 for (const page of priorityPages) await writePage(page.route, priorityLandingPage(page));
@@ -544,7 +558,7 @@ await writePage("/privacy", layout({ title: "Privacy & Cookies | LF Clothing", d
 const errorBody = `<section class="page-hero"><div class="container"><p class="eyebrow">404</p><h1>Page Not Found</h1><p>The requested page is not part of the current LF Clothing product range.</p><p style="margin-top:28px"><a class="btn btn-light" href="/products">Browse Products</a></p></div></section>`;
 await writeFile(path.join(dist, "404.html"), layout({ title: "Page Not Found | LF Clothing", description: "The requested LF Clothing page could not be found. Browse the current workwear and uniform range or send LF Clothing a sourcing brief.", pathName: "/404", body: errorBody, robots: "noindex,follow" }), "utf8");
 
-const routes = ["/", "/products", "/guides", ...customizationGuides.map((guide) => `/guides/${guide.slug}`), ...detailProducts.map(productUrl), ...priorityPages.map((item) => item.route), ...collections.map((item) => `/collections/${item.slug}`), aviationRoute, eventRoute, ...projectStudies.map((study) => `/projects/${study.slug}`), "/customization", "/process-quality", "/projects", "/about", "/inquiry"];
+const routes = [...Object.keys(newPages).map(slug => `/${slug}`), "/", "/products", "/guides", ...customizationGuides.map((guide) => `/guides/${guide.slug}`), ...detailProducts.map(productUrl), ...priorityPages.map((item) => item.route), ...collections.map((item) => `/collections/${item.slug}`), aviationRoute, eventRoute, ...projectStudies.map((study) => `/projects/${study.slug}`), "/customization", "/process-quality", "/projects", "/about", "/inquiry"];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${routes.map((route) => `  <url><loc>${absolute(route)}</loc></url>`).join("\n")}\n</urlset>\n`;
 await writeFile(path.join(dist, "sitemap.xml"), sitemap, "utf8");
 await writeFile(path.join(dist, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${baseUrl}/sitemap.xml\n`, "utf8");
