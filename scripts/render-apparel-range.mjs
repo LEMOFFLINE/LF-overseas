@@ -103,8 +103,8 @@ function projectsSection() {
   </div></section>`;
 }
 function factorySection() {
-  return `<section class="editorial-customization"><div class="container editorial-customization-grid">
-    <figure class="editorial-theme-image"><img src="/assets/operations/sewing-line-overview-02.webp" alt="Garment production floor in LF's own factory" width="960" height="720" loading="lazy"></figure>
+  return `<section class="editorial-customization" id="about-lf-clothing"><div class="container editorial-customization-grid">
+    <figure class="editorial-theme-image"><img src="/assets/operations/sample-showroom-02.webp" alt="LF garment sample showroom" width="1706" height="1279" loading="lazy"></figure>
     <div class="editorial-customization-copy"><h2>About LF Clothing</h2><p>${esc(companyIntro)}</p>${link("About LF Clothing","/about")}</div>
   </div></section>`;
 }

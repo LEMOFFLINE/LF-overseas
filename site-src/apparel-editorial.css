@@ -56,7 +56,8 @@ body { font-family: Arial, Helvetica, sans-serif; }
 .editorial-hero-actions .btn-outline:hover { background: #ffffff18; }
 .editorial-hero-foot { display: flex; flex-wrap: wrap; gap: 10px 20px; max-width: 620px; margin-top: 35px; padding-top: 20px; border-top: 1px solid #ffffff45; color: #e0e9f0; font-size: 12px; }
 .editorial-hero-foot span + span { padding-left: 20px; border-left: 1px solid #ffffff55; }
-.editorial-range { padding: 62px 0 52px; scroll-margin-top: 145px; }
+.editorial-range { padding: 62px 0 52px; }
+.editorial-range, #about-lf-clothing { scroll-margin-top: 145px; }
 .editorial-section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; margin-bottom: 30px; }
 .editorial-section-head h2 { max-width: 760px; margin-bottom: 12px; }
 .editorial-section-head p:not(.eyebrow) { max-width: 770px; margin: 0; font-size: 16px; color: var(--muted); }
@@ -180,7 +181,7 @@ body { font-family: Arial, Helvetica, sans-serif; }
   .editorial-hero-foot { gap: 8px 15px; margin-top: 24px; padding-top: 16px; font-size: 11px; }
   .editorial-hero-foot span + span { border-left: 0; padding-left: 0; }
   .editorial-range, .editorial-customization, .editorial-experience, .editorial-process { padding-block: 38px; }
-  .editorial-range { scroll-margin-top: 86px; }
+  .editorial-range, #about-lf-clothing { scroll-margin-top: 86px; }
   .editorial-section-head { margin-bottom: 24px; }
   .editorial-section-head p:not(.eyebrow) { font-size: 16px; }
   .range-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 16px; }

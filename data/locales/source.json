@@ -2495,7 +2495,8 @@
     "id": "1c89987c0d74",
     "text": "LF garment sample showroom",
     "pages": [
-      "about/index.html"
+      "about/index.html",
+      "index.html"
     ]
   },
   {
@@ -2635,8 +2636,7 @@
     "id": "90f68fe922b7",
     "text": "Garment production floor in LF's own factory",
     "pages": [
-      "about/index.html",
-      "index.html"
+      "about/index.html"
     ]
   },
   {
