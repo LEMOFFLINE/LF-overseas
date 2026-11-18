@@ -145,7 +145,17 @@
 .inner-page .field label { font-size: 14px; }
 .inner-page .field { align-content: start; min-width: 0; }
 .inner-page .field small { font-size: 13px; }
-.inner-page .field textarea { min-height: 165px; }
+.inner-page .inquiry-section h1 { margin: 0 0 24px; font-size: clamp(28px, 4vw, 42px); }
+.inquiry-extras { border-block: 1px solid var(--line); }
+.inquiry-extras summary { padding: 12px 0; color: var(--blue); font-weight: 650; cursor: pointer; }
+.inquiry-extra-fields { display: grid; gap: 18px; padding-block: 4px 20px; }
+.inner-page .inquiry-form textarea { min-height: 96px; }
+@media (max-width: 600px) {
+  .inner-page .section.inquiry-section { padding-block: 24px 40px; }
+  .inner-page .inquiry-section h1 { margin-bottom: 16px; }
+  .inquiry-form { gap: 12px; }
+  .inquiry-form :is(input, textarea, select) { font-size: 16px; }
+}
 
 /* Existing collection and product detail templates retain all specifications. */
 .inner-page .page-hero { padding: 30px 0 42px; background: var(--paper); }
@@ -336,3 +346,47 @@
   .inner-page .project-story .study-delivery-number { font-size: 48px; }
   .inner-page .project-story .study-next .cta-actions { align-items: flex-start; }
 }
+
+/* Editorial directories extend the existing range and feature layouts. */
+.portfolio-details,.portfolio-index,.editorial-directory-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 0 clamp(1.5rem,4vw,3.75rem);
+}
+.portfolio-details article { border-top: 1px solid var(--line); padding: 22px 0; scroll-margin-top: 10rem; }
+.portfolio-details h3 { margin: 0 0 10px; color: var(--navy); font-size: 20px; line-height: 1.3; }
+.portfolio-details p { margin: 0 0 12px; color: var(--muted); }
+.product-specs .range-items { font-size: 13px; }
+.portfolio-index { list-style: none; padding: 0; margin: 0; gap: 0 20px; }
+.portfolio-index li { border-top: 1px solid var(--line); }
+.portfolio-index .text-link { display: block; padding: 12px 0; }
+.editorial-customization-copy .portfolio-index { margin-bottom: 18px; }
+.editorial-directory { padding-block: 60px; }
+.editorial-directory-grid { align-items: start; }
+.editorial-directory-grid p { color: var(--muted); max-width: 55ch; }
+.range-card h3 a,.range-collection-title h2 a { color: inherit; }
+.range-card h3 a:hover,.range-collection-title h2 a:hover { text-decoration: underline; }
+@media(min-width:861px) {
+  .nav-links { gap: clamp(.65rem,1.25vw,1.4rem); flex-wrap: wrap; }
+  .site-footer .footer-grid { grid-template-columns: repeat(5,minmax(0,1fr)); }
+}
+@media(max-width:760px) {
+  .editorial-directory { padding-block: 38px; }
+  .editorial-directory-grid,.portfolio-details { grid-template-columns: 1fr; }
+  .editorial-directory-grid { gap: 20px; }
+  .portfolio-details article { scroll-margin-top: 6rem; }
+}
+@media(max-width:420px) {
+  .portfolio-index { grid-template-columns: 1fr; }
+}
+
+.range-directory { margin-top: 22px; border-bottom: 1px solid var(--line); }
+.range-directory summary,.editorial-order-steps summary { cursor: pointer; color: var(--navy); font-weight: 700; }
+.range-directory summary { width: fit-content; padding-block: 10px; font-size: 14px; }
+.range-directory-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px 36px; }
+.range-directory-list dt { font-weight: 700; color: var(--blue); }
+.range-directory-list dd { color: var(--muted); margin: 4px 0 12px; font-size: 14px; }
+.editorial-order-steps details { min-width: 0; }
+.editorial-order-steps summary { font-size: 15px; }
+.editorial-order-steps p { font-size: 14px; color: var(--muted); margin: 8px 0 0; }
+@media(max-width:760px) { .range-directory-list { grid-template-columns: 1fr; } }

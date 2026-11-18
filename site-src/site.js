@@ -277,7 +277,7 @@ document.querySelectorAll("[data-inquiry-form]").forEach((rfqForm) => {
       const data = new FormData(rfqForm);
       const file = data.get("attachment");
       const payload = Object.fromEntries([...data.entries()].filter(([key]) => key !== "attachment"));
-      payload.country = countrySelect?.selectedOptions[0]?.textContent?.trim() || payload.countryCode || "";
+      payload.country = payload.countryCode ? countrySelect.selectedOptions[0].textContent.trim() : "";
       payload.attachment = await fileToAttachment(file);
       payload.pageUrl = location.href;
       payload.referrer = document.referrer || "Direct / unavailable";
@@ -291,7 +291,7 @@ document.querySelectorAll("[data-inquiry-form]").forEach((rfqForm) => {
       payload.utmTerm = firstTouch.utmTerm;
       const response = await fetch("/.netlify/functions/rfq", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(payload) });
       const result = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(response.status === 413 ? "Please upload a file under 4 MB." : "Unable to send the inquiry right now.");
+      if (!response.ok || result.ok !== true) throw new Error(response.status === 413 ? "Please upload a file under 4 MB." : "Unable to send the inquiry right now.");
       const selectedCountry = countrySelect?.value;
       rfqForm.reset();
       if (countrySelect && selectedCountry) countrySelect.value = selectedCountry;

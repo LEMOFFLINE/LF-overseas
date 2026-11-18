@@ -38,6 +38,11 @@ function buildEmailHtml(data) {
         ${row("Email", data.email)}
         ${row("WhatsApp / Phone", data.phone)}
         ${row("Country / Region", data.country ? `${data.country} (${data.countryCode})` : data.countryCode)}
+        ${row("Company", data.company)}
+        ${row("Product category", data.category)}
+        ${row("Estimated quantity", data.quantity)}
+        ${row("Target delivery date", data.deliveryDate)}
+        ${row("Delivery destination", data.destination)}
         ${row("Message", data.message)}
         ${row("First-touch Source", data.sourceCategory)}
         ${row("Landing Page", data.landingPage)}
@@ -82,15 +87,17 @@ exports.handler = async (event) => {
 
   const email = String(data.email || "").trim();
   const countryCode = String(data.countryCode || "").trim().toUpperCase();
-  if (!data.name || !email || !data.phone || !countryCode || !data.message) {
-    return json(400, { error: "Name, email, WhatsApp or phone number, country, and message are required." });
+  const name = String(data.name || "").trim();
+  const message = String(data.message || "").trim();
+  if (!email || !message) {
+    return json(400, { error: "Email and message are required." });
   }
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return json(400, { error: "Please enter a valid email address." });
   }
 
-  if (!/^[A-Z]{2}$/.test(countryCode)) {
+  if (countryCode && !/^[A-Z]{2}$/.test(countryCode)) {
     return json(400, { error: "Please select a valid country or region." });
   }
 
@@ -118,10 +125,12 @@ exports.handler = async (event) => {
       email: senderEmail,
     },
     to: [{ email: toEmail, name: "Lingfeng Sales" }],
-    replyTo: { email, name: String(data.name).slice(0, 70) },
-    subject: `Website Inquiry - ${data.name} - ${countryCode}`,
+    replyTo: name ? { email, name: name.slice(0, 70) } : { email },
+    subject: ["Website Inquiry", name || email, countryCode].filter(Boolean).join(" - "),
     htmlContent: buildEmailHtml({
       ...data,
+      name,
+      message,
       email,
       countryCode,
       functionRequirements: data.functionRequirements || data.function,

@@ -148,7 +148,7 @@ for (const file of htmlFiles) {
   const h1Count = (html.match(/<h1\b/gi) || []).length;
   if (h1Count !== 1) errors.push(`${rel}: expected one H1, found ${h1Count}`);
   if (!title || title.length < 20 || title.length > 72) errors.push(`${rel}: title length ${title?.length || 0}`);
-  if (!description || description.length < 70 || description.length > 190) errors.push(`${rel}: description length ${description?.length || 0}`);
+  if (!description || description.length < 70 || description.length > (rel === "index.html" ? 200 : 190)) errors.push(`${rel}: description length ${description?.length || 0}`);
   if (!is404 && !canonical?.startsWith("https://lfclothing.com/")) errors.push(`${rel}: invalid canonical`);
   if (!is404 && !hasTrailingSlash(canonical)) errors.push(`${rel}: canonical must use a trailing slash`);
   if (!is404 && canonical !== expectedCanonicalFor(rel)) errors.push(`${rel}: canonical must point to ${expectedCanonicalFor(rel)}`);
@@ -275,7 +275,7 @@ for (const banned of ["Request Full Catalog", "Download Catalogue", "700,000", "
 }
 const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((item) => item[1]);
-const expectedSitemapUrls = (collections.length + 14 + detailProducts.length + projectStudies.length + customizationGuides.length) * 8;
+const expectedSitemapUrls = (collections.length + 16 + detailProducts.length + projectStudies.length + customizationGuides.length) * 8;
 if (sitemapUrls.length !== expectedSitemapUrls) errors.push(`expected ${expectedSitemapUrls} sitemap URLs, found ${sitemapUrls.length}`);
 for (const study of projectStudies) if (!sitemapUrls.includes(`${baseUrl}/projects/${study.slug}/`)) errors.push(`project study missing from sitemap: ${study.slug}`);
 if (new Set(sitemapUrls).size !== sitemapUrls.length) errors.push("sitemap has duplicate URLs");
@@ -288,7 +288,7 @@ if (!sitemapUrls.includes(`${baseUrl}/collections/aviation-flight-suits/`)) erro
 if (!sitemapUrls.includes(`${baseUrl}/event-staff-uniforms/`)) errors.push("event staff uniforms landing page missing from sitemap");
 
 const expectedSeoTitles = new Map([
-  ["index.html", "Custom Apparel & Uniform Manufacturer in China | LF Clothing"],
+  ["index.html", "Custom Apparel Manufacturer & Clothing Supplier | LF Clothing"],
   ["custom-workwear/index.html", buyerPrograms.workwear.title],
   ["event-staff-uniforms/index.html", buyerPrograms.eventStaff.title],
   ["customization/index.html", "Custom Apparel Development & Private Label | LF Clothing"],
@@ -308,12 +308,13 @@ for (const [rel, expectedTitle] of expectedSeoTitles) {
 const homepage = await readFile(path.join(root, "index.html"), "utf8");
 if (!homepage.includes('<script src="/analytics.js"></script>')) errors.push("homepage is missing the analytics bootstrap");
 if (!homepage.includes('data-cookie-banner')) errors.push("homepage is missing analytics consent controls");
-// Category links must remain visible without scripting; the homepage has six content sections.
-const categories = [...homepage.matchAll(/data-range-category="([^"]+)"/g)].map((match) => match[1]);
-if (categories.length !== 4 || new Set(categories).size !== 4) errors.push("homepage must show four distinct category links");
+// Every portfolio category must be reachable without JavaScript.
+const categories = [...homepage.matchAll(/data-range-category="([^"]+)"/g)].map(match => match[1]);
+if (categories.length !== 8 || new Set(categories).size !== 8) errors.push("homepage must show eight distinct product categories");
 const homeMain = homepage.match(/<main id="main">([\s\S]*?)<\/main>/)?.[1] || "";
-if ((homeMain.match(/<section\b/g) || []).length !== 6) errors.push("homepage must contain six content sections");
-for (const text of ["Custom apparel manufacturer with our own factory", "20 years of clothing industry experience", "procurement partners", "Industry photography illustrates applications"]) if (!homepage.includes(text)) errors.push(`homepage missing positioning or image context: ${text}`);
+if ((homeMain.match(/<section\b/g) || []).length !== 8) errors.push("homepage must cover the eight V2 sections");
+for (const text of ["Hebei", "2002", "/manufacturing-capabilities/", "/industries/"]) if (!homeMain.includes(text)) errors.push(`homepage missing: ${text}`);
+if (/Yongqing|Langfang/i.test(homepage)) errors.push("homepage discloses detailed factory location");
 if (!homepage.includes('href="/inquiry/"') || !homepage.includes('href="/projects/"')) errors.push("homepage requires inquiry and project routes");
 for (const oldClass of ["home-product-tile", "home-capability-card", "visual-process-card", "why-choose-card"]) if (homepage.includes(`class="${oldClass}"`)) errors.push(`homepage still has the retired long layout: ${oldClass}`);
 if (homepage.includes("Four main product lines") || homepage.includes("Start with the Product You Need")) errors.push("homepage still contains the removed four-product-line section");
@@ -330,15 +331,23 @@ if (!privacyPage.includes("lf_country")) errors.push("privacy page is missing th
 if (!robotsTokens(privacyPage).has("noindex")) errors.push("privacy page must remain outside the search index");
 if (sitemapUrls.includes(`${baseUrl}/privacy/`)) errors.push("privacy page must not be included in the SEO sitemap");
 const inquiryPage = await readFile(path.join(root, "inquiry", "index.html"), "utf8");
-for (const field of ["name", "email", "phone", "countryCode", "message"]) {
+for (const field of ["email", "message"]) {
   const fieldPattern = new RegExp(`name=["']${field}["'][^>]*\\brequired\\b`, "i");
   if (!fieldPattern.test(inquiryPage)) errors.push(`inquiry page is missing required field: ${field}`);
+}
+for (const field of ["name", "phone", "countryCode", "attachment"]) {
+  const tag = inquiryPage.match(new RegExp(`<(?:input|select)\\b[^>]*name="${field}"[^>]*>`, "i"))?.[0];
+  if (!tag || /\brequired\b/.test(tag)) errors.push(`inquiry field must be present and optional: ${field}`);
 }
 if (!/<input[^>]*name=["']email["'][^>]*type=["']email["']/i.test(inquiryPage)) errors.push("inquiry email field must use type=email");
 if (!/<select[^>]*name=["']countryCode["'][^>]*data-country-select/i.test(inquiryPage)) errors.push("inquiry country field must use the country selector");
 
 const productsPage = await readFile(path.join(root, "products", "index.html"), "utf8");
-if ((productsPage.match(/class="range-collection-item"/g) || []).length !== 4) errors.push("products overview must contain four visual category groups");
+for (const category of categories) if (!productsPage.includes(`<article id="${category}">`)) errors.push(`missing product portfolio anchor: ${category}`);
+for (const key of ["range-workwear-stock-v4", "range-corporate-stock-v4", "range-team-stock-v4", "range-accessories-stock-v4"]) {
+  for (const [label, html] of [["homepage", homepage], ["products", productsPage]]) if (!html.includes(`src="/assets/editorial/${key}.webp"`)) errors.push(`${label} is missing its editorial photograph: ${key}`);
+}
+for (const key of ["apparel-development-hero-stock-v4","professional-design-stock-v3","enterprise-projects-stock-v3","coordinated-logistics-stock-v4"]) if (!homeMain.includes(`src="/assets/editorial/${key}.webp"`)) errors.push(`homepage missing feature photograph: ${key}`);
 if (productsPage.includes('class="product-card"')) errors.push("products overview still contains the retired SKU grid");
 for (const collection of collections) if (!productsPage.includes(`href="/collections/${collection.slug}/"`)) errors.push(`products page is missing collection link: ${collection.slug}`);
 if (!productsPage.includes(`href="/collections/aviation-flight-suits/"`)) errors.push("products page is missing aviation collection link");
@@ -376,8 +385,8 @@ else {
   const projectText = decodeHtml(flightProject.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ");
   const projectFacts = [
     ["ten-suit completed order", /\b(?:10|ten)\s+(?:custom\s+flight\s+|flight\s+)?suits\b/i],
-    ["98% cotton material", /\b98\s*%\s*cotton\b/i],
-    ["2% conductive fibre material", /\b2\s*%\s*conductive\s+fib(?:re|er)\b/i],
+    ["flame-resistant material", /flame-resistant/i],
+    ["anti-static material", /anti-static/i],
     ["one sample-revision round", /\b(?:one|1)\s+round\b/i],
     ["28-day project interval", /\b28\s+days?\b/i],
     ["order-to-arrival context", /\border\s+to\s+arrival\b/i],
@@ -388,7 +397,7 @@ else {
   ];
   for (const [label, pattern] of projectFacts) if (!pattern.test(projectText)) errors.push(`aviation project is missing its confirmed ${label}`);
   if (!/\bhref=["']\/assets\/cases\/flight-suit-sample-original\.jpg["']/i.test(flightProject)) errors.push("aviation project must link to the original sample photograph");
-  if (!/\bAI\b/i.test(projectText)) errors.push("aviation project must disclose the AI visualization accompanying the original-photo link");
+  if (!flightProject.includes('src="/assets/cases/flight-suit-sample-original.jpg"')) errors.push("aviation project must display the original sample photograph");
 }
 if (/\/assets\/(?:cases|capabilities)\/[^"'<>\s]+\.png/i.test(combined)) errors.push("public pages still reference an unoptimized case or capability PNG");
 

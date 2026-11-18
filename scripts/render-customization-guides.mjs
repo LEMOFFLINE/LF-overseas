@@ -14,8 +14,15 @@ export function renderReferenceNote() {
 }
 
 export function renderGuidesIndex(guides) {
-  return corporateHero({ eyebrow: "Customization guides", title: "Plan your custom clothing project", intro: guidesIntro }) +
-    `<section class="section"><div class="container">${renderDevelopmentScope(false)}<div class="guide-list">${guides.map(guide => `<article><h2><a href="/guides/${guide.slug}/">${esc(guide.heading)}</a></h2><p>${esc(guide.intro)}</p><a class="text-link" href="/guides/${guide.slug}/">Read the guide</a></article>`).join("")}</div></div></section>` + corporateCta();
+  const topics = [
+    ["Fabric & material selection", "Compare twill for abrasion, ripstop for tear resistance and softshell for stretch. Ask for swatches at the target weight and assess the handle after washing.", "/manufacturing-capabilities#topic-2"],
+    ["Garment construction", "Check pocket access with gloves on, reach with the sleeve extended and ease over base layers. Record fit changes before grading.", "/manufacturing-capabilities#topic-3"],
+    ["Dyeing & finishing", "Dyeing the fabric sets colour before cutting. Garment dyeing colours the assembled piece. Approve wash effects, shrinkage and shade variation on the finished sample.", "/manufacturing-capabilities#topic-4"],
+    ["Quality & delivery assurance", "Agree the inspection method and defect limits before cutting. Match each test report to the actual fabric or finished garment covered.", "/process-quality#quality-checkpoints"],
+    ["OEM manufacturing", "Include drawings, measurements, tolerances, materials, artwork, size quantities and target delivery in a tech pack. A reference image can start the discussion.", "/customization"],
+  ];
+  return corporateHero({ eyebrow: "Resources", title: "Apparel sourcing and product development", intro: guidesIntro }) +
+    `<section class="section"><div class="container"><div class="portfolio-details">${topics.map(([title,body,url])=>`<article><h3><a href="${url}">${esc(title)}</a></h3><p>${esc(body)}</p></article>`).join("")}</div></div></section><section class="section section-soft"><div class="container">${renderDevelopmentScope(false)}<div class="guide-list">${guides.map(guide => `<article><h2><a href="/guides/${guide.slug}/">${esc(guide.heading)}</a></h2><p>${esc(guide.intro)}</p><a class="text-link" href="/guides/${guide.slug}/">Read the guide</a></article>`).join("")}</div></div></section>` + corporateCta();
 }
 
 export function renderCustomizationGuide(guide, guides, orderFaqs) {
