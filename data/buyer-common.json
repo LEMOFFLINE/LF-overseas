@@ -1,17 +1,16 @@
 {
   "home": {
-    "title": "Custom Clothing & Related Products Supplier in China | LF Clothing",
-    "description": "China-based supplier of custom clothing and related products, with 20 years of apparel experience and enterprise supply projects. Start with your idea or reference.",
-    "eyebrow": "China-based custom apparel supplier",
-    "intro": "LF is a custom clothing manufacturer in China with 20 years of clothing experience. We manage materials, garment development, samples and production through specialist manufacturing partners. Bring your company's clothing and related supplies together, from staff uniforms and workwear to event clothing, caps, footwear and towels.",
+    "title": "Custom Apparel & Uniform Manufacturer in China | LF Clothing",
+    "description": "Custom workwear, uniforms and branded apparel from China. Start with a reference image; regular clothing usually starts at 50 pieces per style/colour.",
+    "eyebrow": "Custom apparel manufacturer with our own factory",
+    "intro": "Develop workwear, uniforms and branded apparel from a reference image. We handle garment development, sampling and production in our own factory, with complementary accessories available in the same order.",
     "targetPhrases": [
-      "custom clothing manufacturer in China",
-      "Chinese clothing manufacturer",
-      "garment manufacturing in China",
-      "custom staff uniforms",
-      "corporate uniform supplier",
-      "bespoke uniforms",
-      "custom event staff uniforms"
+      "custom apparel manufacturer in China",
+      "custom clothing development",
+      "custom workwear supplier",
+      "custom uniform supplier",
+      "private label clothing",
+      "small batch custom apparel"
     ],
     "faqs": [
       {
@@ -39,20 +38,20 @@
         "a": "Both are welcome. Send one list covering the clothing, caps, footwear, towels or PPE your team needs, with quantities for each item. LF brings the requirements together and coordinates the relevant suppliers, so your purchasing team has one point of contact. Options, minimums and schedules can vary by item."
       },
       {
-        "q": "How does LF manage clothing manufacturing in China?",
-        "a": "Your garments are made by specialist production partners matched to the product. LF manages the specification, materials, samples, production follow-up, quality checks and packing. Your team stays in contact with LF throughout the order, including when it covers several garment types or related products."
+        "q": "Do you manufacture clothing in your own factory?",
+        "a": "We manufacture garments in our own factory. LF handles specifications, materials, patterns, samples, production, quality checks and packing. Your team works directly with us from the initial brief to shipment."
       },
       {
         "q": "How are PPE and construction safety helmets reviewed?",
         "a": "Tell us the product, intended use, destination and required standard. We check the supporting documents and whether the proposed colour, logo or other changes are suitable. PPE and helmet requirements are assessed for each product; clothing or fabric certificates do not automatically cover them."
       }
     ],
-    "h1": "Custom Clothing & Related Products",
-    "heroIntro": "LF Clothing coordinates product development, sampling, production and export preparation, backed by 20 years of apparel industry experience."
+    "h1": "Custom Apparel for Brands, Businesses & Teams",
+    "heroIntro": "Develop workwear, uniforms and branded apparel from a reference image. We handle garment development, sampling and production in our own factory, with complementary accessories available in the same order."
   },
   "customization": {
-    "title": "Bespoke Staff Uniforms & Clothing Customization | LF Clothing",
-    "description": "Turn a reference image into custom staff uniforms or event clothing. Explore fabric, fit, pockets and branding, with real flight-suit details from LF's work.",
+    "title": "Custom Apparel Development & Private Label | LF Clothing",
+    "description": "Develop custom apparel from a reference image. Explore fabrics, fit, printing, embroidery, labels and packaging for brands, businesses and teams.",
     "eyebrow": "Staff uniforms & event clothing customisation",
     "h1": "From your reference image to your team’s clothing.",
     "intro": "You do not need a finished technical specification to begin. Bring an image, an existing garment or an idea for your team. LF helps turn it into wearable clothing, from fabric and fit to pockets, lining and branding, with samples to check before production.",
@@ -74,6 +73,10 @@
         "a": "Yes. Photos, sketches and AI concept images can all start a project. Tell us the staff roles, working conditions and details that matter most. We work out how the concept can be made and prepare a physical sample for you to assess."
       },
       {
+        "q": "What if we do not know which fabric or processes to choose?",
+        "a": "We first clarify how the garment will be used and any requirements for water resistance, breathability, texture and colour. We then select a suitable fabric and propose the matching construction, decoration and finishing methods. We send you the fabric choice and process proposal for confirmation before sampling."
+      },
+      {
         "q": "Should we choose semi-custom or full garment development?",
         "a": "If your current uniform works well, start with branding or selected detail changes. For a different fabric, fit or construction, discuss full development. Send the reference and mark what you want to keep or change; we can explain which route fits the brief and how the changes affect price, quantity and timing."
       },
@@ -91,7 +94,7 @@
       },
       {
         "q": "What information helps you quote our uniforms or event clothing?",
-        "a": "Start with your item list, estimated quantities, reference images, destination and required arrival date. Add sizes, artwork and any testing requirements if you have them. If some details are still undecided, tell us your priorities and we will help you narrow the options. Sample fees are quoted for the project. For orders of 100 pieces or more, the sample fee can be credited against the bulk order payment."
+        "a": "Start with your item list, estimated quantities, reference images, destination and required arrival date. Add sizes, artwork and any testing requirements if you have them. If some details are still undecided, tell us your priorities and we will help you narrow the options. Sample fees are quoted for the project. For orders of 200 pieces or more of the same style, the sample fee can be credited against the bulk order payment."
       },
       {
         "q": "Can you arrange fabric and finished-garment test reports?",
@@ -107,5 +110,41 @@
     "United Kingdom",
     "Europe",
     "North America"
+  ],
+  "samplingFaqs": [
+    {
+      "q": "How much does a clothing sample cost?",
+      "a": "We quote the sample fee after reviewing your requirements. It is usually around twice the bulk unit price. The exact amount is confirmed in your quotation."
+    },
+    {
+      "q": "Can the sample fee be credited against a bulk order?",
+      "a": "For orders of 200 pieces or more of the same style, the sample fee can be credited against the bulk order payment."
+    },
+    {
+      "q": "Does the sample fee include adjustments?",
+      "a": "The sample fee includes adjustments within a reasonable scope. We work through your feedback until the sample achieves the agreed result. Bulk production follows the approved sample and confirmed specifications."
+    },
+    {
+      "q": "How are samples shipped, and is shipping included?",
+      "a": "Sample shipping is charged separately. Samples are usually sent by express courier on DDP terms."
+    }
+  ],
+  "productionFaqs": [
+    {
+      "q": "How long does bulk production take, and what deposit is required?",
+      "a": "For regular bulk orders of up to 500 pieces, production usually takes 2–3 weeks from receipt of the 30% deposit. Shipping time is additional."
+    },
+    {
+      "q": "When is the balance due, and can we inspect the order?",
+      "a": "We require a 30% deposit, with the remaining 70% balance paid in full before shipment. Video inspection and in-person inspection are available before dispatch."
+    },
+    {
+      "q": "How do you check and pack the order before dispatch?",
+      "a": "We record quality inspection and packing videos before shipment. Garments with obvious quality or appearance issues identified during inspection are remade before packing and are not dispatched with those issues."
+    },
+    {
+      "q": "How are defects in a delivered bulk order handled?",
+      "a": "If defects are found after delivery, we review the issues against the approved sample and specifications. Compensation is agreed case by case, taking the defect rate and other relevant factors into account."
+    }
   ]
 }

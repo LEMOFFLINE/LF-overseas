@@ -54,7 +54,8 @@ for(const language of locales){
 }
 const sitemap=await readFile(path.join(dist,'sitemap.xml'),'utf8');
 const urls=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match=>match[1]);
-if(urls.length!==280||new Set(urls).size!==280)errors.push(`Expected 280 unique sitemap URLs, found ${urls.length}`);
+const expectedUrlCount=pagePaths.filter(route=>route!=='/privacy/').length*locales.length;
+if(urls.length!==expectedUrlCount||new Set(urls).size!==expectedUrlCount)errors.push(`Expected ${expectedUrlCount} unique sitemap URLs, found ${urls.length}`);
 for(const language of locales)for(const base of pagePaths.filter(route=>route!=='/privacy/'))if(!urls.includes(`https://lfclothing.com${languagePath(base,language)}`))errors.push(`Missing sitemap URL ${language}:${base}`);
 if(errors.length){console.error(errors.join('\n'));process.exitCode=1;}
-else console.log(`Validated ${pages} public pages in 8 languages, ${links} local references, all translation entries, language navigation, RTL, inquiry messages and 280 sitemap URLs.`);
+else console.log(`Validated ${pages} public pages in ${locales.length} languages, ${links} local references, all translation entries, language navigation, RTL, inquiry messages and ${expectedUrlCount} sitemap URLs.`);

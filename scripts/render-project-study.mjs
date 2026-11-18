@@ -26,7 +26,7 @@ export function renderProjectStudyBody(study, { escapeHtml, breadcrumb, eventRou
       <div class="study-reference-copy"><p class="eyebrow">03 / What LF coordinated</p><h2 id="study-coordination-heading">One brief, across the whole outfit.</h2><p>${escapeHtml(study.sections[2].body)}</p><ul class="study-points">${study.coordinationPoints.map((point) => `<li>${escapeHtml(point)}</li>`).join("")}</ul></div>
     </section>
     <section class="study-delivery container" aria-labelledby="study-delivery-heading">
-      <div class="study-delivery-number">30<span>days · project delivery</span></div>
+      <div class="study-delivery-number">${escapeHtml(study.deliveryDays)}<span>days · project delivery</span></div>
       <div><p class="eyebrow">04 / The result</p><h2 id="study-delivery-heading">2,000 complete sets delivered.</h2><p>${escapeHtml(study.outcome)}</p></div>
     </section>
     <section class="study-next container" aria-labelledby="study-next-heading">

@@ -61,6 +61,8 @@ body { font-family: Arial, Helvetica, sans-serif; }
 .editorial-section-head h2 { max-width: 760px; margin-bottom: 12px; }
 .editorial-section-head p:not(.eyebrow) { max-width: 770px; margin: 0; font-size: 16px; color: var(--muted); }
 .editorial-section-head > .text-link { white-space: nowrap; margin-bottom: 5px; }
+.editorial-buyer-links { display: flex; flex-wrap: wrap; gap: 16px 32px; margin-bottom: 28px; }
+.editorial-buyer-links .text-link { max-width: 100%; line-height: 1.6; }
 .range-card-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
 .range-card { min-width: 0; display: flex; flex-direction: column; border-bottom: 2px solid var(--line); padding-bottom: 18px; }
 .range-card:hover { border-bottom-color: var(--blue); }

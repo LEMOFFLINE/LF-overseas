@@ -1,6 +1,8 @@
 export const pagePaths = [
   "/",
   "/products/",
+  "/guides/",
+  "/guides/custom-clothing-from-reference-images/",
   "/products/cotton-twill-work-jacket-gar-wj-001/",
   "/products/waterproof-breathable-hooded-shell-gar-oj-001/",
   "/products/cotton-work-jacket-with-reflective-detail-gar-wj-002/",

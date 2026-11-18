@@ -6,6 +6,7 @@ const products = JSON.parse(await readFile(path.resolve("data/products.json"), "
 const collections = JSON.parse(await readFile(path.resolve("data/collections.json"), "utf8"));
 const buyerPrograms = JSON.parse(await readFile(path.resolve("data/buyer-programs.json"), "utf8"));
 const projectStudies = JSON.parse(await readFile(path.resolve("data/project-studies.json"), "utf8"));
+const customizationGuides = JSON.parse(await readFile(path.resolve("data/customization-guides.json"), "utf8"));
 const catalogPages = JSON.parse(await readFile(path.resolve("data/catalog-pages.json"), "utf8"));
 const featuredProducts = products.filter((product) => product.homepage);
 const errors = [];
@@ -274,7 +275,7 @@ for (const banned of ["Request Full Catalog", "Download Catalogue", "700,000", "
 }
 const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((item) => item[1]);
-const expectedSitemapUrls = (collections.length + 13 + detailProducts.length + projectStudies.length) * 8;
+const expectedSitemapUrls = (collections.length + 14 + detailProducts.length + projectStudies.length + customizationGuides.length) * 8;
 if (sitemapUrls.length !== expectedSitemapUrls) errors.push(`expected ${expectedSitemapUrls} sitemap URLs, found ${sitemapUrls.length}`);
 for (const study of projectStudies) if (!sitemapUrls.includes(`${baseUrl}/projects/${study.slug}/`)) errors.push(`project study missing from sitemap: ${study.slug}`);
 if (new Set(sitemapUrls).size !== sitemapUrls.length) errors.push("sitemap has duplicate URLs");
@@ -287,10 +288,10 @@ if (!sitemapUrls.includes(`${baseUrl}/collections/aviation-flight-suits/`)) erro
 if (!sitemapUrls.includes(`${baseUrl}/event-staff-uniforms/`)) errors.push("event staff uniforms landing page missing from sitemap");
 
 const expectedSeoTitles = new Map([
-  ["index.html", "Custom Clothing & Related Products Supplier in China | LF Clothing"],
+  ["index.html", "Custom Apparel & Uniform Manufacturer in China | LF Clothing"],
   ["custom-workwear/index.html", buyerPrograms.workwear.title],
   ["event-staff-uniforms/index.html", buyerPrograms.eventStaff.title],
-  ["customization/index.html", "Bespoke Staff Uniforms & Clothing Customization | LF Clothing"],
+  ["customization/index.html", "Custom Apparel Development & Private Label | LF Clothing"],
   ["custom-jackets/index.html", "Custom Jacket Supplier in China | LF Clothing"],
   ["custom-suits/index.html", "Custom Corporate Suit Supplier China | LF Clothing"],
   ["school-uniforms/index.html", "Custom School Uniform Supplier China | LF Clothing"],
@@ -312,7 +313,7 @@ const categories = [...homepage.matchAll(/data-range-category="([^"]+)"/g)].map(
 if (categories.length !== 4 || new Set(categories).size !== 4) errors.push("homepage must show four distinct category links");
 const homeMain = homepage.match(/<main id="main">([\s\S]*?)<\/main>/)?.[1] || "";
 if ((homeMain.match(/<section\b/g) || []).length !== 6) errors.push("homepage must contain six content sections");
-for (const text of ["China-based custom apparel supplier", "20 years of clothing industry experience", "procurement partners", "Industry photography illustrates applications"]) if (!homepage.includes(text)) errors.push(`homepage missing positioning or image context: ${text}`);
+for (const text of ["Custom apparel manufacturer with our own factory", "20 years of clothing industry experience", "procurement partners", "Industry photography illustrates applications"]) if (!homepage.includes(text)) errors.push(`homepage missing positioning or image context: ${text}`);
 if (!homepage.includes('href="/inquiry/"') || !homepage.includes('href="/projects/"')) errors.push("homepage requires inquiry and project routes");
 for (const oldClass of ["home-product-tile", "home-capability-card", "visual-process-card", "why-choose-card"]) if (homepage.includes(`class="${oldClass}"`)) errors.push(`homepage still has the retired long layout: ${oldClass}`);
 if (homepage.includes("Four main product lines") || homepage.includes("Start with the Product You Need")) errors.push("homepage still contains the removed four-product-line section");
