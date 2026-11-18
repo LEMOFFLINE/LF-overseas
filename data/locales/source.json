@@ -2687,7 +2687,8 @@
     "id": "a895840b1099",
     "text": "Enterprise project experience",
     "pages": [
-      "about/index.html"
+      "about/index.html",
+      "index.html"
     ]
   },
   {
@@ -2797,11 +2798,9 @@
       "about/index.html",
       "customization/index.html",
       "guides/index.html",
-      "index.html",
       "industries/index.html",
       "manufacturing-capabilities/index.html",
       "process-quality/index.html",
-      "products/index.html",
       "projects/index.html"
     ]
   },
@@ -2812,11 +2811,9 @@
       "about/index.html",
       "customization/index.html",
       "guides/index.html",
-      "index.html",
       "industries/index.html",
       "manufacturing-capabilities/index.html",
       "process-quality/index.html",
-      "products/index.html",
       "projects/index.html"
     ]
   },
@@ -4728,7 +4725,8 @@
     "text": "Explore customization",
     "pages": [
       "collections/corporate-service-uniforms/index.html",
-      "event-staff-uniforms/index.html"
+      "event-staff-uniforms/index.html",
+      "index.html"
     ]
   },
   {
@@ -6595,7 +6593,6 @@
     "text": "ANA ground crew coverall supplied through an apparel program",
     "pages": [
       "custom-workwear/index.html",
-      "industries/index.html",
       "projects/index.html"
     ]
   },
@@ -6759,8 +6756,7 @@
     "id": "33b11746e45a",
     "text": "Stock photograph illustrating garment design and pattern development",
     "pages": [
-      "customization/index.html",
-      "index.html"
+      "customization/index.html"
     ]
   },
   {
@@ -8074,8 +8070,36 @@
     ]
   },
   {
+    "id": "3826d340cdcb",
+    "text": "Stock photograph of garment sample sewing with fabric and paper patterns; illustrative apparel development scene",
+    "pages": [
+      "index.html"
+    ]
+  },
+  {
     "id": "7f3d01ad2719",
     "text": "OEM and ODM apparel for businesses, brands and professional buyers. Our own garment factory in Hebei, China develops and produces clothing from industrial uniforms to private label collections and technical outerwear.",
+    "pages": [
+      "index.html"
+    ]
+  },
+  {
+    "id": "edd6e9fd1ca5",
+    "text": "Start with a reference image",
+    "pages": [
+      "index.html"
+    ]
+  },
+  {
+    "id": "dcd1e2798434",
+    "text": "Regular clothing: usually 50 pcs / style / colour",
+    "pages": [
+      "index.html"
+    ]
+  },
+  {
+    "id": "353d7f51b8f0",
+    "text": "Clothing & accessories",
     "pages": [
       "index.html"
     ]
@@ -8088,16 +8112,142 @@
     ]
   },
   {
-    "id": "657a98a6c737",
-    "text": "Work jackets, trousers and shorts, bib overalls, coveralls and winter uniforms",
+    "id": "e24772b489c2",
+    "text": "View all categories",
+    "pages": [
+      "index.html"
+    ]
+  },
+  {
+    "id": "a3ff50968501",
+    "text": "Industry photograph illustrating workwear and outerwear in use",
+    "pages": [
+      "index.html",
+      "industries/index.html",
+      "products/index.html"
+    ]
+  },
+  {
+    "id": "bb3bf25f4e58",
+    "text": "Workwear & Outerwear",
     "pages": [
       "index.html",
       "products/index.html"
     ]
   },
   {
-    "id": "f342ec91e913",
-    "text": "Workwear",
+    "id": "5bf523ce9bf3",
+    "text": "Work jackets · Coveralls · Trousers · Insulated clothing",
+    "pages": [
+      "index.html",
+      "products/index.html"
+    ]
+  },
+  {
+    "id": "4d0d4669f71e",
+    "text": "Explore workwear",
+    "pages": [
+      "index.html"
+    ]
+  },
+  {
+    "id": "61c06c9aa622",
+    "text": "Industry photograph illustrating corporate and service clothing",
+    "pages": [
+      "index.html",
+      "products/index.html"
+    ]
+  },
+  {
+    "id": "1aa9104fd53d",
+    "text": "Corporate & Service Uniforms",
+    "pages": [
+      "index.html",
+      "products/index.html",
+      "products/long-double-breasted-wool-blend-blazer-gar-bl-002/index.html",
+      "products/men-s-single-breasted-wool-blend-suit-gar-bl-001/index.html"
+    ]
+  },
+  {
+    "id": "ced04b398aab",
+    "text": "Suits · Shirts · Staff polos · Tailored uniforms",
+    "pages": [
+      "index.html",
+      "products/index.html"
+    ]
+  },
+  {
+    "id": "74fc62a810d8",
+    "text": "Explore uniforms",
+    "pages": [
+      "index.html"
+    ]
+  },
+  {
+    "id": "2f32335ffc3e",
+    "text": "Industry photograph illustrating team and casual clothing",
+    "pages": [
+      "index.html",
+      "products/index.html"
+    ]
+  },
+  {
+    "id": "5c16f58d0ebd",
+    "text": "School, Team & Event Clothing",
+    "pages": [
+      "index.html",
+      "products/index.html"
+    ]
+  },
+  {
+    "id": "b80ad7da3043",
+    "text": "School uniforms · T-shirts · Hoodies · Tracksuits",
+    "pages": [
+      "index.html",
+      "products/index.html"
+    ]
+  },
+  {
+    "id": "33ff8a18dda1",
+    "text": "Explore team clothing",
+    "pages": [
+      "index.html"
+    ]
+  },
+  {
+    "id": "c8ed551ec152",
+    "text": "Industry photograph illustrating complementary textile accessories",
+    "pages": [
+      "index.html",
+      "products/index.html"
+    ]
+  },
+  {
+    "id": "5626c571a524",
+    "text": "Caps · Bags · Footwear · Towels · Textile accessories",
+    "pages": [
+      "index.html",
+      "products/index.html"
+    ]
+  },
+  {
+    "id": "d0b88f8521c4",
+    "text": "Discuss your product list",
+    "pages": [
+      "index.html"
+    ]
+  },
+  {
+    "id": "8980f4cbb1d4",
+    "text": "Product portfolio",
+    "pages": [
+      "index.html",
+      "products/index.html"
+    ]
+  },
+  {
+    "id": "657a98a6c737",
+    "text": "Work jackets, trousers and shorts, bib overalls, coveralls and winter uniforms",
     "pages": [
       "index.html",
       "products/index.html"
@@ -8112,14 +8262,6 @@
     ]
   },
   {
-    "id": "d86298f68df7",
-    "text": "Hi-vis",
-    "pages": [
-      "index.html",
-      "products/index.html"
-    ]
-  },
-  {
     "id": "cad49c42300b",
     "text": "Business suits, shirts, polos, hotel reception and service uniforms",
     "pages": [
@@ -8128,25 +8270,8 @@
     ]
   },
   {
-    "id": "0b96a42eb32c",
-    "text": "Corporate uniforms",
-    "pages": [
-      "index.html",
-      "products/index.html",
-      "projects/winter-event-clothing-2019/index.html"
-    ]
-  },
-  {
     "id": "f5a7a881ad01",
     "text": "T-shirts, polos, crewnecks, hoodies, panelled styles and vintage-washed collections",
-    "pages": [
-      "index.html",
-      "products/index.html"
-    ]
-  },
-  {
-    "id": "f8daee6a5a8c",
-    "text": "Team apparel",
     "pages": [
       "index.html",
       "products/index.html"
@@ -8161,24 +8286,8 @@
     ]
   },
   {
-    "id": "e9a258e08f4b",
-    "text": "Jackets",
-    "pages": [
-      "index.html",
-      "products/index.html"
-    ]
-  },
-  {
     "id": "149c8f7dd996",
     "text": "School blazers and shirts, sports kits, team polos and event sweatshirts",
-    "pages": [
-      "index.html",
-      "products/index.html"
-    ]
-  },
-  {
-    "id": "c0f55dd71796",
-    "text": "Event clothing",
     "pages": [
       "index.html",
       "products/index.html"
@@ -8193,14 +8302,6 @@
     ]
   },
   {
-    "id": "903f6fd12770",
-    "text": "Aviation",
-    "pages": [
-      "index.html",
-      "products/index.html"
-    ]
-  },
-  {
     "id": "0686dfb330d8",
     "text": "Baseball caps, beanies, work gloves, shoes, backpacks and towels",
     "pages": [
@@ -8209,19 +8310,33 @@
     ]
   },
   {
-    "id": "db606a7dd7d1",
-    "text": "Discuss related products",
+    "id": "3f7c0173c126",
+    "text": "Industry photography illustrates applications. Products are developed to your brief and approved sample.",
     "pages": [
       "index.html",
       "products/index.html"
     ]
   },
   {
-    "id": "0b65018a6d14",
-    "text": "Pattern development and cutting",
+    "id": "d33e41379cfc",
+    "text": "Stock photograph of designers working on garment patterns; illustrative industry scene",
     "pages": [
       "index.html",
       "manufacturing-capabilities/index.html"
+    ]
+  },
+  {
+    "id": "a5dc5894365d",
+    "text": "Apparel design & development",
+    "pages": [
+      "index.html"
+    ]
+  },
+  {
+    "id": "b3431b069224",
+    "text": "Design & development",
+    "pages": [
+      "index.html"
     ]
   },
   {
@@ -8231,6 +8346,14 @@
       "index.html",
       "industries/index.html",
       "products/index.html"
+    ]
+  },
+  {
+    "id": "7280fbbbe018",
+    "text": "Choose uniforms by role, working conditions and brand identity. Combine garments and accessories across teams under one purchasing programme.",
+    "pages": [
+      "index.html",
+      "industries/index.html"
     ]
   },
   {
@@ -8298,6 +8421,35 @@
     ]
   },
   {
+    "id": "b53356c9319b",
+    "text": "Stock photograph of warehouse staff carrying packed cartons; illustrative logistics scene",
+    "pages": [
+      "index.html"
+    ]
+  },
+  {
+    "id": "586966f7a6da",
+    "text": "Packing & dispatch coordination",
+    "pages": [
+      "index.html"
+    ]
+  },
+  {
+    "id": "8ae8ba7af714",
+    "text": "Supply & logistics",
+    "pages": [
+      "index.html"
+    ]
+  },
+  {
+    "id": "d8ffa78ea32b",
+    "text": "From specifications and samples to production in our own factory, quality checks and export preparation, LF manages your order directly.",
+    "pages": [
+      "index.html",
+      "process-quality/index.html"
+    ]
+  },
+  {
     "id": "f10eeb64927c",
     "text": "Requirement review",
     "pages": [
@@ -8308,6 +8460,22 @@
   {
     "id": "0c72b022098c",
     "text": "Agree on the garment list, quantities, intended use, destination and required arrival date.",
+    "pages": [
+      "index.html",
+      "process-quality/index.html"
+    ]
+  },
+  {
+    "id": "bffb198805f2",
+    "text": "Specification confirmation",
+    "pages": [
+      "index.html",
+      "process-quality/index.html"
+    ]
+  },
+  {
+    "id": "1cbd499cb4d4",
+    "text": "Record fabric weight, measurements, construction, branding, size breakdown and packing instructions.",
     "pages": [
       "index.html",
       "process-quality/index.html"
@@ -8418,6 +8586,116 @@
     ]
   },
   {
+    "id": "a1e6fb8c61d9",
+    "text": "Some projects were supplied through procurement partners. The names identify past supply experience and do not imply endorsement.",
+    "pages": [
+      "index.html",
+      "projects/index.html"
+    ]
+  },
+  {
+    "id": "01f585fc2445",
+    "text": "Stock photograph of industrial embroidery equipment, not an LF facility or customer project",
+    "pages": [
+      "index.html"
+    ]
+  },
+  {
+    "id": "5163ad7a0c86",
+    "text": "Batch embroidery & production",
+    "pages": [
+      "index.html"
+    ]
+  },
+  {
+    "id": "96bb8ccf30d6",
+    "text": "flight suits",
+    "pages": [
+      "index.html"
+    ]
+  },
+  {
+    "id": "8807a0b2ec80",
+    "text": "Specialist flight-suit project in Germany",
+    "pages": [
+      "index.html"
+    ]
+  },
+  {
+    "id": "f6cb27e93f82",
+    "text": "outfits",
+    "pages": [
+      "index.html"
+    ]
+  },
+  {
+    "id": "5d01c1c8440b",
+    "text": "Explore the winter clothing project",
+    "pages": [
+      "index.html",
+      "projects/index.html"
+    ]
+  },
+  {
+    "id": "364b816924d3",
+    "text": "Selected project end users",
+    "pages": [
+      "index.html",
+      "projects/index.html"
+    ]
+  },
+  {
+    "id": "35487aa779b3",
+    "text": "View ANA apparel project",
+    "pages": [
+      "index.html"
+    ]
+  },
+  {
+    "id": "baded734864a",
+    "text": "View Mercedes-Benz apparel project",
+    "pages": [
+      "index.html"
+    ]
+  },
+  {
+    "id": "de99db182e39",
+    "text": "View SMS group apparel project",
+    "pages": [
+      "index.html"
+    ]
+  },
+  {
+    "id": "9912de2f7cc0",
+    "text": "View PetroChina apparel project",
+    "pages": [
+      "index.html"
+    ]
+  },
+  {
+    "id": "bf711cbe8a95",
+    "text": "View Sinopec apparel project",
+    "pages": [
+      "index.html"
+    ]
+  },
+  {
+    "id": "e1afe1e128bc",
+    "text": "Discuss your next project",
+    "pages": [
+      "index.html",
+      "products/index.html"
+    ]
+  },
+  {
+    "id": "cd0bbddd231a",
+    "text": "Send your product list, estimated quantities, destination and required delivery date. A reference image is enough to start the conversation.",
+    "pages": [
+      "index.html",
+      "products/index.html"
+    ]
+  },
+  {
     "id": "52faf734d757",
     "text": "Related Products",
     "pages": [
@@ -8429,13 +8707,6 @@
   {
     "id": "2688e7295ea2",
     "text": "Apparel Solutions by Industry | LF Clothing",
-    "pages": [
-      "industries/index.html"
-    ]
-  },
-  {
-    "id": "7280fbbbe018",
-    "text": "Choose uniforms by role, working conditions and brand identity. Combine garments and accessories across teams under one purchasing programme.",
     "pages": [
       "industries/index.html"
     ]
@@ -8946,13 +9217,6 @@
     ]
   },
   {
-    "id": "d8ffa78ea32b",
-    "text": "From specifications and samples to production in our own factory, quality checks and export preparation, LF manages your order directly.",
-    "pages": [
-      "process-quality/index.html"
-    ]
-  },
-  {
     "id": "0acddaf9d17e",
     "text": "Discuss Your Requirements",
     "pages": [
@@ -9004,20 +9268,6 @@
   {
     "id": "dd20534c36a4",
     "text": "Our factory · fabric cutting",
-    "pages": [
-      "process-quality/index.html"
-    ]
-  },
-  {
-    "id": "bffb198805f2",
-    "text": "Specification confirmation",
-    "pages": [
-      "process-quality/index.html"
-    ]
-  },
-  {
-    "id": "1cbd499cb4d4",
-    "text": "Record fabric weight, measurements, construction, branding, size breakdown and packing instructions.",
     "pages": [
       "process-quality/index.html"
     ]
@@ -11174,15 +11424,15 @@
     ]
   },
   {
-    "id": "8980f4cbb1d4",
-    "text": "Product portfolio",
+    "id": "30f4ece33dc9",
+    "text": "Custom apparel products and supply",
     "pages": [
       "products/index.html"
     ]
   },
   {
-    "id": "30f4ece33dc9",
-    "text": "Custom apparel products and supply",
+    "id": "c192c106612b",
+    "text": "Custom clothing and related product categories",
     "pages": [
       "products/index.html"
     ]
@@ -11195,8 +11445,22 @@
     ]
   },
   {
+    "id": "f342ec91e913",
+    "text": "Workwear",
+    "pages": [
+      "products/index.html"
+    ]
+  },
+  {
     "id": "5a33ee3b9236",
     "text": "High-visibility, flame-resistant and anti-static garments. Share the intended use, destination and required standard so we can agree materials and finished-garment testing.",
+    "pages": [
+      "products/index.html"
+    ]
+  },
+  {
+    "id": "d86298f68df7",
+    "text": "Hi-vis",
     "pages": [
       "products/index.html"
     ]
@@ -11206,6 +11470,14 @@
     "text": "Suits, blazers, tailored trousers, shirts and polos for offices, retail, hotels and service teams. Coordinate colours and fits across roles.",
     "pages": [
       "products/index.html"
+    ]
+  },
+  {
+    "id": "0b96a42eb32c",
+    "text": "Corporate uniforms",
+    "pages": [
+      "products/index.html",
+      "projects/winter-event-clothing-2019/index.html"
     ]
   },
   {
@@ -11223,8 +11495,22 @@
     ]
   },
   {
+    "id": "f8daee6a5a8c",
+    "text": "Team apparel",
+    "pages": [
+      "products/index.html"
+    ]
+  },
+  {
     "id": "03730e4c3da2",
     "text": "Rain jackets, softshells, technical shells, padded jackets and down coats. Choose layers, insulation and weather protection for the climate and activity.",
+    "pages": [
+      "products/index.html"
+    ]
+  },
+  {
+    "id": "e9a258e08f4b",
+    "text": "Jackets",
     "pages": [
       "products/index.html"
     ]
@@ -11251,6 +11537,13 @@
     ]
   },
   {
+    "id": "c0f55dd71796",
+    "text": "Event clothing",
+    "pages": [
+      "products/index.html"
+    ]
+  },
+  {
     "id": "db1588bbd2fd",
     "text": "Flight suits, ground-crew uniforms, motorsport suits and specialist coveralls. Develop pockets, ventilation and adjustments around the wearer's movements.",
     "pages": [
@@ -11258,8 +11551,22 @@
     ]
   },
   {
+    "id": "903f6fd12770",
+    "text": "Aviation",
+    "pages": [
+      "products/index.html"
+    ]
+  },
+  {
     "id": "fc1cffe0e1a9",
     "text": "Caps, gloves, footwear, bags and towels can be supplied with the garments. Agree colours, branding, quantities and packing for the complete order.",
+    "pages": [
+      "products/index.html"
+    ]
+  },
+  {
+    "id": "db606a7dd7d1",
+    "text": "Discuss related products",
     "pages": [
       "products/index.html"
     ]
@@ -11297,14 +11604,6 @@
     "text": "Long Double-Breasted Wool-Blend Blazer (GAR-BL-002) for international B2B workwear and uniform programs. Review the reference material, construction and configurable options.",
     "pages": [
       "products/long-double-breasted-wool-blend-blazer-gar-bl-002/index.html"
-    ]
-  },
-  {
-    "id": "1aa9104fd53d",
-    "text": "Corporate & Service Uniforms",
-    "pages": [
-      "products/long-double-breasted-wool-blend-blazer-gar-bl-002/index.html",
-      "products/men-s-single-breasted-wool-blend-suit-gar-bl-001/index.html"
     ]
   },
   {
@@ -11816,13 +12115,6 @@
     ]
   },
   {
-    "id": "5d01c1c8440b",
-    "text": "Explore the winter clothing project",
-    "pages": [
-      "projects/index.html"
-    ]
-  },
-  {
     "id": "ef519d539eae",
     "text": "Timing describes this completed project. New schedules are agreed for each order.",
     "pages": [
@@ -12054,22 +12346,8 @@
     ]
   },
   {
-    "id": "364b816924d3",
-    "text": "Selected project end users",
-    "pages": [
-      "projects/index.html"
-    ]
-  },
-  {
     "id": "99cf206b2a40",
     "text": "Apparel and textile supply experience",
-    "pages": [
-      "projects/index.html"
-    ]
-  },
-  {
-    "id": "a1e6fb8c61d9",
-    "text": "Some projects were supplied through procurement partners. The names identify past supply experience and do not imply endorsement.",
     "pages": [
       "projects/index.html"
     ]

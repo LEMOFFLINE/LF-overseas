@@ -343,7 +343,11 @@ if (!/<input[^>]*name=["']email["'][^>]*type=["']email["']/i.test(inquiryPage)) 
 if (!/<select[^>]*name=["']countryCode["'][^>]*data-country-select/i.test(inquiryPage)) errors.push("inquiry country field must use the country selector");
 
 const productsPage = await readFile(path.join(root, "products", "index.html"), "utf8");
-if ((productsPage.match(/class="portfolio-card"/g) || []).length !== 8) errors.push("products overview must contain eight product groups");
+for (const category of categories) if (!productsPage.includes(`<article id="${category}">`)) errors.push(`missing product portfolio anchor: ${category}`);
+for (const key of ["range-workwear-stock-v4", "range-corporate-stock-v4", "range-team-stock-v4", "range-accessories-stock-v4"]) {
+  for (const [label, html] of [["homepage", homepage], ["products", productsPage]]) if (!html.includes(`src="/assets/editorial/${key}.webp"`)) errors.push(`${label} is missing its editorial photograph: ${key}`);
+}
+for (const key of ["apparel-development-hero-stock-v4","professional-design-stock-v3","enterprise-projects-stock-v3","coordinated-logistics-stock-v4"]) if (!homeMain.includes(`src="/assets/editorial/${key}.webp"`)) errors.push(`homepage missing feature photograph: ${key}`);
 if (productsPage.includes('class="product-card"')) errors.push("products overview still contains the retired SKU grid");
 for (const collection of collections) if (!productsPage.includes(`href="/collections/${collection.slug}/"`)) errors.push(`products page is missing collection link: ${collection.slug}`);
 if (!productsPage.includes(`href="/collections/aviation-flight-suits/"`)) errors.push("products page is missing aviation collection link");
