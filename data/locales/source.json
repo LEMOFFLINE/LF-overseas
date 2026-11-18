@@ -1979,7 +1979,6 @@
       "event-staff-uniforms/index.html",
       "guides/custom-clothing-from-reference-images/index.html",
       "guides/index.html",
-      "inquiry/index.html",
       "process-quality/index.html",
       "products/anti-static-option-insulated-work-jacket-gar-oj-006/index.html",
       "products/colour-block-short-sleeve-polo-gar-po-001/index.html",
@@ -7565,15 +7564,15 @@
     ]
   },
   {
-    "id": "18af604ee9f4",
-    "text": "Custom Apparel & Uniform Manufacturer in China | LF Clothing",
+    "id": "8de117914530",
+    "text": "Custom Clothing Manufacturer in China | LF Clothing",
     "pages": [
       "index.html"
     ]
   },
   {
-    "id": "ffcf76e827ff",
-    "text": "Custom workwear, uniforms and branded apparel from China. Start with a reference image; regular clothing usually starts at 50 pieces per style/colour.",
+    "id": "c15525f09f97",
+    "text": "Custom clothing for brands, businesses and teams. Our factory develops patterns and samples from your brief, from washed tees to tailored suits and technical outerwear.",
     "pages": [
       "index.html"
     ]
@@ -7586,22 +7585,22 @@
     ]
   },
   {
-    "id": "a55c060ce30e",
-    "text": "Custom apparel manufacturer with our own factory",
+    "id": "02713f38d363",
+    "text": "Our garment factory in Yongqing, China",
     "pages": [
       "index.html"
     ]
   },
   {
-    "id": "784135bc0ea7",
-    "text": "Custom Apparel for Brands, Businesses & Teams",
+    "id": "31d9c6db1606",
+    "text": "Custom Clothing Made to Your Design",
     "pages": [
       "index.html"
     ]
   },
   {
-    "id": "34f8defeaa4d",
-    "text": "Develop workwear, uniforms and branded apparel from a reference image. We handle garment development, sampling and production in our own factory, with complementary accessories available in the same order.",
+    "id": "b5fa2c3ad6cc",
+    "text": "Send a sketch, photo or sample. We develop the pattern, source the fabric and make your garments, from washed T-shirts and tailored suits to staff uniforms and technical outerwear.",
     "pages": [
       "index.html"
     ]
@@ -7636,15 +7635,15 @@
     ]
   },
   {
-    "id": "8598eb4ec597",
-    "text": "Workwear, uniforms & branded apparel",
+    "id": "f75ac236e67b",
+    "text": "What would you like to make?",
     "pages": [
       "index.html"
     ]
   },
   {
-    "id": "6801e690cd34",
-    "text": "For clothing brands, business procurement teams, schools and event organisers. Order one garment type or add accessories to the same brief.",
+    "id": "2453004d27aa",
+    "text": "Develop a private label collection, outfit your staff or order clothing for a school, sports team or event. You can include matching caps, gloves or footwear in the same brief.",
     "pages": [
       "index.html"
     ]
@@ -8055,57 +8054,15 @@
     ]
   },
   {
-    "id": "e3c2778f3f2d",
-    "text": "Request a Custom Workwear or Uniform Quote | LF Clothing",
+    "id": "6897ce36dceb",
+    "text": "Request a Custom Clothing Quote | LF Clothing",
     "pages": [
       "inquiry/index.html"
     ]
   },
   {
-    "id": "b04b836c8e85",
-    "text": "Send LF Clothing your workwear or uniform brief, product reference, quantity, delivery target and logo or testing requirements for project review.",
-    "pages": [
-      "inquiry/index.html"
-    ]
-  },
-  {
-    "id": "369f270a5cbd",
-    "text": "Contact & inquiry",
-    "pages": [
-      "inquiry/index.html"
-    ]
-  },
-  {
-    "id": "ec6499ececad",
-    "text": "Tell us about your project",
-    "pages": [
-      "inquiry/index.html"
-    ]
-  },
-  {
-    "id": "ff64cd40399d",
-    "text": "Send a reference, estimated quantities, destination and required arrival date. A photo or short description is enough to begin.",
-    "pages": [
-      "inquiry/index.html"
-    ]
-  },
-  {
-    "id": "b735fa9acd28",
-    "text": "Request a quotation",
-    "pages": [
-      "inquiry/index.html"
-    ]
-  },
-  {
-    "id": "8f99ef6fc1fd",
-    "text": "Fields marked * are required.",
-    "pages": [
-      "inquiry/index.html"
-    ]
-  },
-  {
-    "id": "862fead051be",
-    "text": "Name *",
+    "id": "f9d379686803",
+    "text": "Tell our factory what you would like to make. Send a short description or attach a reference for a custom garment, staff uniform or private label collection.",
     "pages": [
       "inquiry/index.html"
     ]
@@ -8118,22 +8075,43 @@
     ]
   },
   {
-    "id": "e7863ff1e11a",
-    "text": "WhatsApp / Phone *",
+    "id": "cf9a4d479f0e",
+    "text": "What do you need? *",
     "pages": [
       "inquiry/index.html"
     ]
   },
   {
-    "id": "c199508ac43d",
-    "text": "Include country code",
+    "id": "62dd3440211e",
+    "text": "What would you like us to make? A brief description is enough.",
     "pages": [
       "inquiry/index.html"
     ]
   },
   {
-    "id": "1a14a75d7112",
-    "text": "Country / Region *",
+    "id": "dfb5cb4deff1",
+    "text": "Add a file or other details (optional)",
+    "pages": [
+      "inquiry/index.html"
+    ]
+  },
+  {
+    "id": "d645998e95a5",
+    "text": "Reference file",
+    "pages": [
+      "inquiry/index.html"
+    ]
+  },
+  {
+    "id": "7cfaf707bd24",
+    "text": "Photo, drawing, tech pack, artwork or size chart. One file, maximum 4 MB.",
+    "pages": [
+      "inquiry/index.html"
+    ]
+  },
+  {
+    "id": "f16a05ac6347",
+    "text": "Country / Region",
     "pages": [
       "inquiry/index.html"
     ]
@@ -8153,36 +8131,22 @@
     ]
   },
   {
-    "id": "cf9a4d479f0e",
-    "text": "What do you need? *",
+    "id": "dcd1d5223f73",
+    "text": "Name",
     "pages": [
       "inquiry/index.html"
     ]
   },
   {
-    "id": "1d68767cab85",
-    "text": "Product, quantity, destination, target date and any logo or material requirements.",
+    "id": "6770004b0939",
+    "text": "WhatsApp / Phone",
     "pages": [
       "inquiry/index.html"
     ]
   },
   {
-    "id": "d645998e95a5",
-    "text": "Reference file",
-    "pages": [
-      "inquiry/index.html"
-    ]
-  },
-  {
-    "id": "0059798b7f70",
-    "text": "(optional)",
-    "pages": [
-      "inquiry/index.html"
-    ]
-  },
-  {
-    "id": "7cfaf707bd24",
-    "text": "Photo, drawing, tech pack, artwork or size chart. One file, maximum 4 MB.",
+    "id": "c199508ac43d",
+    "text": "Include country code",
     "pages": [
       "inquiry/index.html"
     ]

@@ -288,7 +288,7 @@ if (!sitemapUrls.includes(`${baseUrl}/collections/aviation-flight-suits/`)) erro
 if (!sitemapUrls.includes(`${baseUrl}/event-staff-uniforms/`)) errors.push("event staff uniforms landing page missing from sitemap");
 
 const expectedSeoTitles = new Map([
-  ["index.html", "Custom Apparel & Uniform Manufacturer in China | LF Clothing"],
+  ["index.html", "Custom Clothing Manufacturer in China | LF Clothing"],
   ["custom-workwear/index.html", buyerPrograms.workwear.title],
   ["event-staff-uniforms/index.html", buyerPrograms.eventStaff.title],
   ["customization/index.html", "Custom Apparel Development & Private Label | LF Clothing"],
@@ -313,7 +313,7 @@ const categories = [...homepage.matchAll(/data-range-category="([^"]+)"/g)].map(
 if (categories.length !== 4 || new Set(categories).size !== 4) errors.push("homepage must show four distinct category links");
 const homeMain = homepage.match(/<main id="main">([\s\S]*?)<\/main>/)?.[1] || "";
 if ((homeMain.match(/<section\b/g) || []).length !== 6) errors.push("homepage must contain six content sections");
-for (const text of ["Custom apparel manufacturer with our own factory", "20 years of clothing industry experience", "procurement partners", "Industry photography illustrates applications"]) if (!homepage.includes(text)) errors.push(`homepage missing positioning or image context: ${text}`);
+for (const text of ["Our garment factory in Yongqing, China", "20 years of clothing industry experience", "procurement partners", "Industry photography illustrates applications"]) if (!homepage.includes(text)) errors.push(`homepage missing positioning or image context: ${text}`);
 if (!homepage.includes('href="/inquiry/"') || !homepage.includes('href="/projects/"')) errors.push("homepage requires inquiry and project routes");
 for (const oldClass of ["home-product-tile", "home-capability-card", "visual-process-card", "why-choose-card"]) if (homepage.includes(`class="${oldClass}"`)) errors.push(`homepage still has the retired long layout: ${oldClass}`);
 if (homepage.includes("Four main product lines") || homepage.includes("Start with the Product You Need")) errors.push("homepage still contains the removed four-product-line section");
@@ -330,9 +330,13 @@ if (!privacyPage.includes("lf_country")) errors.push("privacy page is missing th
 if (!robotsTokens(privacyPage).has("noindex")) errors.push("privacy page must remain outside the search index");
 if (sitemapUrls.includes(`${baseUrl}/privacy/`)) errors.push("privacy page must not be included in the SEO sitemap");
 const inquiryPage = await readFile(path.join(root, "inquiry", "index.html"), "utf8");
-for (const field of ["name", "email", "phone", "countryCode", "message"]) {
+for (const field of ["email", "message"]) {
   const fieldPattern = new RegExp(`name=["']${field}["'][^>]*\\brequired\\b`, "i");
   if (!fieldPattern.test(inquiryPage)) errors.push(`inquiry page is missing required field: ${field}`);
+}
+for (const field of ["name", "phone", "countryCode", "attachment"]) {
+  const tag = inquiryPage.match(new RegExp(`<(?:input|select)\\b[^>]*name="${field}"[^>]*>`, "i"))?.[0];
+  if (!tag || /\brequired\b/.test(tag)) errors.push(`inquiry field must be present and optional: ${field}`);
 }
 if (!/<input[^>]*name=["']email["'][^>]*type=["']email["']/i.test(inquiryPage)) errors.push("inquiry email field must use type=email");
 if (!/<select[^>]*name=["']countryCode["'][^>]*data-country-select/i.test(inquiryPage)) errors.push("inquiry country field must use the country selector");

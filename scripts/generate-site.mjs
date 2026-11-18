@@ -178,7 +178,7 @@ function header(active = "") {
   <header class="site-header"><div class="nav-wrap">
     <a class="brand" href="/" aria-label="LF Clothing home"><img src="/assets/brand/lingfeng-logo.webp" width="1200" height="292" alt="Lingfeng Workwear and Uniform Supply"></a>
     <div class="nav-utility"><a class="nav-email" href="mailto:sales@lfclothing.com">sales@lfclothing.com</a><a href="tel:+8613901335518">+86 139 0133 5518</a></div>
-    <div class="nav-actions"><a class="btn btn-primary" href="/inquiry">Request a Quote</a><button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="primary-navigation" aria-expanded="false"><span></span><span></span><span></span></button></div>
+    <div class="nav-actions">${active === "inquiry" ? '<a class="btn btn-primary" href="https://wa.me/8613901335518">WhatsApp</a>' : '<a class="btn btn-primary" href="/inquiry">Request a Quote</a>'}<button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="primary-navigation" aria-expanded="false"><span></span><span></span><span></span></button></div>
   </div><div class="nav-bar">
     <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">
       <a${activeClass(active, "home")} href="/">Home</a>
@@ -265,7 +265,30 @@ function productCard(product) {
 function logos() { return `<div class="logo-grid">${partners.map(([name, file]) => `<div class="logo-card"><img src="/assets/partners/${file}" width="480" height="240" loading="lazy" alt="${escapeHtml(name)} project logo"></div>`).join("")}</div>`; }
 
 function inquiryForm(prefix = "inquiry") {
-  return `<form class="inquiry-form" data-inquiry-form><div class="form-two"><div class="field"><label for="${prefix}-name">Name *</label><input id="${prefix}-name" name="name" autocomplete="name" required></div><div class="field"><label for="${prefix}-email">Email *</label><input id="${prefix}-email" name="email" type="email" autocomplete="email" required></div></div><div class="form-two"><div class="field"><label for="${prefix}-phone">WhatsApp / Phone *</label><input id="${prefix}-phone" name="phone" type="tel" autocomplete="tel" required placeholder="Include country code"></div><div class="field"><label for="${prefix}-country">Country / Region *</label><select id="${prefix}-country" name="countryCode" autocomplete="country" required data-country-select><option value="">Select country or region</option></select><small>Selected automatically where location information is available. You can change it.</small></div></div><div class="field"><label for="${prefix}-message">What do you need? *</label><textarea id="${prefix}-message" name="message" required placeholder="Product, quantity, destination, target date and any logo or material requirements."></textarea></div><div class="field"><label for="${prefix}-attachment">Reference file <span>(optional)</span></label><input id="${prefix}-attachment" name="attachment" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg,.jpeg,.webp"><small>Photo, drawing, tech pack, artwork or size chart. One file, maximum 4 MB.</small></div><div class="visually-hidden" aria-hidden="true"><label for="${prefix}-website">Leave blank</label><input id="${prefix}-website" name="website" tabindex="-1" autocomplete="off"></div><button class="btn btn-primary" type="submit">Send Inquiry</button><div class="form-message" tabindex="-1" data-form-message></div></form>`;
+  return `<form class="inquiry-form" data-inquiry-form>
+    <div class="field">
+      <label for="${prefix}-email">Email *</label>
+      <input id="${prefix}-email" name="email" type="email" autocomplete="email" required>
+    </div>
+    <div class="field">
+      <label for="${prefix}-message">What do you need? *</label>
+      <textarea id="${prefix}-message" name="message" rows="3" required placeholder="What would you like us to make? A brief description is enough."></textarea>
+    </div>
+    <details class="inquiry-extras">
+      <summary>Add a file or other details (optional)</summary>
+      <div class="inquiry-extra-fields">
+        <div class="field"><label for="${prefix}-attachment">Reference file</label><input id="${prefix}-attachment" name="attachment" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg,.jpeg,.webp"><small>Photo, drawing, tech pack, artwork or size chart. One file, maximum 4 MB.</small></div>
+        <div class="field"><label for="${prefix}-country">Country / Region</label><select id="${prefix}-country" name="countryCode" autocomplete="country" data-country-select><option value="">Select country or region</option></select><small>Selected automatically where location information is available. You can change it.</small></div>
+        <div class="form-two">
+          <div class="field"><label for="${prefix}-name">Name</label><input id="${prefix}-name" name="name" autocomplete="name"></div>
+          <div class="field"><label for="${prefix}-phone">WhatsApp / Phone</label><input id="${prefix}-phone" name="phone" type="tel" autocomplete="tel" placeholder="Include country code"></div>
+        </div>
+      </div>
+    </details>
+    <div class="visually-hidden" aria-hidden="true"><label for="${prefix}-website">Leave blank</label><input id="${prefix}-website" name="website" tabindex="-1" autocomplete="off"></div>
+    <button class="btn btn-primary" type="submit">Send Inquiry</button>
+    <div class="form-message" role="status" tabindex="-1" data-form-message></div>
+  </form>`;
 }
 
 function projectCaseCards(cases = projectCases, className = "") {
@@ -472,7 +495,7 @@ function standardPage(name) {
     "process-quality": { title: "Workwear Quality Control & Inspection | LF Clothing", description: "See how LF manufactures clothing in our own factory, from approved samples and material checks to production, inspection, packing and export preparation.", active: "process", render: renderProcess, image: "/assets/editorial/enterprise-projects-stock-v3.webp" },
     projects: { title: "Uniform & Branded Apparel Project Examples | LF Clothing", description: "See documented LF Clothing apparel programs and real samples for ANA, Mercedes-Benz, SMS group, PetroChina, Sinopec, IBM, Apple and other organisations.", active: "projects", render: renderProjects, image: winterEventStudy.image },
     about: { title: "China Clothing Manufacturer & Uniform Supplier | LF Clothing", description: "Meet LF Clothing, a custom clothing manufacturer with our own factory in China. We develop, sample and produce uniforms, workwear and branded apparel.", active: "about", render: renderAbout, image: "/assets/operations/sample-showroom-03.webp", schema: [buyerFaqSchema] },
-    inquiry: { title: "Request a Custom Workwear or Uniform Quote | LF Clothing", description: "Send LF Clothing your workwear or uniform brief, product reference, quantity, delivery target and logo or testing requirements for project review.", active: "inquiry", render: renderInquiry },
+    inquiry: { title: "Request a Custom Clothing Quote | LF Clothing", description: "Tell our factory what you would like to make. Send a short description or attach a reference for a custom garment, staff uniform or private label collection.", active: "inquiry", render: renderInquiry },
   }[name];
   return layout({ ...page, pathName: `/${name}`, body: page.render(context) });
 }

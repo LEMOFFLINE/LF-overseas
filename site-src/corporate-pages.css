@@ -145,7 +145,17 @@
 .inner-page .field label { font-size: 14px; }
 .inner-page .field { align-content: start; min-width: 0; }
 .inner-page .field small { font-size: 13px; }
-.inner-page .field textarea { min-height: 165px; }
+.inner-page .inquiry-section h1 { margin: 0 0 24px; font-size: clamp(28px, 4vw, 42px); }
+.inquiry-extras { border-block: 1px solid var(--line); }
+.inquiry-extras summary { padding: 12px 0; color: var(--blue); font-weight: 650; cursor: pointer; }
+.inquiry-extra-fields { display: grid; gap: 18px; padding-block: 4px 20px; }
+.inner-page .inquiry-form textarea { min-height: 96px; }
+@media (max-width: 600px) {
+  .inner-page .section.inquiry-section { padding-block: 24px 40px; }
+  .inner-page .inquiry-section h1 { margin-bottom: 16px; }
+  .inquiry-form { gap: 12px; }
+  .inquiry-form :is(input, textarea, select) { font-size: 16px; }
+}
 
 /* Existing collection and product detail templates retain all specifications. */
 .inner-page .page-hero { padding: 30px 0 42px; background: var(--paper); }

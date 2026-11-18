@@ -38,11 +38,16 @@ html[dir='rtl'] .spec-table th,html[dir='rtl'] .spec-table td { text-align:start
   html[dir='rtl'] .nav-actions { margin-left:0; margin-inline-start:auto; }
   html[dir='rtl'] .dropdown-menu { right:auto; }
 }
+.editorial-hero-actions .hero-whatsapp { display:none; }
 @media(max-width:600px) {
   .nav-wrap { flex-wrap:wrap; gap:6px 12px; padding-block:10px; }
-  .brand img { width:157px; }
-  .nav-actions { gap:8px; flex:1; justify-content:flex-end; }
-  .nav-actions > .btn { display:none; }
+  .brand img { width:clamp(90px, 27vw, 150px); }
+  .nav-actions { gap:6px; flex:1; justify-content:flex-end; }
+  .nav-actions > .btn { display:inline-flex; min-height:44px; max-width:40vw; padding:7px 10px; line-height:1.2; text-align:center; }
+  .language-switcher summary span, .language-switcher summary::after { display:none; }
+  .language-switcher summary { justify-content:center; width:40px; min-height:44px; }
+  .editorial-hero-actions .hero-range-link { display:none; }
+  .editorial-hero-actions .hero-whatsapp { display:inline-flex; }
   .language-switcher { font-size:12px; }
   .language-switcher summary { gap:5px; }
   .language-switcher summary svg { width:16px; height:16px; }
@@ -52,7 +57,7 @@ html[dir='rtl'] .spec-table th,html[dir='rtl'] .spec-table td { text-align:start
   html[dir='rtl'] .editorial-project-facts a,html[dir='rtl'] .editorial-project-facts a:first-child,html[dir='rtl'] .editorial-project-facts a:last-child,html[dir='rtl'] .corporate-facts > .container > div,html[dir='rtl'] .corporate-facts > .container > div:first-child { padding-inline:0; border-inline-start:0; }
 }
 @media(max-width:380px) {
-  .brand img { width:130px; }
+  .brand img { width:82px; }
   .nav-wrap { column-gap:8px; }
   .nav-actions { gap:6px; }
 }
