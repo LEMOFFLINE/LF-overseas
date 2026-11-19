@@ -280,7 +280,14 @@ if (sitemapUrls.length !== expectedSitemapUrls) errors.push(`expected ${expected
 for (const study of projectStudies) if (!sitemapUrls.includes(`${baseUrl}/projects/${study.slug}/`)) errors.push(`project study missing from sitemap: ${study.slug}`);
 if (new Set(sitemapUrls).size !== sitemapUrls.length) errors.push("sitemap has duplicate URLs");
 for (const slug of Object.keys(expectedLegacyNamedTargets)) if (sitemapUrls.some((url) => url.replace(/\/$/, "") === `${baseUrl}/products/${slug}`)) errors.push(`redirected historical product must not appear in sitemap: ${slug}`);
-if (sitemap.includes("<lastmod>")) errors.push("sitemap must not emit an unreliable build-date lastmod value");
+const pageDates = JSON.parse(await readFile(path.resolve("data/page-modified.json"), "utf8"));
+for (const [, loc, entry] of sitemap.matchAll(/<url><loc>([^<]+)<\/loc>([\s\S]*?)<\/url>/g)) {
+  const route = new URL(loc).pathname.replace(/^\/(?:de|fr|es|pt|ar|ja|ko)(?=\/)/, "");
+  const date = entry.match(/<lastmod>([^<]*)<\/lastmod>/)?.[1];
+  if (date !== pageDates[route] || (date && !/^\d{4}-\d{2}-\d{2}$/.test(date))) {
+    errors.push(`sitemap modification date does not match the recorded content change for ${loc}`);
+  }
+}
 for (const url of sitemapUrls) if (!hasTrailingSlash(url)) errors.push(`sitemap URL must use a trailing slash: ${url}`);
 for (const product of detailProducts) if (!sitemapUrls.includes(`${baseUrl}/products/${product.slug}/`)) errors.push(`retained product missing from sitemap: ${product.slug}`);
 for (const product of redirectedProducts) if (sitemapUrls.includes(`${baseUrl}/products/${product.slug}/`)) errors.push(`redirected product must not appear in sitemap: ${product.slug}`);
