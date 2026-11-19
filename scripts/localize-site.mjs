@@ -75,6 +75,8 @@ for (const language of locales) {
   }
 }
 if(missing.size) throw new Error(`Missing translations (${missing.size}): ${[...missing].slice(0,30).join('\n')}`);
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${locales.flatMap(language=>indexableRoutes.map(route=>`  <url><loc>${origin}${languagePath(route,language)}</loc>${locales.map(code=>`<xhtml:link rel="alternate" hreflang="${code}" href="${origin}${languagePath(route,code)}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${origin}${route}"/></url>`)).join('\n')}\n</urlset>\n`;
+// Only include a date when a substantive change to the published page is known.
+const lastModified = JSON.parse(await readFile(path.join(root, 'data/page-modified.json'), 'utf8'));
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${locales.flatMap(language=>indexableRoutes.map(route=>`  <url><loc>${origin}${languagePath(route,language)}</loc>${lastModified[route] ? `<lastmod>${lastModified[route]}</lastmod>` : ''}${locales.map(code=>`<xhtml:link rel="alternate" hreflang="${code}" href="${origin}${languagePath(route,code)}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${origin}${route}"/></url>`)).join('\n')}\n</urlset>\n`;
 await writeFile(path.join(dist,'sitemap.xml'),sitemap,'utf8');
 console.log(`Localized ${originals.length} pages into ${locales.length} languages (${originals.length*locales.length} HTML files).`);

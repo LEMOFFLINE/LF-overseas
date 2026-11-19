@@ -9,6 +9,7 @@ export const homeTitle = "Custom Apparel Manufacturer & Clothing Supplier | LF C
 export const homeDescription = "LF Clothing provides custom apparel manufacturing and supply solutions for businesses, brands and professional buyers, covering workwear, uniforms, casualwear, outerwear and specialized garments.";
 export const productTitle = "Custom Apparel Products, Workwear & Uniforms | LF Clothing";
 export const productDescription = "Explore LF Clothing's comprehensive apparel range, including industrial workwear, protective clothing, corporate uniforms, casualwear, jackets, aviation apparel and accessories.";
+const rangeNote = "We develop and manufacture apparel in our own factory. Caps, bags, footwear and towels can be included in the same order.";
 const homeIntro = "OEM and ODM apparel for businesses, brands and professional buyers. Our own garment factory in Hebei, China develops and produces clothing from industrial uniforms to private label collections and technical outerwear.";
 
 const imageNote = "Industry photography illustrates applications. Products are developed to your brief and approved sample.";
@@ -60,6 +61,7 @@ function portfolioDetails() {
 function productRange() {
   return `<section class="editorial-range" id="our-range" aria-labelledby="home-range-title"><div class="container">
     <div class="editorial-section-head"><h2 id="home-range-title">Our product range</h2>${link("View all categories","/products")}</div>
+    <p>${esc(rangeNote)}</p>
     <div class="range-card-grid">${photoGroups.map(group => rangeCard(group,false)).join("")}</div>
     <details class="range-directory"><summary>Product portfolio</summary><dl class="range-directory-list">
       ${portfolio.map(([id,title]) => `<div><dt><a href="/products#${id}" data-range-category="${id}">${esc(title)}</a></dt><dd>${esc(rangeExamples[id])}</dd></div>`).join("")}
@@ -96,7 +98,7 @@ function projectsSection() {
   const partners = [["ANA","ana.jpg"],["Mercedes-Benz","mercedes-benz.jpg"],["SMS group","sms-group.jpg"],["PetroChina","petrochina.jpg"],["Sinopec","sinopec.jpg"]];
   return `<section class="editorial-experience"><div class="container">
     <div class="editorial-experience-grid"><div><p class="eyebrow">Enterprise project experience</p><h2>Selected projects</h2>
-      <p>Some projects were supplied through procurement partners. The names identify past supply experience and do not imply endorsement.</p>${link("View our projects","/projects")}</div>
+      <p>Explore the garments supplied for these teams and events.</p>${link("View our projects","/projects")}</div>
       ${themeFigure("enterprise-projects-stock-v3","Batch embroidery & production","Stock photograph of industrial embroidery equipment, not an LF facility or customer project")}</div>
     <div class="editorial-project-facts">${projects.map(([name,unit,title,url]) => `<a href="${url}"><strong>${esc(name)}${unit ? ` <small>${esc(unit)}</small>` : ""}</strong><span>${esc(title)} <b aria-hidden="true">→</b></span></a>`).join("")}</div>
     <div class="editorial-proof-logos" aria-label="Selected project end users">${partners.map(([name,img]) => `<a href="/projects" aria-label="View ${name} apparel project"><img src="/assets/partners/${img}" width="480" height="240" loading="lazy" alt="${name}"></a>`).join("")}</div>
@@ -122,7 +124,7 @@ export function renderHome() {
 export function renderProductsOverview() {
   return `<div class="apparel-editorial">
     <section class="range-page-intro"><div class="container"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><span aria-current="page">Products</span></nav>
-      <h1>Custom apparel products and supply</h1><p>${esc(productDescription)}</p></div></section>
+      <h1>Custom apparel products and supply</h1><p>${esc(productDescription)}</p><p>${esc(rangeNote)}</p></div></section>
     <section class="range-collection container" aria-label="Custom clothing and related product categories">${photoGroups.map(group => rangeCard(group,true)).join("")}</section>
     <div class="container range-page-notes"><p>${imageNote}</p></div>
     ${section("Product portfolio",portfolioDetails(),true)}
