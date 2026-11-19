@@ -210,7 +210,7 @@ function footer() {
       <div><h3>Manufacturing capabilities</h3><div class="footer-links">${capabilities.map(([title],i)=>`<a href="/manufacturing-capabilities#topic-${i+1}">${escapeHtml(title)}</a>`).join("")}</div></div>
       <div><h3>Company &amp; Services</h3><div class="footer-links"><a href="/about">About LF Clothing</a><a href="/industries">Industries</a><a href="/customization">Customization</a><a href="/process-quality">Quality &amp; delivery assurance</a><a href="/projects">Our Projects</a><a href="/guides">Resources</a></div></div>
       <div class="footer-contact"><h3>Contact Our Team</h3><div class="footer-links"><a href="mailto:sales@lfclothing.com">sales@lfclothing.com</a><a href="https://wa.me/8613901335518">WhatsApp: +86 139 0133 5518</a><span>Beijing, China</span></div></div>
-    </div><div class="footer-bottom"><span>© 2026 Beijing Lingfeng Clothing Co., Ltd. All rights reserved.</span><span><a href="/privacy">Privacy &amp; Cookies</a><button class="footer-cookie-button" type="button" data-cookie-settings>Cookie settings</button></span></div>
+    </div><div class="footer-bottom"><span>© 2026 Beijing Lingfeng Apparel Co., Ltd. All rights reserved.</span><span><a href="/privacy">Privacy &amp; Cookies</a><button class="footer-cookie-button" type="button" data-cookie-settings>Cookie settings</button></span></div>
   </div></footer>`;
 }
 
@@ -229,7 +229,7 @@ function layout({ title, description, pathName, active, body, schema = [], robot
   const url = absolute(pathName);
   description = pathName === "/" ? description : metaDescription(description);
   const organization = {
-    "@context": "https://schema.org", "@type": "Organization", "@id": `${baseUrl}/#organization`, name: "Beijing Lingfeng Clothing Co., Ltd.", alternateName: "LF Clothing", url: `${baseUrl}/`,
+    "@context": "https://schema.org", "@type": "Organization", "@id": `${baseUrl}/#organization`, name: "Beijing Lingfeng Apparel Co., Ltd.", alternateName: "LF Clothing", url: `${baseUrl}/`,
     logo: absoluteAsset("/assets/brand/lingfeng-logo.webp"), email: "sales@lfclothing.com", telephone: "+86 139 0133 5518",
     address: { "@type": "PostalAddress", streetAddress: "Room 203, Building 1, No. 18 Jia, Longtai Road, Jiugong Industrial Park, Daxing District", addressLocality: "Beijing", addressCountry: "CN" },
     sameAs: ["https://www.linkedin.com/in/kai-wang-b6aa79420/", "https://www.facebook.com/profile.php?id=61591964337372"],
