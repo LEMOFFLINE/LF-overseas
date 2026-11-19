@@ -60,7 +60,7 @@ const collections = [
 const curated = {
   "GAR-WJ-001": ["Cotton Twill Work Jacket", "Work Jacket", "industrial-workwear", [], "100% combed cotton with a pre-wash option; shrinkage and colourfastness targets are confirmed in the approved specification.", ["Cotton", "Work Jacket"]],
   "GAR-KN-001": ["Stretch Cotton Zip Hoodie", "Zip Hoodie", "team-staff-apparel", [], "95% cotton / 5% elastane with a pre-wash option.", ["Cotton Blend", "Stretch", "Hoodie"]],
-  "GAR-OJ-001": ["Waterproof-Breathable Hooded Shell", "Hooded Shell Jacket", "cold-weather-outdoor-workwear", ["protective-hi-vis"], "100% polyester shell with a waterproof-breathable coating option; performance targets are subject to the final specification and test route.", ["Polyester", "Weather Protection", "Hooded"]],
+  "GAR-OJ-001": ["Hooded Shell Jacket with Optional Waterproof-Breathable Coating", "Hooded Shell Jacket", "cold-weather-outdoor-workwear", ["protective-hi-vis"], "100% polyester shell with a waterproof-breathable coating option; performance targets are subject to the final specification and test route.", ["Polyester", "Weather Protection", "Hooded"], "waterproof-breathable-hooded-shell"],
   "GAR-WJ-002": ["Cotton Work Jacket with Reflective Detail", "Work Jacket", "industrial-workwear", ["protective-hi-vis"], "100% combed cotton.", ["Cotton", "Reflective Detail", "Work Jacket"]],
   "GAR-OJ-002": ["Aramid High-Visibility Hooded Jacket", "Protective Work Jacket", "protective-hi-vis", ["cold-weather-outdoor-workwear"], "100% aramid fabric option; flame-resistant and high-visibility requirements are subject to project specification and verification.", ["Aramid Option", "Flame-Resistant Option", "Reflective Detail", "Hooded"]],
   "GAR-CO-001": ["Cotton Long-Sleeve Work Coverall", "Work Coverall", "industrial-workwear", [], "100% cotton.", ["Cotton", "Coverall"]],
@@ -180,7 +180,7 @@ const products = source.records.map((record, index) => {
   const sku = record["SKU（款号）"];
   const entry = curated[sku];
   if (!entry) throw new Error(`Missing curated mapping for ${sku}`);
-  const [name, garmentType, primaryCollection, secondaryCollections, material, filters] = entry;
+  const [name, garmentType, primaryCollection, secondaryCollections, material, filters, slugBase = slugify(name)] = entry;
   const app = applications[primaryCollection];
   const front = `/assets/products/${sku.toLowerCase()}/front.webp`;
   const back = `/assets/products/${sku.toLowerCase()}/back.webp`;
@@ -191,7 +191,7 @@ const products = source.records.map((record, index) => {
   return {
     sku,
     sourceNumber: record["原编号"],
-    slug: `${slugify(name)}-${sku.toLowerCase()}`,
+    slug: `${slugBase}-${sku.toLowerCase()}`,
     name,
     primaryCollection,
     secondaryCollections,
