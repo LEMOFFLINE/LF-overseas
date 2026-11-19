@@ -10,7 +10,7 @@ export const decodeHtml = value => value.replace(/&(#x[\da-f]+|#\d+|amp|lt|gt|qu
   if (entity.startsWith('#')) return String.fromCodePoint(entity[1].toLowerCase() === 'x' ? parseInt(entity.slice(2), 16) : Number(entity.slice(1)));
   return { amp:'&', lt:'<', gt:'>', quot:'"', apos:"'", nbsp:'\u00a0', hellip:'…', ndash:'–', mdash:'—', copy:'©' }[entity.toLowerCase()] || match;
 });
-const protectedText = /^(?:LF(?: Clothing)?|Beijing Lingfeng Clothing Co\., Ltd\.|LINGFENG|Lingfeng|ANA|Mercedes-Benz|SMS group|PetroChina|Sinopec|Apple|IBM|BMW|Volkswagen|Toyota|Hyundai|3M|YKK|FESCO|ORDINS|REC|ITOCHU Corporation|HPH Consorcio|LinkedIn|Facebook|WhatsApp|ISO \d+|GAR-[A-Z]+-\d+|SKU|MOQ|B2B|OEM|ODM)$/i;
+const protectedText = /^(?:LF(?: Clothing)?|Beijing Lingfeng Apparel Co\., Ltd\.|LINGFENG|Lingfeng|ANA|Mercedes-Benz|SMS group|PetroChina|Sinopec|Apple|IBM|BMW|Volkswagen|Toyota|Hyundai|3M|YKK|FESCO|ORDINS|REC|ITOCHU Corporation|HPH Consorcio|LinkedIn|Facebook|WhatsApp|ISO \d+|GAR-[A-Z]+-\d+|SKU|MOQ|B2B|OEM|ODM)$/i;
 export const needsTranslation = value => /[A-Za-z]{2}/.test(value) && !protectedText.test(value) && !/^(?:https?:|mailto:|tel:|sales@|\+?\d[\d\s./%–-]*$)/i.test(value);
 const descriptiveKeys = new Set(['name', 'description', 'text', 'headline', 'caption', 'articleBody']);
 const attributes = new Set(['alt', 'title', 'aria-label', 'placeholder', 'data-alt']);
